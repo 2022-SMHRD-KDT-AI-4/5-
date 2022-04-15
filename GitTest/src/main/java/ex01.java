@@ -9,6 +9,7 @@ public class ex01 {
 		System.out.println("匙锅掳 目乖");
 		System.out.println("促几锅掳 目乖");
 		System.out.println("咯几锅掳 目乖");
+		System.out.println("老蚌锅掳 目乖");
 	}
 
 }
