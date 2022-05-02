@@ -151,14 +151,18 @@ insert into InvSel values(1, 'birth1','i01',null,null);
 insert into InvSel values(1, 'birth1','i02',null,null);
 insert into InvSel values(1, 'birth1','i03',null,null);
 
+--조건 찾아서 맞는 열을 생성
+
 insert into InvSel (p_id, i_id)
 select p_id, i_id 
 from PartyItem
 where p_id = 'birth2';
 
-select * from InvSel;
+--널값을 지정값으로 변경
 
 update InvSel set v_id = 1
 where v_id is null;
+
+select * from InvSel;
 
 delete from invsel where v_id is null;
