@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<!-- DB 가져오기 -->
+	<properties resource="xe/smhrd/mapper/db.properties"></properties>
+	<typeAliases>
+		<!--데이터 타입 별 alias 설정 -->
+		<typeAlias type="xe.smhrd.model.MemberVO" alias="MemberVO"/>
+		<!-- <typeAlias type="xe.smhrd.model.BoardVO" alias="MypageVO"/> -->
+	</typeAliases>
+  <environments default="development">
+    <environment id="development">
+      <transactionManager type="JDBC"/>
+      <dataSource type="POOLED">
+        <property name="driver" value="${driver}"/>
+        <property name="url" value="${url}"/>
+        <property name="username" value="${username}"/>
+        <property name="password" value="${password}"/>
+      </dataSource>
+    </environment>
+  </environments>
+  <mappers>
+  <!-- Mapper.xml들을 나열하는 곳
+  		SQL 작성된 xml파일의 위치 -->
+    <mapper resource="xe/smhrd/mapper/MemberMapper.xml"/>
+    <!-- <mapper resource="xe/smhrd/mapper/MypageMapper.xml"/> -->
+  </mappers>
+</configuration>

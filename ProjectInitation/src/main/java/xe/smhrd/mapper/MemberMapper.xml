@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <!-- 어떤 DAO에서 사용하는지  -->
+<mapper namespace="xe.smhrd.model.MemberDAO">
+	<insert id="join" parameterType="MemberVO">
+		insert into MEMBER
+		values(#{m_id}, #{m_pw}, #{m_name})
+	</insert>
+</mapper>
