@@ -151,6 +151,14 @@ insert into InvSel values(1, 'birth1','i01',null,null);
 insert into InvSel values(1, 'birth1','i02',null,null);
 insert into InvSel values(1, 'birth1','i03',null,null);
 
-insert into InvSel (v_id, p_id, i_id)
-select p_id
-from 
+insert into InvSel (p_id, i_id)
+select p_id, i_id 
+from PartyItem
+where p_id = 'birth2';
+
+select * from InvSel;
+
+update InvSel set v_id = 1
+where v_id is null;
+
+delete from invsel where v_id is null;
