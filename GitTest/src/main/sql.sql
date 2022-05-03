@@ -1,4 +1,4 @@
-SELECT * FROM all_tables where owner = 'HR'
+SELECT * FROM all_tables where owner like 'CGI%';
 select * from MEMBER;
 select * from Invite;
 select * from PartyTyp;
