@@ -8,6 +8,7 @@
 </head>
 <body>
 	<h1>로그인</h1>
+	<p>서비스를 이용하기 위해서는 로그인이 필요합니다.</p>
 	<form action="LoginService" method="post">
 		<table>
 			<tr>
@@ -21,7 +22,6 @@
 			<tr>
 				<td><button type="submit" name="login" >로그인</button>
 					<button type="button" name="cancel" onclick="location.href='Main.jsp'">취소</button>
-					<button type="button" name="join" onclick="location.href='Join.jsp'">회원가입</button>
 				</td>
 			</tr>
 		</table>

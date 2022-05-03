@@ -8,7 +8,7 @@
 <title>회원 가입</title>
 </head>
 <body>
-	<h1>회원가입</h1>
+	<h1>환영합니다^^</h1>
 	<fieldset>
 		<legend>'*' 표시 항목은 필수 입력 항목입니다.</legend>
 		<form action="JoinService" method="post">

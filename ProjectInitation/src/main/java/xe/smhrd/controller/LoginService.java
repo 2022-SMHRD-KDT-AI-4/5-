@@ -42,7 +42,7 @@ public class LoginService extends HttpServlet {
 			System.out.println("로그인 성공");
 			
 			session.setAttribute("vo", mvo);
-//		4. main.jsp로 이동
+			
 			response.sendRedirect("Main.jsp");
 		}
 			
