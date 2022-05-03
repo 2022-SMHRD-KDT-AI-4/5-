@@ -7,6 +7,8 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
+import xe.smhrd.model.MemberVO;
+
 public class MemberDAO {
 	
 //	Connection pool 만들기
@@ -37,6 +39,21 @@ public class MemberDAO {
 		
 //		리턴값 반환
 		return cnt;
+	}
+	
+//	emailCheck method
+	public MemberVO emailCheck(String m_id) {
+		
+//		1. SqlSession 빌려오기
+		SqlSession session = sqlSessionFactory.openSession(true);
+		
+//		2. Sql문 실행
+		MemberVO vo = session.selectOne("emailCheck", m_id);
+		
+//		3. 세션 반환
+		session.close();
+		
+		return vo;
 	}
 	
 }

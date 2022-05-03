@@ -8,4 +8,9 @@
 		insert into MEMBER
 		values(#{m_id}, #{m_pw}, #{m_name})
 	</insert>
+	
+	<select id="emailCheck" resultType="MemberVO">
+		select * from MEMBER
+		where m_id = #{m_id}
+	</select>
 </mapper>
