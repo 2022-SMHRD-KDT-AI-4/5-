@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="xe.smhrd.model.InviteDAO">
+
+	<insert id="invite" parameterType="xe.smhrd.model.InviteVO" >
+		insert into Invite
+		values(inv_num_seq.nextval, #{m_id}, #{v_name}, #{v_wdate}, sysdate, #{v_cont})
+	</insert>
+	
+	<select id="selectLast" resultType="_int">
+		select LAST_NUMBER from USER_SEQUENCES where SEQUENCE_NAME = 'INV_NUM_SEQ'
+	</select>
+	
+	<insert id="addinvsel" parameterType="xe.smhrd.model.InviteVO" >
+		insert into InvSel
+		values(#{v_id}, #{p_id})
+	</insert>
+	
+	<insert id="addinvselitm" >
+		insert into InvSelItm (v_id, i_id, sel_h, sel_g)
+		select DISTINCT #{num}, b.i_id ,0, 0 from Invsel a, PartyItem b
+		where a.v_id = #{num} 
+		and a.p_id = b.p_id
+	</insert>
+</mapper>
