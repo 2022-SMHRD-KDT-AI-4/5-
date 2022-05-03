@@ -13,4 +13,11 @@
 		select * from MEMBER
 		where m_id = #{m_id}
 	</select>
+	
+	<select id="login" parameterType="MemberVO" resultType="MemberVO">
+		select * from MEMBER
+		where m_id = #{m_id}
+		and m_pw = #{m_pw}
+	</select>
+	
 </mapper>

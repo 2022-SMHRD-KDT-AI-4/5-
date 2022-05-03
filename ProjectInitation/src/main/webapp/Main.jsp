@@ -1,12 +1,21 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@page import="xe.smhrd.model.MemberVO"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>ธÞภฮ ฦไภฬม๖ ภิดฯดู.</h1>
+	<h1>๋ฉ”์ธ ํ์ด์ง€ ์…๋๋ค.</h1>
+	<a href="Login.jsp">๋ก๊ทธ์ธ</a><br>
+	<a href="LogoutService">๋ก๊ทธ์•์</a><br>
+	
+	<%
+	MemberVO vo = (MemberVO) session.getAttribute("vo");
+	out.print(vo);
+	%>
+	
 </body>
 </html>
