@@ -26,11 +26,6 @@ public class JoinService extends HttpServlet {
 		MemberVO mvo = new MemberVO(m_id, m_pw, m_name);
 		MemberDAO dao = new MemberDAO();
 		
-		System.out.println(m_id);
-		System.out.println(m_pw);
-		System.out.println(m_name);
-		
-		System.out.println(mvo);
 		int cnt = dao.join(mvo);
 		
 		if(cnt > 0) {
