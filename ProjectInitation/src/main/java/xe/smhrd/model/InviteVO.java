@@ -15,7 +15,7 @@ public class InviteVO {
 	private int v_id;
 	private String m_id;
 	private String v_name;
-	private String v_wdate;
+	private String v_adr;
 	private String v_date;
 	private String v_cont;
 	private String p_id;

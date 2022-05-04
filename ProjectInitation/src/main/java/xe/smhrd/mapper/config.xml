@@ -26,6 +26,7 @@
   		SQL 작성된 xml파일의 위치 -->
     <mapper resource="xe/smhrd/mapper/MemberMapper.xml"/>
     <mapper resource="xe/smhrd/mapper/InviteMapper.xml"/>
+    <mapper resource="xe/smhrd/mapper/BoardMapper.xml"/>
     <!-- <mapper resource="xe/smhrd/mapper/MypageMapper.xml"/> -->
   </mappers>
 </configuration>

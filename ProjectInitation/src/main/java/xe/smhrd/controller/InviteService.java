@@ -9,9 +9,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.oreilly.servlet.MultipartRequest;
-import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
-
 import xe.smhrd.model.InviteDAO;
 import xe.smhrd.model.InviteVO;
 
@@ -25,6 +22,7 @@ public class InviteService extends HttpServlet {
 
 		String name = request.getParameter("name");
 		String date = request.getParameter("date");
+		String address = request.getParameter("address");
 		String content = request.getParameter("content");
 		InviteVO vo = new InviteVO();
 
@@ -35,9 +33,10 @@ public class InviteService extends HttpServlet {
 
 		vo.setM_id("test1");
 		vo.setV_name(name);
-		vo.setV_wdate(date);
+		vo.setV_date(date);
+		vo.setV_adr(address);
 		vo.setV_cont(content);
-//		System.out.println(vo);
+		System.out.println(vo);
 
 		InviteDAO dao = new InviteDAO();
 		int lastnum = dao.selectLast();

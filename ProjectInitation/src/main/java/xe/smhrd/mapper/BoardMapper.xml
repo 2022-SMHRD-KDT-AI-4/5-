@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="xe.smhrd.model.BoardDAO">
+
+	<insert id="write" parameterType="xe.smhrd.model.BoardVO">
+		insert into Party
+		values(#{p_id}, #{pt_id}, #{p_name}, #{p_cont}, #{p_img}, 0)
+	</insert>
+	
+	<select id="selectBoard" resultType="xe.smhrd.model.BoardVO">
+		select * from Party
+	</select>
+	
+	<select id="selectOne" resultType="xe.smhrd.model.BoardVO">
+		select * from Party
+		where p_id = #{p_id}
+	</select>
+	
+	<select id="selectPartyItemList" resultType="xe.smhrd.model.BoardVO">
+		select a.p_id as p_id, b.i_id as i_id, 
+		b.it_id as it_it, b.i_name as i_name, b.i_cont as i_cont 
+		from PARTYITEM a, ITEM b
+		where a.i_id = b.i_id
+		and a.p_id=#{p_id}
+	</select>
+
+</mapper>

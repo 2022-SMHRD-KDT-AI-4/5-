@@ -6,7 +6,7 @@
 
 	<insert id="invite" parameterType="xe.smhrd.model.InviteVO" >
 		insert into Invite
-		values(inv_num_seq.nextval, #{m_id}, #{v_name}, #{v_wdate}, sysdate, #{v_cont})
+		values(inv_num_seq.nextval, #{m_id}, #{v_name}, #{v_date}, #{v_adr}, #{v_cont})
 	</insert>
 	
 	<select id="selectLast" resultType="_int">

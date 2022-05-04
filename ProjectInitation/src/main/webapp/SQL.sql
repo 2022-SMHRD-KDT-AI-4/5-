@@ -34,8 +34,8 @@ create table Invite(
 v_id number(20),
 m_id varchar2(20),
 v_name varchar2(100) not null,
-v_wdate date,
 v_date date,
+v_adr varchar2(1000),
 v_cont varchar2(1000),
 
 constraint invite_v_id_pk primary key(v_id),
@@ -219,8 +219,16 @@ where a.v_id = 4
 and a.p_id = b.p_id;
 
 delete InvSelItm;
+drop table InvselItm;
+drop table Invsel;
+drop table Invite;
 
 insert into InvSelItm (v_id, i_id, sel_h, sel_g)
 select DISTINCT 4, b.i_id ,0, 0 from Invsel a, PartyItem b
 where a.v_id = 4 
 and a.p_id = b.p_id;
+
+select a.p_id as p_id, b.i_id as i_id, b.it_id as it_it, b.i_name as i_name, b.i_cont as i_cont 
+from PARTYITEM a, ITEM b
+where a.i_id = b.i_id
+and a.p_id='birth2';
