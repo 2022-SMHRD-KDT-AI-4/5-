@@ -38,8 +38,10 @@
 
 				<tr>
 					<td colspan="2" align="center">
-						<button type="button" id="JoinBtn" onclick="location.href='Login.jsp'">회원가입</button>
-						<button type="button" name="cancel" onclick="location.href='Main.jsp'">취소</button>
+						<input type="submit" id="JoinBtn" value="회원가입">
+						<input type="button" id="cancel" value="취소" onclick="location.href='Main.jsp'">
+						<!-- <button type="button" id="JoinBtn" onclick="location.href='Login.jsp'">회원가입</button>
+						<button type="button" name="cancel" onclick="location.href='Main.jsp'">취소</button> -->
 					</td>
 				</tr>
 			</table>

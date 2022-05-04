@@ -10,7 +10,7 @@
 <body>
 <%
 	MemberVO vo = (MemberVO) session.getAttribute("vo");
-	/* out.print(vo); */
+	out.print(vo);
 %>
 	
 	<h1>메인 페이지 입니다.</h1>

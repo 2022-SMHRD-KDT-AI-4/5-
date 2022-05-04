@@ -25,9 +25,6 @@ public class LoginService extends HttpServlet {
 		
 		MemberVO vo = new MemberVO(m_id, m_pw, null);
 
-		System.out.println(m_id);
-		System.out.println(m_pw);
-		System.out.println(vo);
 		MemberDAO dao = new MemberDAO();
 		MemberVO mvo = dao.login(vo);
 		

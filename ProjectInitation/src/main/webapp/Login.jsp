@@ -20,8 +20,11 @@
 			</tr>
 			
 			<tr>
-				<td><button type="submit" name="login" >로그인</button>
-					<button type="button" name="cancel" onclick="location.href='Main.jsp'">취소</button>
+				<td>
+					<input type="submit" name="login" value="로그인">
+					<input type="button" name="cancel" value="취소" onclick="location.href='Main.jsp'">
+					<!-- <button type="submit" name="login" >로그인</button>
+					<button type="button" name="cancel" onclick="location.href='Main.jsp'">취소</button> -->
 				</td>
 			</tr>
 		</table>

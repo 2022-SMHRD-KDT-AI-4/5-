@@ -5,7 +5,7 @@
   <!-- 어떤 DAO에서 사용하는지  -->
 <mapper namespace="xe.smhrd.model.MemberDAO">
 	<insert id="join" parameterType="MemberVO">
-		insert into MEMBER
+		insert into Member
 		values(#{m_id}, #{m_pw}, #{m_name})
 	</insert>
 	

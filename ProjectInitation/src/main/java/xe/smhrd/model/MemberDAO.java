@@ -1,4 +1,4 @@
-package xe.smhrd.model;
+ package xe.smhrd.model;
 
 import java.io.InputStream;
 
@@ -32,8 +32,13 @@ public class MemberDAO {
 		SqlSession session = sqlSessionFactory.openSession(true);
 		
 //		MemberMapper.xml에 적어둔 SQL문장 실행
-		int cnt = session.insert("join", vo);
-		
+//		int cnt = session.insert("join", vo);
+		int cnt = 0;
+		try{
+			cnt = session.insert("join", vo);
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
 //		세션 반환
 		session.close();
 		

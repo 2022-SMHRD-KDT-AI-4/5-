@@ -20,12 +20,17 @@ public class JoinService extends HttpServlet {
 		
 //		파라미터 수집
 		String m_id = request.getParameter("m_id");
-		String m_pw = request.getParameter("m_pw");
+		String m_pw = request.getParameter("n_pw1");
 		String m_name = request.getParameter("m_name");
 		
 		MemberVO mvo = new MemberVO(m_id, m_pw, m_name);
 		MemberDAO dao = new MemberDAO();
 		
+		System.out.println(m_id);
+		System.out.println(m_pw);
+		System.out.println(m_name);
+		
+		System.out.println(mvo);
 		int cnt = dao.join(mvo);
 		
 		if(cnt > 0) {
