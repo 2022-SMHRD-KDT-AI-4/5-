@@ -21,20 +21,23 @@ public class ViewService extends HttpServlet {
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//1. 파라메터 수집
-		String p_id = request.getParameter("p_id");
+		String pt_id = request.getParameter("pt_id");
+		int num = Integer.parseInt(request.getParameter("num"));
 			
-		//2. DAO메서드사용
+		BoardVO vo = new BoardVO();
+		vo.setNum(num);
+		vo.setPt_id(pt_id);
 		BoardDAO dao = new BoardDAO();
-		System.out.println("p_id:"+p_id);
-		BoardVO bvo = dao.selectOne(p_id);
-		List<BoardVO> list = dao.selectPartyItemList(p_id);
-		System.out.println("리스트 사이즈 : "+list.size());
+		BoardVO bvo = dao.selectViewOne(vo);
+//		List<BoardVO> list = dao.selectPartyItemList(p_id);
+//		System.out.println("리스트 사이즈 : "+list.size());
 		System.out.println("vo:"+bvo);
 		
 		
 		//3. 객체바인딩
-		request.setAttribute("list", list);
-        request.setAttribute("bvo", bvo);
+//		request.setAttribute("vlist", list);
+		request.setAttribute("bvo", bvo);
+		request.setAttribute("num", num);
         
 		
 		//4. 페이지이동

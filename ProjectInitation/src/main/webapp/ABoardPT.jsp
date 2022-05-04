@@ -14,22 +14,40 @@
 	List<BoardVO> list = (List<BoardVO>) request.getAttribute("list");
 	%>
 	<div id="board">
+	<h1>파티종류보기</h1>
 		<table id="list" border=1>
 			<thead>
-				<tr>
-					<td>파티분류</td>
-					<td>파티이름</td>
-				</tr>
 			</thead>
 			<tbody>
 				<%
+				int i = 1;
 				for (BoardVO bvo : list) {
+				if(i%2==1){
 				%>
 				<tr>
-					<td><%=bvo.getPt_id()%></td>
-					<td><a href="ViewService?p_id=<%=bvo.getP_id()%>"><%=bvo.getP_name()%></a></td>
-				</tr>
+				<%} %>
+					<td>
+					<table>
+						<tr>
+						<td><center>
+							<img src="img/bono.png">
+							</center>
+						</td>
+					</tr>
+					<tr>
+					<td><center>
+						<a href="ListService?pt_id=<%=bvo.getPt_id()%>"><%=bvo.getPt_name()%></a>
+						</center>
+						</td>
+					</tr>
+					</td>
+				<%if(i%2==1){
+				%>
+				</tbody>
+				<%} %>
+				</table>
 				<%
+				i++;
 				}
 				%>
 
@@ -37,7 +55,6 @@
 
 		</table>
 
-		<a href="IABoardWrite.jsp"><button id="writer">작성하러가기</button></a>
 	</div>
 
 </body>

@@ -40,9 +40,9 @@ public class BoardDAO {
 		return list;
 	}
 	
-	public BoardVO selectOne(String p_id) {
+	public BoardVO selectViewOne(BoardVO vo) {
 		SqlSession session = sqlSessionFactory.openSession(true);
-		BoardVO bvo = session.selectOne("selectOne", p_id);
+		BoardVO bvo = session.selectOne("selectViewOne", vo);
 		session.close();
 		return bvo;
 	}
@@ -52,6 +52,27 @@ public class BoardDAO {
 		List<BoardVO> list = session.selectList("selectPartyItemList", p_id);
 		session.close();
 		return list;
+	}
+	
+	public List<BoardVO> selectPTList() {
+		SqlSession session = sqlSessionFactory.openSession(true);
+		List<BoardVO> list = session.selectList("selectPTList");
+		session.close();
+		return list;
+	}
+	
+	public List<BoardVO> selectPList(String pt_id) {
+		SqlSession session = sqlSessionFactory.openSession(true);
+		List<BoardVO> list = session.selectList("selectPList", pt_id);
+		session.close();
+		return list;
+	}
+	
+	public BoardVO selectPTone(String pt_id) {
+		SqlSession session = sqlSessionFactory.openSession(true);
+		BoardVO bvo = session.selectOne("selectPTone", pt_id);
+		session.close();
+		return bvo;
 	}
 
 }

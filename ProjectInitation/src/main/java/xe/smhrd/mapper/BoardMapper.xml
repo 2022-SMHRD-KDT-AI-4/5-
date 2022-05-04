@@ -13,9 +13,12 @@
 		select * from Party
 	</select>
 	
-	<select id="selectOne" resultType="xe.smhrd.model.BoardVO">
-		select * from Party
-		where p_id = #{p_id}
+	<select id="selectViewOne" parameterType="xe.smhrd.model.BoardVO" resultType="xe.smhrd.model.BoardVO">
+		select * from(
+		select row_number() over (order by p_id asc) as num, p_id, pt_id, p_name, p_cont, p_img, p_view  
+		from party
+		where pt_id = #{pt_id})
+		where num = #{num}
 	</select>
 	
 	<select id="selectPartyItemList" resultType="xe.smhrd.model.BoardVO">
@@ -24,6 +27,20 @@
 		from PARTYITEM a, ITEM b
 		where a.i_id = b.i_id
 		and a.p_id=#{p_id}
+	</select>
+	
+	<select id="selectPTList" resultType="xe.smhrd.model.BoardVO">
+		select * from PartyTyp
+	</select>
+	
+	<select id="selectPList" resultType="xe.smhrd.model.BoardVO">
+		select row_number() over (order by p_id asc) as num, p_id, pt_id, p_name, p_cont, p_img, p_view  from party
+		where pt_id=#{pt_id}
+	</select>
+	
+	<select id="selectPTone" resultType="xe.smhrd.model.BoardVO">
+		select * from PartyTyp
+		where pt_id=#{pt_id}
 	</select>
 
 </mapper>

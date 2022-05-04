@@ -10,6 +10,7 @@ import lombok.RequiredArgsConstructor;
 @AllArgsConstructor			//모든 필드를 매개변수로 받는 생성자
 @NoArgsConstructor
 public class BoardVO {
+	private int num;
 	private String i_id;
 	private String i_name;
 	private String i_cont;
