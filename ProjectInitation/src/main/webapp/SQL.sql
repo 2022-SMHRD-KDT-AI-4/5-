@@ -23,7 +23,7 @@ DROP TABLE MEMBER5;
 --회원정보테이블
 create table Member(
 m_id varchar2(20),
-m_pw varchar2(20) not null,
+m_pw varchar2(50) not null,
 m_name varchar2(50) not null,
 
 constraint member_m_id_pk primary key(m_id)
@@ -227,6 +227,7 @@ insert into InvSelItm (v_id, i_id, sel_h, sel_g)
 select DISTINCT 4, b.i_id ,0, 0 from Invsel a, PartyItem b
 where a.v_id = 4 
 and a.p_id = b.p_id;
+
 
 select a.p_id as p_id, b.i_id as i_id, b.it_id as it_it, b.i_name as i_name, b.i_cont as i_cont 
 from PARTYITEM a, ITEM b

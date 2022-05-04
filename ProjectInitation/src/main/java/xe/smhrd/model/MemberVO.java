@@ -12,11 +12,10 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class MemberVO {
 	
-	
+	@NonNull
 	private String m_id;
 	@NonNull
 	private String m_pw;
-	@NonNull
 	private String m_name;
 	
 }
