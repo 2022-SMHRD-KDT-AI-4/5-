@@ -31,7 +31,7 @@
 					<table>
 						<tr>
 						<td><center>
-							<img src="img/<%=bvo.getP_img() %>">
+							<img src="img/<%=bvo.getP_img() %>" width="500px">
 							</center>
 						</td>
 					</tr>
