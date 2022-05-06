@@ -15,7 +15,7 @@
 	%>
 	<div id="board">
 	<h1>파티종류보기</h1>
-		<table id="list" border=1>
+		<table border="1">
 			<thead>
 			</thead>
 			<tbody>

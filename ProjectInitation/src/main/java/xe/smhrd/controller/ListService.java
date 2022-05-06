@@ -34,7 +34,7 @@ public class ListService extends HttpServlet {
 			List<BoardVO> list = dao.selectPTList();
 			request.setAttribute("list", list);
 //			System.out.println("리스트 사이즈 : "+list.size());
-			rd = request.getRequestDispatcher("ABoardPT.jsp");
+			rd = request.getRequestDispatcher("BoardPT.jsp");
 		}
 
 		else {
@@ -42,7 +42,7 @@ public class ListService extends HttpServlet {
 			BoardVO vo = dao.selectPTone(pt_id);
 			request.setAttribute("vo", vo);
 			request.setAttribute("list", list);
-			rd = request.getRequestDispatcher("ABoardP.jsp");
+			rd = request.getRequestDispatcher("BoardP.jsp");
 		}
 		rd.forward(request, response);
 	}

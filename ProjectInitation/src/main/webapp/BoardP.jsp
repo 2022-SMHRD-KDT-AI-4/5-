@@ -14,9 +14,9 @@
 	List<BoardVO> list = (List<BoardVO>) request.getAttribute("list");
 	BoardVO vo = (BoardVO) request.getAttribute("vo");
 	%>
-	<div id="board">
+	<div>
 		<h1><%=vo.getPt_name() %></h1>
-		<table id="list" border=1>
+		<table border = "1">
 			<thead>
 			</thead>
 			<tbody>

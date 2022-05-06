@@ -42,5 +42,10 @@
 		select * from PartyTyp
 		where pt_id=#{pt_id}
 	</select>
+	
+	<update id="viewPlusOne">
+		update party set p_view = p_view + 1
+		where p_id=#{p_id}
+	</update>
 
 </mapper>

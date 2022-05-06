@@ -74,5 +74,11 @@ public class BoardDAO {
 		session.close();
 		return bvo;
 	}
+	
+	public void viewPlusOne(String p_id) {
+		SqlSession session = sqlSessionFactory.openSession(true);
+		session.update("viewPlusOne", p_id);
+		session.close();
+	}
 
 }
