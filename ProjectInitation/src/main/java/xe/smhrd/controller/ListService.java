@@ -19,11 +19,6 @@ import xe.smhrd.model.BoardVO;
 @WebServlet("/ListService")
 public class ListService extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * @see HttpServlet#service(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String pt_id = request.getParameter("pt_id");
@@ -33,6 +28,7 @@ public class ListService extends HttpServlet {
 		if (pt_id == null) {
 			List<BoardVO> list = dao.selectPTList();
 			request.setAttribute("list", list);
+		
 //			System.out.println("리스트 사이즈 : "+list.size());
 			rd = request.getRequestDispatcher("BoardPT.jsp");
 		}

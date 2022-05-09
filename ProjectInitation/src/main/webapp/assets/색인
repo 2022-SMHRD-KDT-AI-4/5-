@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width initial scale 1.0">
+      <meta name="p:domain_verify" content="5106e0d8c90f98f5675e3292a49d07b5"/>
+       <title>shine drop</title>
+       <link rel="stylesheet" type="text/css" href="css/main.css">
+       <link rel="stylesheet" type="text/css" href="css/main_t.css" media="only all and (max-width:1297px)">
+       <link rel="stylesheet" type="text/css" href="css/main_m.css" media="only screen and (max-width:910px)">
+       <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+       <script src="base.js"></script>
+       
+       
+       
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->  
+    </head>
+    
+    <body>
+        
+        <section id="header">
+            <h1><a href="index.html"><img src="images/logo_s.png" alt="paing drop"></a></h1>
+            <nav>
+               <h2 class="hidden">카테고리</h2>
+                <ul class="gnb">
+                    <li><a href="#header">HOME</a></li>
+                    <li><a href="#cha">CHARACTER</a></li>
+                    <li><a href="#sto">STORY</a></li>
+                    <li><a href="#qa">Q&amp;A</a></li>
+                    <li><a href="#gal">DILLYHUB</a></li>
+                    <li><a href="sub1.html">INSTAGRAM</a></li>
+                </ul>
+            </nav>
+            
+            <div class="mnb">
+               <button><img src="images/mnb.png" alt="더보기 메뉴"></button>
+                <ul class="mnb_inner">
+                    <li><a href="#header">HOME</a></li>
+                    <li><a href="#cha">CHARACTER</a></li>
+                    <li><a href="#sto">STORY</a></li>
+                    <li><a href="#qa">Q&amp;A</a></li>
+                    <li><a href="#gal">DILLYHUB</a></li>
+                    <li><a href="sub1.html">INSTAGRAM</a></li>
+                    <li class="exit">X</li>
+                </ul>
+            </div>
+            
+            
+            <button class="top">
+                <img src="images/top.png" alt="top button">
+            </button>
+            
+        </section>
+        
+        <section class="visual">
+            
+        </section>
+        
+        <div class="cha" id="cha">
+            <h3>CHARACTER</h3>
+            <ul>
+                <li>
+                    <figure>
+                        <img src="images/c01.png" alt="물감찍이">
+                        <figcaption>
+                            <h4>시트렛(Chartrat) </h4>
+                            <p>기본 색 : 시트러스(Chartreuse)
+                                <span>성격 : 호기심이 많고 행동파. 파워긍정.</span>
+                                <span>잘 놀라고 잘 웃고 잘 울고 사고도 잘 친다.</span>
+                                <span>블루와 매일매일 놀고싶다.</span>
+                            </p>
+                        </figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <figure>
+                        <img src="images/c02.png" alt="물감냥씨">
+                        <figcaption>
+                            <h4>블루(Blue)</h4>
+                            <p>기본 색 : 클래식블루(Classic Blue)
+                                <span>성격 : 느긋하고 잠이많다.</span>
+                                <span>퍼져있고 꼬리만 움직일 때가 많음.</span>
+                                <span>시트렛과 잘 놀아준다. 다정함</span>
+                            </p>
+                        </figcaption>
+                        </figure>
+                </li>
+                <li>
+                    <figure>
+                        <img src="images/c03.png" alt="???">
+                        <figcaption>
+                            <h4>이너스(Inous)</h4>
+                            <p>기본 색 : 와인(Vinous)
+                                <span>성격 : 속에 분노가 많은 타입.</span>
+                                <span>어쩐지 항상 화나있다.</span>
+                                <span>오지랖이 넓다.</span>
+                            </p>
+                        </figcaption>
+                        </figure>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="sto" id="sto">
+            <h3>STORY</h3>
+            <figure>
+                <img src="images/story.png" alt="story">
+                <figcaption>
+                    <h4>우당탕탕 좌충우돌 신나는 일상이야기.</h4>
+                    <p>
+                       톡 떨어진 물감에서 태어난 시트렛은 궁금한게 너무나 많다. 
+                       <span>세상에는 모르는 것과 신기한 것들 투성이.</span>
+                       <span>여기저기 안가보는 곳 없이 기웃거리며 미끄러져들어가 그 속으로 스며들어간다.</span>
+                       <span>하나씩 알아가는 세상은 반짝임으로 가득할 것만 같다.</span>
+                    </p>
+                    <p>
+                       <span>그 속에서 알아가는 친구들과의 유쾌한 만남. </span>
+                       <span>때로는 함께 놀기도하고, 때로는 모험을, 또 때로는 조언을 구하기도하는</span>
+                       <span>그 유쾌함속으로 당신을 초대합니다.</span>
+                    </p>
+                </figcaption>
+            </figure>
+        </div>
+        
+        <div class="qa" id="qa">
+            <h3>Q&amp;A</h3>
+            <ul>
+                <li>
+                   <section class="front">
+                     <h4>Q. 이름의 의미</h4>
+                       <p> 
+                          A. 이름은 색과 연관지어서 지었어요.
+                          <span>시트렛은 시트러스색보다는 형광색에 가깝지만</span>
+                          <span>시트러스 + rat(쥐) 조합이 마음에 들었죠.</span>
+                          <span>블루는 정말 단순한 작명이라고 생각하고는 있어요.</span>
+                       </p>
+                    </section>
+                   
+                   <section class="back">
+                       <h4>Q.1</h4>
+                   </section>
+                    
+                </li>
+                <li>
+                   <section class="front">
+                     <h4>Q. 색깔의 의미?</h4>
+                    <p>
+                       A. 비현실적이게 보이는 색으로 설정했어요.
+                        <span>형광색처럼 빛나는 쥐는 현실에 절대 없을거에요.</span>
+                        <span>마찬가지로 파란색 고양이도 없겠죠.</span>
+                        <span>또 2020 팬톤컬러가 클래식블루라서</span>
+                        <span>클래식블루 컬러를 사용했어요.</span>
+                    </p>
+                    </section>
+                   
+                   <section class="back">
+                       <h4>Q.2</h4>
+                   </section>
+                    
+                </li>
+                <li>
+                   <section class="front">
+                     <h4>Q. 성별?</h4>
+                    <p>A. 물에는 성별이 없죠.</p>
+                    </section>
+                   
+                   <section class="back">
+                       <h4>Q.3</h4>
+                   </section>
+                    
+                </li>
+            </ul>
+        </div>
+        
+        <div class="banner"></div>
+        
+        <div class="gal" id="gal">
+            <h3>DILLYHUB</h3>
+            <ul>
+              <li>
+                 <a href="https://dillyhub.com/home/wool/shinedrop/7" target="_blank">일곱 방울</a>
+                 <img src="images/t07.jpg" alt="일곱 방울">
+                </li>
+               <li>
+                 <a href="https://dillyhub.com/home/wool/shinedrop/6" target="_blank">여섯 방울</a>
+                 <img src="images/t06.jpg" alt="여섯 방울">
+                </li>
+                <li>
+                 <a href="https://dillyhub.com/home/wool/shinedrop/5" target="_blank">다섯 방울</a>
+                 <img src="images/t05.jpg" alt="다섯 방울">
+                </li>
+                <li>
+                 <a href="https://dillyhub.com/home/wool/shinedrop/4" target="_blank">네 방울</a>
+                 <img src="images/t04.jpg" alt="네 방울">
+                </li>
+               <li>
+                 <a href="https://dillyhub.com/home/wool/shinedrop/3" target="_blank">세 방울</a>
+                 <img src="images/t03.jpg" alt="세 방울">
+                </li>
+                <li>
+                 <a href="https://dillyhub.com/home/wool/shinedrop/2" target="_blank">두 방울</a>
+                 <img src="images/t02.jpg" alt="두 방울 보러가기">
+                </li>
+                
+                <li  class="m_li">    
+                  <a href="https://dillyhub.com/home/wool/shinedrop/1" target="_blank">한 방울</a>
+                  <img src="images/t01.jpg" alt="한 방울 보러가기">
+                </li>
+                <li class="m_li">
+                 <a href="https://dillyhub.com/home/wool/shinedrop" target="_blank">준비중</a>
+                 <img src="images/t00.jpg" alt="준비중">
+                </li>
+                <li class="m_li">
+                 <a href="https://dillyhub.com/home/wool/shinedrop" target="_blank">준비중</a>
+                 <img src="images/t00.jpg" alt="준비중">
+                </li>
+                <li class="m_li">
+                 <a href="https://dillyhub.com/home/wool/shinedrop" target="_blank">준비중</a>
+                 <img src="images/t00.jpg" alt="준비중">
+                </li>
+            </ul>
+            
+            <button class="more">더보기</button>
+            
+            
+        </div>        
+        
+        
+        
+       <ins class="kakao_ad_area" style="display:none;" 
+ data-ad-unit    = "DAN-trwuypjyxe7s" 
+ data-ad-width   = "320" 
+ data-ad-height  = "100"></ins> 
+<script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+        
+        
+        
+        
+        <sction id="footer">
+           <ul>
+               <li><a href="https://www.instagram.com/draw_wool/" target="_blank"><img src="images/f_icon01.png" alt="인스타그램"></a></li>
+               <li><a href="https://dillyhub.com/home/wool/shinedrop" target="_blank"><img src="images/f_icon02.png" alt="딜리헙"></a></li>
+               <li><a href="http://ssimplay.com/" target="_blank"><img src="images/f_icon03.png" alt="홈페이지"></a></li>
+               <li><a href="https://www.etsy.com/shop/ShineDrop" target="_blank"><img src="images/f_icon04.png" alt="엣시샵"></a></li>
+               <li><a href="https://twitter.com/draw_wool" target="_blank"><img src="images/f_icon05.png" alt="트위터"></a></li>
+           </ul>
+            <p>© 2020. SSIMPLAY All rights reserved.</p>
+        </sction>
+        
+        
+    </body>    
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

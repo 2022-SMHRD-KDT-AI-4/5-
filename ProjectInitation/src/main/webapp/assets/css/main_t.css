@@ -1,0 +1,41 @@
+div, .sto figure {
+  width: 98%;
+  margin: 60px 1%; }
+
+.cha ul li {
+  width: 40%;
+  margin: 20px 4%; }
+
+.sto {
+  background: linear-gradient(to left, #fff 50%, #fff5bf 50%); }
+  .sto figure img {
+    float: none; }
+  .sto figure figcaption {
+    float: none;
+    text-align: center;
+    margin: 60px 20px; }
+    .sto figure figcaption p {
+      word-break: keep-all;
+      margin-bottom: 20px; }
+    .sto figure figcaption span {
+      display: inline; }
+
+.qa ul li {
+  float: none;
+  width: 60%;
+  margin: 20px 20%; }
+  .qa ul li:hover {
+    transform: rotateY(0deg); }
+  .qa ul li section.front {
+    transform: rotateY(0deg); }
+  .qa ul li section.back {
+    display: none; }
+
+.gal ul {
+  width: 98%;
+  margin: 0 1%; }
+  .gal ul li {
+    width: 48%;
+    margin: 12px 1%; }
+
+/*# sourceMappingURL=main_t.css.map */
