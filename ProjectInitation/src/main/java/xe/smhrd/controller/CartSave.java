@@ -24,6 +24,8 @@ public class CartSave extends HttpServlet {
 		String p_id = request.getParameter("p_id");
 		String pt_id = request.getParameter("pt_id");
 		int num = Integer.parseInt(request.getParameter("num"));
+		
+//		카트목록 소환
 		ArrayList<String> cartList = (ArrayList)session.getAttribute("cartList");
 		if(cartList==null) {
 			cartList = new ArrayList<String>();
