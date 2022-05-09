@@ -47,5 +47,10 @@
 		update party set p_view = p_view + 1
 		where p_id=#{p_id}
 	</update>
+	
+	<select id="selectPone" resultType="xe.smhrd.model.BoardVO">
+		select * from Party
+		where p_id=#{p_id}
+	</select>
 
 </mapper>
