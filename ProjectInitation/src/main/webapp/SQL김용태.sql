@@ -11,3 +11,5 @@ where pt_id = 'birth')
 where num = 2;
 
 select * from party;
+
+select * from Party	where p_id='xmas1';

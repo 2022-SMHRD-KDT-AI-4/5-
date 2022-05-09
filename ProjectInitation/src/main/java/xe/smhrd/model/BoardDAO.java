@@ -80,5 +80,12 @@ public class BoardDAO {
 		session.update("viewPlusOne", p_id);
 		session.close();
 	}
+	
+	public BoardVO selectPone(String p_id) {
+		SqlSession session = sqlSessionFactory.openSession(true);
+		BoardVO bvo = session.selectOne("selectPone", p_id);
+		session.close();
+		return bvo;
+	}
 
 }

@@ -41,19 +41,16 @@
 						</center>
 						</td>
 					</tr>
+					</table>
 					</td>
-				<%if(i%2==1){
+				<%if(i%2==0){
 				%>
-				</tbody>
-				<%} %>
-				</table>
-				<%
+				</tr>
+				<%}
 				i++;
 				}
 				%>
-
 			</tbody>
-
 		</table>
 
 	</div>

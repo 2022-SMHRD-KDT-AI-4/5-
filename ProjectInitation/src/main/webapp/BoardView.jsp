@@ -35,12 +35,16 @@
 			<tr>
 				<td align=center height=10px>
 				
-				<a href="CartDelete?p_id=<%=bvo.getP_id()%>
-				&pt_id=<%=bvo.getPt_id()%>&num=<%=bvo.getNum()%>"
+				<a href="CartService?p_id=<%=bvo.getP_id()%>
+				&pt_id=<%=bvo.getPt_id()%>&num=<%=bvo.getNum()%>
+				&action=delete"
+				target = "Cartlist"
 				style="float: left;">찜빼기</a>
 				
-				<a href="CartSave?p_id=<%=bvo.getP_id()%>
-				&pt_id=<%=bvo.getPt_id()%>&num=<%=bvo.getNum()%>"
+				<a href="CartService?p_id=<%=bvo.getP_id()%>
+				&pt_id=<%=bvo.getPt_id()%>&num=<%=bvo.getNum()%>
+				&action=save"
+				target = "Cartlist"
 				style="float: right;">찜하기</a>
 				
 				</td>
