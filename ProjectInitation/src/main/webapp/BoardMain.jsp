@@ -9,8 +9,13 @@
 <frameset cols="*,300px">
 	<frame src="ListService" name="Boardlist" scrolling="auto"
 	frameborder=0 noresize>
+	<frameset rows="*,40px">
 	<frame src="Cartlist.jsp" name="Cartlist" scrolling="auto"
 	frameborder=0 noresize>
+	<frame src="CartSubmit.jsp" name="CartSubmit" scrolling="no"
+	frameborder=0 noresize>
+	
+	</frameset>
 </frameset>
 <body>
 </body>
