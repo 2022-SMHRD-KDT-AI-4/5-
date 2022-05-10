@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<a href="Cart.jsp"><input type="button" id="cart_btn" value="찜 목록"></a>
+	<a href=""><input type="button" id="cart_btn" value="찜 목록"></a>
+
 </body>
 </html>
