@@ -87,5 +87,13 @@ public class BoardDAO {
 		session.close();
 		return bvo;
 	}
+	
+	public BoardVO selectPimgOne(String pt_id) {
+		SqlSession session = sqlSessionFactory.openSession(true);
+		BoardVO bvo = session.selectOne("selectPimgOne", pt_id);
+		session.close();
+		return bvo;
+	}
+	
 
 }

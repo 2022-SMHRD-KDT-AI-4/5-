@@ -27,6 +27,10 @@ public class ListService extends HttpServlet {
 
 		if (pt_id == null) {
 			List<BoardVO> list = dao.selectPTList();
+			for(int i = 0; i<list.size(); i++) {
+				String p_img =  dao.selectPimgOne(list.get(i).getPt_id()).getP_img();
+				list.get(i).setP_img(p_img);
+			}
 			request.setAttribute("list", list);
 		
 //			System.out.println("리스트 사이즈 : "+list.size());

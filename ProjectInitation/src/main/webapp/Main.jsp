@@ -113,6 +113,29 @@
 
 	<section class="visual"> </section>
 
+<<<<<<< HEAD
+=======
+	<%-- <%
+	if (vo == null) {
+	%>
+	<a href="Login.jsp">로그인</a>
+	<br>
+	<a href="Join.jsp">회원가입</a>
+	<br>
+	<%
+	} else {
+	%>
+	<h3><%=vo.getM_name()%>님
+	</h3>
+	<a href="mypage">마이페이지</a>
+	<br>
+	<a href="LogoutService">로그아웃</a>
+	<br>
+	<%
+	}
+	%> --%>
+
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-AI-4/5micron.git
 </body>
 
 </html>

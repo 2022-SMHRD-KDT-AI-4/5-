@@ -7,7 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<a href = "Invitepage.jsp" target = "main">초대장 작성하기</a>
+	<a href = "Invitepage.jsp" target = "main" style="float: left;">초대장 작성하기</a>
+	<a href="CartClearService" target = "Cartlist"
+				style="float: right;">찜목록 비우기</a>
 
 </body>
 </html>

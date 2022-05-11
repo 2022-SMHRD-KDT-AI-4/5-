@@ -88,4 +88,26 @@ public class InviteDAO {
 		session.close();
 	}
 	
+<<<<<<< HEAD
+=======
+	public void resultOne(InviteVO vo) {
+		SqlSession session = sqlSessionFactory.openSession(true);
+		session.update("resultOne", vo);
+		session.close();
+	}
+	
+	public void clearAll(int v_id) {
+		SqlSession session = sqlSessionFactory.openSession(true);
+		session.update("clearAll", v_id);
+		session.close();
+	}
+	
+	public List<InviteVO> selectResultItem(int v_id) {
+		SqlSession session = sqlSessionFactory.openSession(true);
+		List<InviteVO> list = session.selectList("selectResultItem", v_id);
+		session.close();
+		return list;
+	}
+	
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-AI-4/5micron.git
 }
