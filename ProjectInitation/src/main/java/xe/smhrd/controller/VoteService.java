@@ -19,8 +19,7 @@ public class VoteService extends HttpServlet {
 		HttpSession session = request.getSession();
 		request.setCharacterEncoding("UTF-8");
 		int v_id = Integer.parseInt(request.getParameter("v_id"));
-		String[] seli_id = request.getParameterValues("seli_id");
-		
+		String[] seli_id = request.getParameterValues("seli_id");	
 		System.out.println(v_id);
 		if(seli_id!=null) {
 		for(int i = 0; i < seli_id.length; i++) {

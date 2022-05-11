@@ -15,7 +15,7 @@
 </head>
 <body>
     <div class="login-sys" >
-        <a href="index.html"><img src="assets/images/logoda.png" alt=""></a>
+        <a href="Main.jsp"><img src="assets/images/logoda.png" alt=""></a>
     </div>
 
 <div class="login-page">
