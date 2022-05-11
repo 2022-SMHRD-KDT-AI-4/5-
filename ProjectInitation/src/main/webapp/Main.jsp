@@ -46,25 +46,22 @@
 
 	<nav class="main-menu">
 	<h2 class="hidden">카테고리</h2>
-
 	<ul class="menu">
-
-		<li><a href="invite.html">invitation</a>
-
+		<li><a>invitation</a>
 			<ul class="sub-menu">
-				<li><a href=""> write </a></li>
+				<li><a href="Invitepage.jsp"> write </a></li>
 				<br>
-				<li><a href=""> list </a></li>
-			</ul></li>
+				<li><a href="InviteService"> list </a></li>
+			</ul>
+		</li>
 
-		<li><a href="informa.html">information</a>
-
+		<li><a>information</a>
 			<ul class="sub-menu">
 				<li><a href="">introduce</a></li>
 				<br>
 				<li><a href="">how to use</a></li>
-			</ul></li>
-
+			</ul>
+		</li>
 	</ul>
 	</nav>
 	
