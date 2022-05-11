@@ -88,8 +88,6 @@ public class InviteDAO {
 		session.close();
 	}
 	
-<<<<<<< HEAD
-=======
 	public void resultOne(InviteVO vo) {
 		SqlSession session = sqlSessionFactory.openSession(true);
 		session.update("resultOne", vo);
@@ -109,5 +107,4 @@ public class InviteDAO {
 		return list;
 	}
 	
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-AI-4/5micron.git
 }

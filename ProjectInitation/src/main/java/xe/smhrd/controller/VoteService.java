@@ -22,19 +22,7 @@ public class VoteService extends HttpServlet {
 		String[] seli_id = request.getParameterValues("seli_id");
 		
 		System.out.println(v_id);
-<<<<<<< HEAD
-		for(int i = 0; i < seli_id.length; i++) {
-		System.out.println(seli_id[i]);
-		}
-		InviteDAO dao = new InviteDAO();
-		InviteVO vo = new InviteVO();
-		vo.setV_id(v_id);
-		for(int i = 0; i < seli_id.length; i++) {
-			vo.setI_id(seli_id[i]);
-			System.out.println(vo);
-			dao.voteOne(vo);
-		}
-=======
+
 		if(seli_id!=null) {
 		for(int i = 0; i < seli_id.length; i++) {
 		System.out.println(seli_id[i]);
@@ -47,7 +35,6 @@ public class VoteService extends HttpServlet {
 			System.out.println(vo);
 			dao.voteOne(vo);
 		}}
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-AI-4/5micron.git
 		
 //		임시결과보기용
 		RequestDispatcher rd = request.getRequestDispatcher("MylistService");
