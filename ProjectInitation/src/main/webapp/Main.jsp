@@ -70,7 +70,7 @@
 
 	<section class="visual"> </section>
 
-	<%
+	<%-- <%
 	if (vo == null) {
 	%>
 	<a href="Login.jsp">로그인</a>
@@ -88,7 +88,7 @@
 	<br>
 	<%
 	}
-	%>
+	%> --%>
 
 </body>
 </html>
