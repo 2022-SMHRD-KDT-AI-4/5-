@@ -10,303 +10,336 @@
 * {
   margin: 0;
   padding: 0;
-  list-style: none; }
+  list-style: none; 
+}
+
+#main-screen {
+  background:#fff5bf;
+}
 
 img {
-  border: 0; }
+  border: 0; 
+}
 
 a {
   text-decoration: none;
   list-style: none;
-  color: #000; }
+  color: #000; 
+}
 
 .hidden {
-  display: none; }
+  display: none; 
+}
 
 button {
   background: none;
   border: 0;
-  font-family: 'NanumBarunpen'; }
+  font-family: 'NanumBarunpen'; 
+}
 
-#header {
+div.icons a.login-icon, a.join-icon, a.mypage-icon, a.logout-icon{
+  text-align: left;
+  margin-left: 30px;
+  margin-top: 30px;
+  padding: 15px;
+  font-family: 'NanumBarunpen';
+  font-size: 25px;
+  }
+  
+
+#header  {
   position: absolute;
-  width: 100%; }
-  #header h1 {
-    text-align: center;
-    padding: 12px 0;
+  width: 100%;
+  
+  
+}
+  
+  .header a {
+    display: flex;
+    align-content: center;
+    padding: 20px 0;
     position: relative;
     margin-bottom: 20px;
-    box-sizing: border-box; }
+    box-sizing: border-box;
+    
+  }
 
-.gnb {
+
+.menu {
   text-align: center;
   position: relative; }
-  .gnb li {
+  .menu li {
     display: inline-block;
-    padding: 0 32px; }
-    .gnb li a {
-      font-family: 'Nanum Pen Script', cursive;
+    padding: 0 32px; 
+  }
+
+    .menu li a {
+      font-family:'NanumBarunpen', cursive;
       font-size: 30px;
       color: #312828; }
-      .gnb li a:hover {
-        opacity: 0.5; }
+      .menu li a:hover {
+        opacity: 0.5; 
+      }
 
-.mnb button {
-  position: fixed;
-  top: 5%;
-  right: 3%;
-  cursor: pointer; }
-  .mnb button:hover {
-    opacity: 0.5; }
-.mnb .mnb_inner {
-  position: fixed;
-  width: 30%;
-  top: 0;
-  right: 0;
-  background: rgba(255, 237, 143, 0.7);
-  height: 100%;
-  margin: 0;
-  text-align: left;
-  padding: 60px 3%;
-  box-sizing: border-box;
-  z-index: 10;
-  margin-right: -40%; }
-  .mnb .mnb_inner li {
-    margin: 12px 0; }
-    .mnb .mnb_inner li.exit {
-      text-align: right;
-      font-family: 'Nanum Pen Script', cursive;
-      font-size: 52px;
-      color: #312828;
-      margin-top: 60px;
-      cursor: pointer; }
-      .mnb .mnb_inner li.exit:hover {
-        opacity: 0.5; }
-    .mnb .mnb_inner li a {
-      font-family: 'Nanum Pen Script', cursive;
-      font-size: 30px;
-      color: #312828;
-      display: block;
-      padding: 4px 12px; }
-      .mnb .mnb_inner li a:hover {
-        background: #fff; }
+  .menu .this {
+  background: #fff; 
+}
 
+
+  
+    .menu {
+      width: 50%;
+      height: 100%;
+      margin: 0 auto;
+    }
+  
+  .menu>li {
+    float: left;
+    width: 40%;
+    line-height: 50px;
+    text-align: center;
+     position: relative;
+  }
+  
+  .menu>li:hover .sub-menu {
+    left: 0;
+  }
+  
+  .menu>li a {
+    display: block;
+  }
+  
+
+  .sub-menu {
+    position: absolute;
+    top: 50px;
+    left: -9999px;
+    background: #fff;
+    opacity: 0.8;
+    width: 80%;
+    text-align: center;
+    margin-left: 10%;  
+  }
+
+  .sub-menu>li {
+    position: relative;
+  }
+
+  /* �뿬湲곌� 異붽� �맂 遺�遺�! */
+  
+  .menu {
+  
+    width: 50%;
+
+    height: 100%;
+
+    margin: 0 auto;
+    
+}
+
+.menu>li {
+
+    float: left;
+
+    width: 40%;
+
+    line-height: 50px;
+
+    text-align: center;
+
+    position: relative;
+
+}
+
+.menu>li:hover .sub-menu {
+
+  left: 0;
+
+}
+
+
+.menu>li a {
+
+    display: block;
+
+}
+
+.menu>li a:hover {
+
+   
+
+    color: gray;
+
+    font-weight: bold;
+
+}
+
+.sub-menu {
+
+    position: absolute;
+
+    top: 50px;
+
+    left: -9999px;
+
+    background: #fff;
+
+    width: 80%;
+
+    text-align: center;
+
+    margin-left: 10%;
+    
+}
+.sub-menu>li {
+
+    position: relative;
+
+}
+
+
+#wrap{
+  width: 1300px;
+  margin: 0 auto;
+  overflow: hidden;
+  padding-top: 150px;
+}
+
+div>article{
+  float: left;
+  margin-left: 30px;
+  margin-bottom: 30px;
+}
+
+
+article{
+  float: left;
+  margin-left: 30px;
+  margin-bottom: 30px;  
+  border-radius: 10%;
+  content-visibility: auto;
+
+
+}
+
+
+/*5�썡 10�씪 21�떆源뚯� 異붽��븳 遺�遺�*/
+      
 .top {
   cursor: pointer;
   position: fixed;
   right: 3%;
-  bottom: 6%; }
+  bottom: 6%; 
+}
   .top:hover {
-    opacity: 0.5; }
+    opacity: 0.5; 
+  }
 
-#footer {
-  background: #fff5bf;
+
+div.header {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 15px auto;
+  padding: 10px 0; 
   text-align: center;
-  display: block;
-  height: 180px;
-  box-sizing: border-box;
-  padding: 32px 0; }
-  #footer ul {
-    overflow: hidden;
-    margin-bottom: 32px; }
-    #footer ul li {
-      display: inline-block;
-      margin: 0 8px; }
-      #footer ul li:hover {
-        opacity: 0.5; }
-  #footer p {
-    color: #2e2e2e;
-    font-family: 'NanumBarunpen';
-    font-size: 18px;
-    letter-spacing: -1px; }
+}
 
-div, .sto figure, .cont ul {
+div.login-sys {
   width: 1280px;
-  margin: 100px auto;
-  padding: 20px 0; }
+  margin: 30px auto;
+  padding: 30px 0; 
+  text-align: center;
+}  
 
-::selection {
-  background: chartreuse;
-  color: #312828; }
 
 .visual {
-  background: url(../images/visual.png) no-repeat center bottom, linear-gradient(#fff5bf 80%, #fff 10%);
   height: 1000px;
-  margin-bottom: 160px; }
+  margin-bottom: 160px; 
+}
 
-div {
-  text-align: center; }
-
-h3 {
-  text-align: center;
-  color: #b71023;
-  display: inline-block;
-  padding: 4px 72px;
-  margin: 16px 0 40px;
-  font-family: 'Nanum Pen Script', cursive;
-  font-size: 26px;
-  background: url(../images/title_l.png) no-repeat left center, url(../images/title_r.png) no-repeat right center; }
-
-h4 {
-  color: #2e2e2e; }
-
-p {
-  color: #717171; }
-
-.cha {
-  margin-bottom: 120px; }
-  .cha ul li {
-    display: inline-block;
-    width: 28%;
-    margin: 20px 1%; }
-    .cha ul li figcaption {
-      margin: 20px 0;
-      font-family: 'NanumBarunpen'; }
-      .cha ul li figcaption h4 {
-        margin-bottom: 12px;
-        font-size: 18px; }
-      .cha ul li figcaption p {
-        line-height: 21px;
-        font-size: 16px; }
-    .cha ul li span {
-      display: block; }
-
-.sto {
-  background: linear-gradient(to left, #fff 70%, #fff5bf 30%);
-  overflow: hidden;
-  width: auto;
-  padding-bottom: 160px; }
-  .sto figure {
-    margin: 160px auto; }
-    .sto figure img {
-      float: left; }
-    .sto figure figcaption {
-      float: left;
-      margin: 60px 80px;
-      font-family: 'NanumBarunpen';
-      text-align: left; }
-      .sto figure figcaption h4 {
-        font-size: 20px;
-        margin-bottom: 16px; }
-      .sto figure figcaption p {
-        line-height: 22px; }
-      .sto figure figcaption span {
-        display: block; }
-
-.qa ul {
-  overflow: hidden; }
-  .qa ul li {
-    float: left;
-    width: 26%;
-    margin: 20px 3.5%;
-    font-family: 'NanumBarunpen';
-    position: relative;
-    height: 480px;
-    box-sizing: border-box;
-    letter-spacing: -1px;
-    cursor: pointer;
-    transform-style: preserve-3d;
-    transition: all 1s; }
-    .qa ul li:hover {
-      transform: rotateY(180deg); }
-    .qa ul li section {
-      width: 100%;
-      height: 100%;
-      box-sizing: border-box; }
-    .qa ul li section.front {
-      position: absolute;
-      transform: rotateY(180deg);
-      z-index: 1;
-      background: #fff5bf;
-      padding: 150px 0; }
-    .qa ul li section.back {
-      position: absolute;
-      transform: rotateY(0deg);
-      z-index: 2;
-      background: #d4d4d4;
-      line-height: 470px; }
-      .qa ul li section.back h4 {
-        font-size: 52px;
-        letter-spacing: 2px; }
-    .qa ul li h4 {
-      font-size: 20px;
-      margin-bottom: 20px; }
-    .qa ul li span {
-      display: block; }
-
-.banner {
-  width: 100%;
-  background: url(../images/banner.jpg) no-repeat center center fixed;
-  height: 440px; }
-
-.gal ul {
-  overflow: hidden; }
-  .gal ul li {
-    float: left;
-    width: 31%;
-    margin: 12px 1%;
-    height: 218px;
-    border: 3px dashed #312828;
-    box-sizing: border-box; }
-    .gal ul li a {
-      display: none;
-      position: relative;
-      width: 100%;
-      height: 100%;
-      text-align: center;
-      background: #312828;
-      line-height: 212px;
-      color: #fff5bf;
-      font-size: 28px;
-      font-family: 'NanumBarunpen';
-      font-weight: bold;
-      opacity: 0.85;
-      margin-bottom: -212px; }
-    .gal ul li img {
-      height: 100%; }
-    .gal ul li:hover a {
-      display: block; }
-.gal .more {
-  margin: 24px 0;
-  font-size: 20px;
-  background: #fff5bf;
-  padding: 12px 28px;
-  cursor: pointer;
-  color: #312828;
-  font-weight: bold;
-  border: 2px solid #312828;
-  border-radius: 3px; }
-  .gal .more:hover {
-    opacity: 0.5; }
-.gal .m_li {
-  display: none; }
-
-.add {
-  display: none; }
 
 .top {
   display: none;
-  z-index: 3; }
+  z-index: 3; 
+}
 
-/* sub1 */
-.sub_visual {
-  height: 400px;
-  background: #fff5bf; }
+.login-sys a {
+  width: 100%;
+  background:#fff5bf;
+  align-content: center;
+}
 
-.gnb .this {
-  background: #fff; }
+  .login-page {
+    width: 360px;
+    padding: 1% 0 0;
+    margin: auto;
+  }
 
-.cont ul {
-  overflow: hidden; }
-  .cont ul li {
-    float: left;
-    width: 30%;
-    margin: 12px 1.5%;
-    box-sizing: border-box; }
-    .cont ul li:hover {
-      opacity: 0.5; }
-    .cont ul li a img {
-      width: 100%;
-      border: 1px solid gray; }
+  .form {
+    position: relative;
+    z-index: 1;
+    background: #FFFFFF;
+    max-width: 360px;
+    margin: 0 auto 100px;
+    padding: 45px;
+    text-align: center;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  }
+
+  .form input {
+    font-family: "Roboto", sans-serif;
+    outline: 0;
+    background: #f2f2f2;
+    width: 100%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+  }
+
+  .form button {
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background: #FFDDBF ;
+    width: 100%;
+    border: 0;
+    padding: 15px;
+    color: #fff;
+    font-size: 14px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+    margin: 0 0 15px;
+  }
+
+  .form button:hover,.form button:active,.form button:focus {
+    background: #FFB472;
+  }
+
+  .form .message {
+    margin: 15px 0 0;
+    color: #312828;
+    font-size: 14px;
+  }
+
+  .form .message a {
+    color: #FF9232;
+    text-decoration: none;
+    font-weight: 700;
+  }
+
+  .form .register-form {
+    display: none;
+  }
+  
+  body {
+    background: #fff5bf;
+    font-family: "Roboto", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;      
+  }
 
 /*# sourceMappingURL=main.css.map */

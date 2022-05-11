@@ -6,7 +6,7 @@
 
 	<insert id="invite" parameterType="xe.smhrd.model.InviteVO" >
 		insert into Invite
-		values(inv_num_seq.nextval, #{m_id}, #{v_name}, #{v_date}, #{v_adr}, #{v_cont})
+		values(inv_num_seq.nextval, #{m_id}, #{v_name}, #{v_date}, #{v_adr}, #{v_cont}, #{p_id})
 	</insert>
 	
 	<select id="selectLast" resultType="_int">
@@ -24,4 +24,33 @@
 		where a.v_id = #{num} 
 		and a.p_id = b.p_id
 	</insert>
+	
+	<select id="selectMylist" resultType="xe.smhrd.model.InviteVO">
+		select a.v_id as v_id, a.m_id as m_id, a.v_name as v_name, a.v_date as v_date,
+		a.v_adr as v_adr, a.v_cont as v_cont, a.p_id as p_id, b.p_img as p_img
+		from Invite a, Party b 
+		where a.p_id = b.p_id 
+		and a.m_id = #{m_id}
+	</select>
+	
+	
+	<select id="selectMyOne" resultType="xe.smhrd.model.InviteVO">
+		select a.v_id as v_id, a.m_id as m_id, a.v_name as v_name, to_char(a.v_date, 'yyyy-mm-dd') as v_date,
+		a.v_adr as v_adr, a.v_cont as v_cont, a.p_id as p_id, b.p_img as p_img
+		from Invite a, Party b 
+		where a.p_id = b.p_id 
+		and a.v_id =  #{v_id}
+	</select>
+	
+	<select id="selectMyItem" resultType="xe.smhrd.model.InviteVO">
+		select a.v_id as v_id, a.i_id as i_id, a.sel_g as sel_g, a.sel_h as sel_h, b.i_name as i_name, b.i_cont as i_cont  
+		from InvSelItm a, Item b 
+		where a.i_id = b.i_id and v_id= #{v_id}
+	</select>
+	
+	<update id="voteOne" parameterType="xe.smhrd.model.InviteVO" >
+		update InvSelItm set sel_g = sel_g + 1
+		where v_id=#{v_id}
+		and i_id=#{i_id}
+	</update>
 </mapper>

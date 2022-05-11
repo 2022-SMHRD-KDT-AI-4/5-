@@ -15,38 +15,36 @@
 		<%
 		List<BoardVO> cartList = (List<BoardVO>) session.getAttribute("cartList");
 		if (cartList == null) {
-			%>찜목록이 비었습니다<%
-		}else{
+		%>찜목록이 비었습니다<%
+		} else {
 		%>
-		<table border="1">
-		<thead>
-		</thead>
-		
-		<tbody>
-			<% 
-			for (BoardVO cvo : cartList) {
-				%>
+		<table border="0">
+			<thead>
+			</thead>
+
+			<tbody>
+				<%	for (BoardVO cvo : cartList) {	%>
 				<tr>
 					<td>
-					<table>
-						<tr>
-						<td width = "260px"><center>
-							<img src="img/<%=cvo.getP_img() %>" width = "260px">
-							</center>
-						</td>
-					</tr>
-					<tr>
-					<td><center>
-						<%=cvo.getP_name() %>
-						</center>
-						</td>
-					</tr>
-					</table>
+						<table>
+							<tr>
+								<td width="250px"><center>
+										<img src="img/<%=cvo.getP_img()%>" width="250px">
+									</center></td>
+							</tr>
+							<tr>
+								<td><center>
+										<%=cvo.getP_name()%>
+									</center></td>
+							</tr>
+						</table>
 					</td>
-					</tr>
-					<%}} %>
-				</table>
+				</tr>
+				<%}	}	%>
+			
+		</table>
 
-			</tbody>
+		</tbody>
+	</div>
 </body>
 </html>

@@ -6,7 +6,6 @@
       <meta name="p:domain_verify" content="5106e0d8c90f98f5675e3292a49d07b5"/>
        <title>shine drop</title>
        <link rel="stylesheet" type="text/css" href="css/main.css">
-       <link rel="stylesheet" type="text/css" href="css/main_t.css" media="only all and (max-width:1297px)">
        <link rel="stylesheet" type="text/css" href="css/main_m.css" media="only screen and (max-width:910px)">
        <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
        <script src="base.js"></script>
@@ -18,42 +17,78 @@
 <![endif]-->  
     </head>
     
-    <body>
+    <body id="main-screen" >
         
+        <nav class="privacy">
+            <ul class="icons">
+                <li><a class="login-icon" href="login.html">login</a><a class="join-icon" href="join.html">join</a></li>
+            </ul>
+        </nav>
+          
         <section id="header">
-            <h1><a href="index.html"><img src="images/logo_s.png" alt="paing drop"></a></h1>
-            <nav>
+            
+            <div class="header">
+                <a href="index.html"><img src="images/logoda.png" alt=""></a>
+            </div>
+
+            <nav class="main-menu">
                <h2 class="hidden">카테고리</h2>
-                <ul class="gnb">
-                    <li><a href="#header">HOME</a></li>
-                    <li><a href="chris.html">X-mas</a></li>
-                    <li><a href="ween.html">Halloween</a></li>
-                    <li><a href="bridal.html">Bridal</a></li>
-                    <li><a href="birth.html">B-day</a></li>
-                    <li><a href="invite.html">초대장</a></li>
-                    <li><a href="informa.html">홈페이지 정보</a></li>
+
+                <ul class="menu">
+
+                    <li><a href="invite.html">invitation</a>
+                        
+                        <ul class="sub-menu">
+                            <li><a href="">  write  </a></li>
+                            <br>
+                            <li><a href="">  list  </a></li>
+                        </ul>
+                        
+
+                    </li>
+
+                    <li><a href="informa.html">information</a>
+                        
+                        <ul class="sub-menu">
+                            <li><a href="">introduce</a></li>
+                            <br>
+                            <li><a href="">how to use</a></li>
+                        </ul>
+                        
+                    </li>
 
                 </ul>
             </nav>
-            
-            <div class="mnb">
-               <button><img src="images/mnb.png" alt="더보기 메뉴"></button>
-                <ul class="mnb_inner">
-                    <li class="exit">X</li>
-                    <li><a href="#header">HOME</a></li>
-                    <li><a href="chris.html">X-mas</a></li>
-                    <li><a href="ween.html">Halloween</a></li>
-                    <li><a href="bridal.html">Bridal</a></li>
-                    <li><a href="birth.html">B-day</a></li>
-                    <li><a href="invite.html">초대장</a></li>
-                    <li><a href="informa.html">홈페이지 정보</a></li>
-                    
-                </ul>
+
+            <!--메인 사진 클릭하는 부분-->
+            <div id="wrap">
+                <article><img src="images/mainbridal.png" alt="bridal"></article>
+                <article><img src="images/mainbirth.png" alt="birth"></article>
+                <article><img src="images/mainxmas.png" alt="xmas"></article>
+                <article><img src="images/mainhallo.png" alt="halloween"></article>
+                <article><img src="images/mainbaby.png" alt="baby"></article>
+                <article> 
+                    <table width="579">
+                        <tr height="579">
+                            <td style="vertical-align: bottom; text-align:right" >
+                                스마트인재개발원
+                            <br>
+                                인공지능 융합서비스 개발자과정 11회차
+                            <br>
+                                윤수조
+                            <br>
+                                파티하자
+                            <br>
+                            <br>
+                            <br>
+                            </td> 
+                        </tr>
+                    </table>
+                </article>
             </div>
-            
-            
+            <!--5월 10일 21시까지 추가한 부분-->
             <button class="top">
-                <img src="images/top.png" alt="top button">
+                <img src="images/conged.png" alt="top button">
             </button>
             
         </section>
@@ -64,27 +99,3 @@
         
     </body>    
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
