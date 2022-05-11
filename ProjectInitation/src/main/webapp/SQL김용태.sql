@@ -58,3 +58,10 @@ select * from InvSelItm a, item b
 where a.i_id = b.i_id
 and sel_h>0
 and v_id=12;
+
+
+select * from(
+		select row_number() over (order by p_id asc) as num, p_id, pt_id, p_name, p_cont, p_img, p_view  
+		from party
+		where pt_id = 'xmas')
+		where num = 1;

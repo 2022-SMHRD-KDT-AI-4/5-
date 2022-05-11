@@ -30,7 +30,7 @@
 					<table>
 						<tr>
 						<td><center>
-							<img src="img/bono.png">
+							<img src="img/<%=bvo.getP_img() %>" width="500px">
 							</center>
 						</td>
 					</tr>
