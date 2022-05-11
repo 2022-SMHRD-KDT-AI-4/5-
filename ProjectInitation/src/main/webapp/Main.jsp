@@ -113,8 +113,7 @@
 
 	<section class="visual"> </section>
 
-<<<<<<< HEAD
-=======
+
 	<%-- <%
 	if (vo == null) {
 	%>
@@ -135,7 +134,6 @@
 	}
 	%> --%>
 
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-AI-4/5micron.git
 </body>
 
 </html>
