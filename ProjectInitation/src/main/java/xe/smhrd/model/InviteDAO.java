@@ -88,4 +88,23 @@ public class InviteDAO {
 		session.close();
 	}
 	
+	public void resultOne(InviteVO vo) {
+		SqlSession session = sqlSessionFactory.openSession(true);
+		session.update("resultOne", vo);
+		session.close();
+	}
+	
+	public void clearAll(int v_id) {
+		SqlSession session = sqlSessionFactory.openSession(true);
+		session.update("clearAll", v_id);
+		session.close();
+	}
+	
+	public List<InviteVO> selectResultItem(int v_id) {
+		SqlSession session = sqlSessionFactory.openSession(true);
+		List<InviteVO> list = session.selectList("selectResultItem", v_id);
+		session.close();
+		return list;
+	}
+	
 }

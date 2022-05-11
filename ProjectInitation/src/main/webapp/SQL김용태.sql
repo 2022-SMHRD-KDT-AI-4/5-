@@ -53,3 +53,8 @@ select to_char(v_date, 'yyyy-mm-dd') as v_date from Invite;
 update InvSelItm set sel_g = sel_g + 1
 where v_id=10
 and i_id='cake2';
+
+select * from InvSelItm a, item b
+where a.i_id = b.i_id
+and sel_h>0
+and v_id=12;

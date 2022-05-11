@@ -46,6 +46,7 @@
 		select a.v_id as v_id, a.i_id as i_id, a.sel_g as sel_g, a.sel_h as sel_h, b.i_name as i_name, b.i_cont as i_cont  
 		from InvSelItm a, Item b 
 		where a.i_id = b.i_id and v_id= #{v_id}
+		order by a.sel_g desc
 	</select>
 	
 	<update id="voteOne" parameterType="xe.smhrd.model.InviteVO" >
@@ -53,4 +54,21 @@
 		where v_id=#{v_id}
 		and i_id=#{i_id}
 	</update>
+	
+	<update id="resultOne" parameterType="xe.smhrd.model.InviteVO" >
+		update InvSelItm set sel_h = sel_h + 1
+		where v_id=#{v_id}
+		and i_id=#{i_id}
+	</update>
+	
+	<update id="clearAll">
+		update InvSelItm set sel_h = 0
+		where v_id=#{v_id}
+	</update>
+	
+	<select id="selectResultItem" resultType="xe.smhrd.model.InviteVO">
+		select * from InvSelItm a, item b
+		where a.i_id = b.i_id
+		and sel_h > 0 and v_id=#{v_id}
+	</select>
 </mapper>
