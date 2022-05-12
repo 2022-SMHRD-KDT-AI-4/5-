@@ -22,7 +22,6 @@
 <%
 	MemberVO mvo = (MemberVO) session.getAttribute("vo");
 %>
-<header>
 	<nav class="privacy">
 	<%if (mvo == null) {%>
 		<div class="icons">
@@ -36,7 +35,6 @@
 		</div>
 	<%}%>
 	</nav>
-</header>
 
 	<section id="header">
 
@@ -51,7 +49,7 @@
 			<ul class="sub-menu">
 				<li><a href="Invitepage.jsp"> write </a></li>
 				<br>
-				<li><a href="InviteService"> list </a></li>
+				<li><a href="MylistService"> list </a></li>
 			</ul>
 		</li>
 
@@ -73,7 +71,8 @@
 <!--메인 사진 클릭하는 부분-->
 	<div id="wrap">
 		<article>
-		<a href="ListService?pt_id=bridal"><img src="assets/images/mainbridal.png" alt="bridal"></a>
+		<!-- <a href="ListService?pt_id=bridal"><img src="assets/images/mainbridal.png" alt="bridal"></a> -->
+		<a href="test_getBoard.jsp"><img src="assets/images/mainbridal.png" alt="bridal"></a>
 		</article>
 		<article>
 		<a href="ListService?pt_id=birth"><img src="assets/images/mainbirth.png" alt="birth"></a>
@@ -109,27 +108,6 @@
 	</section>
 
 	<section class="visual"> </section>
-
-
-	<%-- <%
-	if (vo == null) {
-	%>
-	<a href="Login.jsp">로그인</a>
-	<br>
-	<a href="Join.jsp">회원가입</a>
-	<br>
-	<%
-	} else {
-	%>
-	<h3><%=vo.getM_name()%>님
-	</h3>
-	<a href="mypage">마이페이지</a>
-	<br>
-	<a href="LogoutService">로그아웃</a>
-	<br>
-	<%
-	}
-	%> --%>
 
 </body>
 
