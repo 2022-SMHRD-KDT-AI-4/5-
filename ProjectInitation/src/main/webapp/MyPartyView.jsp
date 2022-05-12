@@ -33,7 +33,7 @@
 	display: inline-block;
 	padding: 20px 30px;
 	background: #fff;
-	width: 200px;
+	width: 400px;
 	vertical-align: middle;
 	font-size: 15px;
 }
@@ -45,7 +45,8 @@
 	InviteVO myvo = (InviteVO) session.getAttribute("myvo");
 	List<InviteVO> myitemlist = (List<InviteVO>) session.getAttribute("myitemlist");
 	%>
-	<form action="MyResultService?v_id=<%=myvo.getV_id()%>" method="post">
+<%-- 	<form action="MyResultService?v_id=<%=myvo.getV_id()%>" method="post"> --%>
+<form id="frm" action="MyCommitService?v_id=<%=myvo.getV_id()%>&action=commit" method="post">
 <div>
 	<h1><%=myvo.getV_name() %></h1><br>
 	<%=myvo.getV_cont() %><br><br>
@@ -83,40 +84,107 @@
 	</table>
 	
 </div>
+</form>
 개최일시 : <%=myvo.getV_date()%><br>
 개최지 : <%=myvo.getV_adr()%><br>
 <br>
 
-<input type="submit" value="초대장 최종안 결정한기">
- <input type="reset" value="선택 초기화">
-  </form>
-  
+
+<!--   </form> -->
+
+<a href="#pop_win1" class="btn_open">파티에 사용할 아이템 추천 링크 띄우기</a><br>
+<a href="#pop_win2" class="btn_open">초대장 최종안 링크 보기</a><br>
+<a href="#" onclick="chk_form()" >초대장 최종안 제출하기</a><br>
+<a href="#pop_win3" class="btn_open" style="display: none;" >팝업창 열기</a><br>
+
+<!-- 기본 url 따오는 창 (안보임) -->
+<input type="text" id = "ShareUrl" style="display: none;">  
   <!-- 팝업창 -->
-<a href="#pop_win" class="btn_open">파티에 사용할 아이템 추천 링크 띄우기</a><br>
-	<div id="pop_win" class="pop_wrap" style="display: none;">
+	<div id="pop_win1" class="pop_wrap" style="display: none;">
 		<div class="pop_inner">
 			<p class="dsc">초대장을 복사해주세요</p>
-			<input type="text" id = "ShareUrl"><br>
-			<button OnClick="javascript:CopyUrlToClipboard()" class="btn_close">URL 복사</button>
+			<input type="text" id = "ShareUrl1" style="width:400px"><br>
+			<button OnClick="javascript:CopyUrlToClipboard1()" class="btn_close">URL 복사</button>
 		</div>
 	</div>
-<!-- 팝업창 끝 -->  
+
+
+	<div id="pop_win2" class="pop_wrap" style="display: none;">
+		<div class="pop_inner">
+			<p class="dsc">초대장을 복사해주세요</p>
+			<input type="text"  id = "ShareUrl2"  style="width:400px"><br>
+			<button OnClick="javascript:CopyUrlToClipboard2()" class="btn_close">URL 복사</button>
+		</div>
+	</div>
+	
+	<div id="pop_win3" class="pop_wrap" style="display: none;">
+		<div class="pop_inner">
+			<p class="resultdsc">정상적으로 등록되었습니다</p>
+			<p class="dsc">초대장을 복사해주세요</p>
+			<input type="text"  id = "ShareUrl3"  style="width:400px"><br>
+			<button OnClick="javascript:CopyUrlToClipboard3()" class="btn_close">URL 복사</button>
+		</div>
+	</div>
+	<!-- 팝업창 끝 -->  
+
   	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<script type="text/javascript">
 	
 	var target = document.querySelectorAll('.btn_open');
 	var btnPopClose = document.querySelectorAll('.pop_wrap .btn_close');
 	var targetID;
-	var obShareUrl = document.getElementById("ShareUrl");
 	
-	obShareUrl.value = window.document.location.href	//현재 주소 추출
-	obShareUrl.value = obShareUrl.value.replace("#pop_win","");  // 팝업태그 제거
-	obShareUrl.value = obShareUrl.value.replace("?v_id=<%=myvo.getV_id()%>","");	// 현 주소 파라메터값 제거
-	obShareUrl.value = obShareUrl.value.replace(window.document.location.pathname,"");	//호스트만 남기고 모두 삭제
-	obShareUrl.value += "/ProjectInitation/MyVoteService?v_id=<%=myvo.getV_id()%>";	// 최종 목표 링크 추가
+	var obShareUrl = document.getElementById("ShareUrl");	
+	var obShareUrl1 = document.getElementById("ShareUrl1");
+	var obShareUrl2 = document.getElementById("ShareUrl2");
+	var obShareUrl3 = document.getElementById("ShareUrl3");
+	
+	obShareUrl.value = window.document.location.host	//현재 주소 추출
+	// 최종목적지 설정
+	obShareUrl1.value = obShareUrl.value+"/ProjectInitation/MyVoteService?v_id=<%=myvo.getV_id()%>";
+	obShareUrl2.value = obShareUrl.value+"/ProjectInitation/MyResultService?v_id=<%=myvo.getV_id()%>";
+	obShareUrl3.value = obShareUrl2.value
+	
 	$('#ShareUrl').val(obShareUrl.value);
+	$('#ShareUrl1').val(obShareUrl1.value);
+	$('#ShareUrl2').val(obShareUrl2.value);
+	$('#ShareUrl3').val(obShareUrl3.value);
 	
- 	
+	function CopyUrlToClipboard1(){	
+		obShareUrl1.select();  // 해당 값이 선택되도록 select() 합니다
+		document.execCommand("copy"); // 클립보드에 복사합니다.
+		obShareUrl1.blur(); // 선택된 것을 다시 선택안된것으로 바꿈니다.
+		alert("URL이 클립보드에 복사되었습니다"); 
+	}
+	function CopyUrlToClipboard2(){	
+		obShareUrl2.select();
+		document.execCommand("copy");
+		obShareUrl2.blur();
+		alert("URL이 클립보드에 복사되었습니다"); 
+	}
+	function CopyUrlToClipboard3(){	
+		obShareUrl3.select();
+		document.execCommand("copy");
+		obShareUrl3.blur();
+		alert("URL이 클립보드에 복사되었습니다"); 
+	}
+	
+	function chk_form() {
+		document.getElementById('frm').submit();
+	}
+	
+	var popup = new Boolean(false);
+	if(<%=session.getAttribute("popup")%>!=null){
+		popup = new Boolean(<%=session.getAttribute("popup")%>);
+	}
+
+	if(popup==Boolean(true)){
+		console.log("팝업확인")
+		document.querySelector("#pop_win3").style.display = 'block';
+		popup = new Boolean(false);
+		<%request.getSession().setAttribute("popup", false);%>
+	}
+
  	// 팝업 열기
 	for (var i = 0; i < target.length; i++) {
 		target[i].addEventListener('click', function() {
@@ -131,13 +199,7 @@
 			this.parentNode.parentNode.style.display = 'none';
 		});
 	}
- 	 
-	function CopyUrlToClipboard(){	
-		obShareUrl.select();  // 해당 값이 선택되도록 select() 합니다
-		document.execCommand("copy"); // 클립보드에 복사합니다.
-		obShareUrl.blur(); // 선택된 것을 다시 선택안된것으로 바꿈니다.
-		alert("URL이 클립보드에 복사되었습니다"); 
-	}
+	
 
   </script>
 
