@@ -10,7 +10,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width initial scale 1.0">
 <meta name="p:domain_verify" content="5106e0d8c90f98f5675e3292a49d07b5" />
-<title>shine drop</title>
+<title>Main</title>
 <link rel="stylesheet" type="text/css" href="assets/css/main.css">
 <link rel="stylesheet" type="text/css" href="assets/css/main_m.css" media="only screen and (max-width:910px)">
 <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
@@ -22,7 +22,6 @@
 <%
 	MemberVO mvo = (MemberVO) session.getAttribute("vo");
 %>
-<header>
 	<nav class="privacy">
 	<%if (mvo == null) {%>
 		<div class="icons">
@@ -36,7 +35,6 @@
 		</div>
 	<%}%>
 	</nav>
-</header>
 
 	<section id="header">
 
@@ -51,7 +49,7 @@
 			<ul class="sub-menu">
 				<li><a href="Invitepage.jsp"> write </a></li>
 				<br>
-				<li><a href="InviteService"> list </a></li>
+				<li><a href="MylistService"> list </a></li>
 			</ul>
 		</li>
 
@@ -73,6 +71,7 @@
 <!--메인 사진 클릭하는 부분-->
 	<div id="wrap">
 		<article>
+		<!-- <a href="ListService?pt_id=bridal"><img src="assets/images/mainbridal.png" alt="bridal"></a> -->
 		<a href="ListService?pt_id=bridal"><img src="assets/images/mainbridal.png" alt="bridal"></a>
 		</article>
 		<article>
@@ -109,27 +108,6 @@
 	</section>
 
 	<section class="visual"> </section>
-
-
-	<%-- <%
-	if (vo == null) {
-	%>
-	<a href="Login.jsp">로그인</a>
-	<br>
-	<a href="Join.jsp">회원가입</a>
-	<br>
-	<%
-	} else {
-	%>
-	<h3><%=vo.getM_name()%>님
-	</h3>
-	<a href="mypage">마이페이지</a>
-	<br>
-	<a href="LogoutService">로그아웃</a>
-	<br>
-	<%
-	}
-	%> --%>
 
 </body>
 

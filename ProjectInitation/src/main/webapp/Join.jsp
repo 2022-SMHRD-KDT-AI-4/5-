@@ -2,51 +2,41 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>회원 가입</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width initial scale 1.0">
+    <meta name="p:domain_verify" content="5106e0d8c90f98f5675e3292a49d07b5"/>
+     <title>Join</title>
+      <link rel="stylesheet" type="text/css" href="./assets/css/main.css">
+     <link rel="stylesheet" type="text/css" href="./assets/css/main_m.css" media="only screen and (max-width:910px)">
+     <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+     <script src="assets/base.js"></script>
+ 
 </head>
 <body>
-	<h1>환영합니다^^</h1>
-	<fieldset>
-		<legend>'*' 표시 항목은 필수 입력 항목입니다.</legend>
-		<form action="JoinService" method="post">
-			<table>
-				<tr>
-					<td>ID :</td>
-					<td><input type="text" id="u_id" name="m_id" placeholder="아이디를 입력하세요">*
-						<button type="button" id="check_btn" onclick="check_id()">중복 확인</button>
-					</td>
-				</tr>
-				<tr><p>필독!! ※아이디가 중복을 확인해 주세요※</p></tr>
-				<tr>
-					<td>PW :</td>
-					<td><input type="password" id="i_pw1" name="n_pw1" placeholder="비밀번호을 입력하세요">*</td>
-				</tr>
+	
+    <div class="join-sys" >
+        <a href="Main.jsp"><img src="assets/images/logoda.png" alt=""></a>
+    </div>
 
-				<tr>
-					<td>PW 확인 :</td>
-					<td><input type="password" id="i_pw2" name="n_pw2" class="pw" placeholder="비밀번호를 확인하세요">*</td>
-					<td><font id="checkPwFont"></font></td>
-				</tr>
+	<div class="join-page">
+		<div class="forms">
+			<form class="register-form" action="JoinService" method="post">
 
-				<tr>
-					<td>이름 :</td>
-					<td><input type="text" name="m_name" placeholder="이름을 입력하세요">*</td>
-				</tr>
-
-				<tr>
-					<td colspan="2" align="center">
-						<input type="submit" id="JoinBtn" value="회원가입">
-						<input type="button" id="cancel" value="취소" onclick="location.href='Main.jsp'">
-						<!-- <button type="button" id="JoinBtn" onclick="location.href='Login.jsp'">회원가입</button>
-						<button type="button" name="cancel" onclick="location.href='Main.jsp'">취소</button> -->
-					</td>
-				</tr>
-			</table>
-		</form>
-	</fieldset>
+				<input type="text" name="m_name" placeholder="name :ex) choi wooshik"/>
+				<input type="text" id="u_id" name="m_id" placeholder="id :ex) eddy"/>
+				<button type="button" id="check_btn" onclick="check_id()">check id</button>
+				<input type="password" id="i_pw1" name="n_pw1" placeholder="pw :ex) summer"/>
+				<font id="checkPwFont"></font>
+				<input type="password" id="i_pw2" name="n_pw2" class="pw" placeholder="retype pw :ex) summer"/>
+				<input type="submit" id="JoinBtn" value="create">
+				<input type="button" id="cancel" value="cancel" onclick="location.href='Main.jsp'">
+				<p class="messages">Already registered? <a href="Login.jsp">Sign In</a></p>
+		
+			</form>
+		</div>
+	</div> 
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<script type="text/javascript">
 	$('#JoinBtn').attr("disabled", true);
@@ -83,11 +73,11 @@
 		if(m_pw1 != "" || m_pw2 != ""){
 			if(m_pw1 == m_pw2){
 				$('#JoinBtn').attr("disabled", false);
-				$("#checkPwFont").html("비밀번호 일치").css("color", "green");
+				$("#checkPwFont").html("password match").css("color", "green");
 				alert("비밀번호가 일치 합니다.");
 			}else{
 				$('#JoinBtn').attr("disabled", true);
-				$("#checkPwFont").html("비밀번호 불일치").css("color", "red");
+				$("#checkPwFont").html("password mismatch").css("color", "red");
 				alert("비밀번호가 불일치 합니다.");
 			}
 		};

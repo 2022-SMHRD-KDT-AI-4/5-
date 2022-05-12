@@ -78,7 +78,7 @@ constraint party_pt_id_fk foreign key(pt_id) references PartyTyp(pt_id)
 );
 
 insert into Party
-values('bridal1', 'bridal', '宏扼捞代箕况1', null, 'bridal3.jpg', 0 );
+values('bridal1', '0', '宏扼捞代箕况1', null, 'bridal3.jpg', 0 );
 
 insert into Party
 values('bridal2', 'bridal', '宏扼捞代箕况2', null, 'bridal44.jpg', 0 );

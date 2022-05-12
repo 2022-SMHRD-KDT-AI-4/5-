@@ -6,7 +6,9 @@
   font-family: 'NanumBarunpen';
   src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumBarunpen.woff") format("woff");
   font-weight: normal;
-  font-style: normal; }
+  font-style: normal; 
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -44,14 +46,11 @@ div.icons a.login-icon, a.join-icon, a.mypage-icon, a.logout-icon{
   padding: 15px;
   font-family: 'NanumBarunpen';
   font-size: 25px;
-  }
-  
+}
 
-#header  {
+  #header  {
   position: absolute;
-  width: 100%;
-  
-  
+  width: 100%; 
 }
   
   .header a {
@@ -60,8 +59,7 @@ div.icons a.login-icon, a.join-icon, a.mypage-icon, a.logout-icon{
     padding: 20px 0;
     position: relative;
     margin-bottom: 20px;
-    box-sizing: border-box;
-    
+    box-sizing: border-box; 
   }
 
 
@@ -85,13 +83,11 @@ div.icons a.login-icon, a.join-icon, a.mypage-icon, a.logout-icon{
   background: #fff; 
 }
 
-
-  
-    .menu {
-      width: 50%;
-      height: 100%;
-      margin: 0 auto;
-    }
+	.menu {
+     width: 50%;
+     height: 100%;
+     margin: 0 auto;
+	}
   
   .menu>li {
     float: left;
@@ -99,7 +95,7 @@ div.icons a.login-icon, a.join-icon, a.mypage-icon, a.logout-icon{
     line-height: 50px;
     text-align: center;
      position: relative;
-  }
+  	}
   
   .menu>li:hover .sub-menu {
     left: 0;
@@ -124,81 +120,8 @@ div.icons a.login-icon, a.join-icon, a.mypage-icon, a.logout-icon{
   .sub-menu>li {
     position: relative;
   }
-
-  /* �뿬湲곌� 異붽� �맂 遺�遺�! */
   
-  .menu {
-  
-    width: 50%;
-
-    height: 100%;
-
-    margin: 0 auto;
-    
-}
-
-.menu>li {
-
-    float: left;
-
-    width: 40%;
-
-    line-height: 50px;
-
-    text-align: center;
-
-    position: relative;
-
-}
-
-.menu>li:hover .sub-menu {
-
-  left: 0;
-
-}
-
-
-.menu>li a {
-
-    display: block;
-
-}
-
-.menu>li a:hover {
-
-   
-
-    color: gray;
-
-    font-weight: bold;
-
-}
-
-.sub-menu {
-
-    position: absolute;
-
-    top: 50px;
-
-    left: -9999px;
-
-    background: #fff;
-
-    width: 80%;
-
-    text-align: center;
-
-    margin-left: 10%;
-    
-}
-.sub-menu>li {
-
-    position: relative;
-
-}
-
-
-#wrap{
+  #wrap{
   width: 1300px;
   margin: 0 auto;
   overflow: hidden;
@@ -221,20 +144,19 @@ article{
 
 
 }
+/* 윗 부분 #wrap ~ article 가령누나 추가 부분 */
+  .top {
+    cursor: pointer;
+    position: fixed;
+    right: 3%;
+    bottom: 6%; 
+    display: none;
+    z-index: 3;
+  }
 
-
-/*5�썡 10�씪 21�떆源뚯� 異붽��븳 遺�遺�*/
-      
-.top {
-  cursor: pointer;
-  position: fixed;
-  right: 3%;
-  bottom: 6%; 
-}
   .top:hover {
     opacity: 0.5; 
   }
-
 
 div.header {
   display: flex;
@@ -245,24 +167,17 @@ div.header {
   text-align: center;
 }
 
+.visual {
+  height: 1000px;
+  margin-bottom: 160px; 
+}
+
 div.login-sys {
   width: 1280px;
   margin: 30px auto;
   padding: 30px 0; 
   text-align: center;
 }  
-
-
-.visual {
-  height: 1000px;
-  margin-bottom: 160px; 
-}
-
-
-.top {
-  display: none;
-  z-index: 3; 
-}
 
 .login-sys a {
   width: 100%;
@@ -277,7 +192,8 @@ div.login-sys {
   }
 
   .form {
-    position: relative;
+    width: 360px;
+    height: 300px;
     z-index: 1;
     background: #FFFFFF;
     max-width: 360px;
@@ -331,9 +247,6 @@ div.login-sys {
     font-weight: 700;
   }
 
-  .form .register-form {
-    display: none;
-  }
   
   body {
     background: #fff5bf;
@@ -342,4 +255,95 @@ div.login-sys {
     -moz-osx-font-smoothing: grayscale;      
   }
 
-/*# sourceMappingURL=main.css.map */
+  /*# sourceMappingURL=main.css.map */
+
+  div.join-sys {
+    width: 1280px;
+    margin: 30px auto;
+    padding: 30px 0; 
+    text-align: center;
+  } 
+
+  .join-sys a {
+    background-color: #fff5bf;
+
+  }
+  .join-page {
+    width: 450px;
+    padding: 1% 0 0;
+    margin: auto;
+  }
+
+  .forms {
+    width: 450px;
+    height: 500px;
+    z-index: 2;
+    background: #FFFFFF;
+    max-width: 450px;
+    margin: 0 auto 100px;
+    padding: 45px;
+    text-align: center;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  }
+
+  .register-form input {
+    font-family: "Roboto", sans-serif;
+    outline: 0;
+    background: #f2f2f2;
+    width: 100%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+  }
+  
+  .register-form font#checkPwFont {
+  	font-family: "Roboto", sans-serif;
+    outline: 0;
+    width: 100%;
+    border: 0;
+    /* margin: 0 0 5px; */
+    padding: 5px;
+    box-sizing: border-box;
+    font-size: 20px;
+  }
+
+  .register-form button, input#JoinBtn, input#cancel {
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background: #FFDDBF ;
+    width: 100%;
+    border: 0;
+    padding: 15px;
+    color: #fff;
+    font-size: 14px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+    margin: 0 0 15px;
+  }
+
+  .register-form button:hover,.register-form button:active,.register-form button:focus {
+    background: #FFB472;
+  }
+
+  .register-form .messages {
+    margin: 15px 0 0;
+    color: #312828;
+    font-size: 14px;
+  }
+
+  .register-form .messages a {
+    color: #FF9232;
+    text-decoration: none;
+    font-weight: 700;
+  }
+
+  body {
+    background: #fff5bf;
+    font-family: "Roboto", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale; 
+  }
