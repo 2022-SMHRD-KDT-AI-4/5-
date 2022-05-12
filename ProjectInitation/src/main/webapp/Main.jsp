@@ -71,7 +71,6 @@
 <!--메인 사진 클릭하는 부분-->
 	<div id="wrap">
 		<article>
-		<!-- <a href="ListService?pt_id=bridal"><img src="assets/images/mainbridal.png" alt="bridal"></a> -->
 		<a href="ListService?pt_id=bridal"><img src="assets/images/mainbridal.png" alt="bridal"></a>
 		</article>
 		<article>

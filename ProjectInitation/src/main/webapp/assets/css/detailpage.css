@@ -12,6 +12,7 @@
 .fixed_img_col ul{
     border-bottom: 1px solid #aaa;
     *zoom: 1;
+    justify-content: center;
 }
 .fixed_img_col li{
     float: left;
@@ -19,8 +20,8 @@
     height: 700px;
     padding: 80px 50px;
     margin-bottom: 10px;
-    /* margin-right: 10px; */
     border-bottom: 5px solid #aaa;
+    justify-content: center;
 }
 .fixed_img_col li a{
     display: block;
