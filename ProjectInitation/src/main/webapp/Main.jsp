@@ -10,7 +10,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width initial scale 1.0">
 <meta name="p:domain_verify" content="5106e0d8c90f98f5675e3292a49d07b5" />
-<title>shine drop</title>
+<title>Main</title>
 <link rel="stylesheet" type="text/css" href="assets/css/main.css">
 <link rel="stylesheet" type="text/css" href="assets/css/main_m.css" media="only screen and (max-width:910px)">
 <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>

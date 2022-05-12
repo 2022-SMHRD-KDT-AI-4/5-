@@ -83,11 +83,11 @@ div.icons a.login-icon, a.join-icon, a.mypage-icon, a.logout-icon{
   background: #fff; 
 }
 
-    .menu {
-      width: 50%;
-      height: 100%;
-      margin: 0 auto;
-    }
+	.menu {
+     width: 50%;
+     height: 100%;
+     margin: 0 auto;
+	}
   
   .menu>li {
     float: left;
@@ -95,7 +95,7 @@ div.icons a.login-icon, a.join-icon, a.mypage-icon, a.logout-icon{
     line-height: 50px;
     text-align: center;
      position: relative;
-  }
+  	}
   
   .menu>li:hover .sub-menu {
     left: 0;
@@ -120,7 +120,31 @@ div.icons a.login-icon, a.join-icon, a.mypage-icon, a.logout-icon{
   .sub-menu>li {
     position: relative;
   }
+  
+  #wrap{
+  width: 1300px;
+  margin: 0 auto;
+  overflow: hidden;
+  padding-top: 150px;
+}
 
+div>article{
+  float: left;
+  margin-left: 30px;
+  margin-bottom: 30px;
+}
+
+
+article{
+  float: left;
+  margin-left: 30px;
+  margin-bottom: 30px;  
+  border-radius: 10%;
+  content-visibility: auto;
+
+
+}
+/* 윗 부분 #wrap ~ article 가령누나 추가 부분 */
   .top {
     cursor: pointer;
     position: fixed;
@@ -224,21 +248,21 @@ div.login-sys {
   }
 
   
-body {
+  body {
     background: #fff5bf;
     font-family: "Roboto", sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;      
- }
+  }
 
   /*# sourceMappingURL=main.css.map */
 
-div.join-sys {
+  div.join-sys {
     width: 1280px;
     margin: 30px auto;
     padding: 30px 0; 
     text-align: center;
-} 
+  } 
 
   .join-sys a {
     background-color: #fff5bf;
@@ -273,8 +297,19 @@ div.join-sys {
     box-sizing: border-box;
     font-size: 14px;
   }
+  
+  .register-form font#checkPwFont {
+  	font-family: "Roboto", sans-serif;
+    outline: 0;
+    width: 100%;
+    border: 0;
+    /* margin: 0 0 5px; */
+    padding: 5px;
+    box-sizing: border-box;
+    font-size: 20px;
+  }
 
-  .register-form button {
+  .register-form button, input#JoinBtn, input#cancel {
     font-family: "Roboto", sans-serif;
     text-transform: uppercase;
     outline: 0;
