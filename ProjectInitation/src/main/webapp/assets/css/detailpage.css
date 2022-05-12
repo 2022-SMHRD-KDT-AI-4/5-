@@ -1,5 +1,5 @@
 .wrap{
-    width: 1800px;
+    width: 100%;
     margin: 0 auto;
     margin-top: 80px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -15,10 +15,11 @@
 }
 .fixed_img_col li{
     float: left;
-    width: 400px;
+    width: 500px;
     height: 700px;
     padding: 80px 50px;
     margin-bottom: 10px;
+    /* margin-right: 10px; */
     border-bottom: 5px solid #aaa;
 }
 .fixed_img_col li a{
