@@ -14,6 +14,7 @@ select * from party;
 
 select * from Party	where p_id='xmas1';
 
+
 select * from Invite;
 ALTER TABLE Invite  ADD (p_id varchar2(20));
       

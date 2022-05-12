@@ -35,15 +35,19 @@ public class ListService extends HttpServlet {
 		
 //			System.out.println("리스트 사이즈 : "+list.size());
 			rd = request.getRequestDispatcher("BoardPT.jsp");
+			
 		}
 
 		else {
 			List<BoardVO> list = dao.selectPList(pt_id);
 			BoardVO vo = dao.selectPTone(pt_id);
-			request.setAttribute("vo", vo);
-			request.setAttribute("list", list);
+			request.setAttribute("pvo", vo);
+			request.setAttribute("plist", list);
 			rd = request.getRequestDispatcher("BoardP.jsp");
 		}
 		rd.forward(request, response);
+		
+
 	}
 }
+

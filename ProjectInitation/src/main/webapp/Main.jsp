@@ -72,7 +72,7 @@
 	<div id="wrap">
 		<article>
 		<!-- <a href="ListService?pt_id=bridal"><img src="assets/images/mainbridal.png" alt="bridal"></a> -->
-		<a href="test_getBoard.jsp"><img src="assets/images/mainbridal.png" alt="bridal"></a>
+		<a href="ListService?pt_id=bridal"><img src="assets/images/mainbridal.png" alt="bridal"></a>
 		</article>
 		<article>
 		<a href="ListService?pt_id=birth"><img src="assets/images/mainbirth.png" alt="birth"></a>
