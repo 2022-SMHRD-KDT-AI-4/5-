@@ -39,7 +39,7 @@ button {
   font-family: 'NanumBarunpen'; 
 }
 
-div.icons a.login-icon, a.join-icon, a.mypage-icon, a.logout-icon{
+div.icons a.login-icon, a.join-icon, a.logout-icon{
   text-align: left;
   margin-left: 30px;
   margin-top: 30px;

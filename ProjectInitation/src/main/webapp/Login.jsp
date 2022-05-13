@@ -14,6 +14,13 @@
 
 </head>
 <body>
+<%
+	String errMsg = (String) session.getAttribute("errMsg");
+	if (errMsg == null)
+		errMsg = " ";
+
+	session.invalidate();
+%>
     <div class="login-sys" >
         <a href="Main.jsp"><img src="assets/images/logoda.png" alt=""></a>
     </div>
@@ -22,6 +29,7 @@
     <div class="form">
 
         <form class="login-form" action="LoginService" method="post">
+        	<div id="errMsg" style="color: red"><%=errMsg%></div>
             <input type="text" name="m_id" placeholder="id"/>
             <input type="password" name="m_pw" placeholder="password"/>
             <button type="submit" name="login" >login</button>
@@ -31,14 +39,6 @@
 
     </div>
 </div>
-<%
-	String errMsg = (String) session.getAttribute("errMsg");
-	if (errMsg == null)
-		errMsg = " ";
-
-	session.invalidate();
-%>
-	<div id="errMsg" style="color: red"><%=errMsg%></div>
 
 </body>
 
