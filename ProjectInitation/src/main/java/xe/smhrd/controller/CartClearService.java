@@ -29,8 +29,8 @@ public class CartClearService extends HttpServlet {
 		List<BoardVO> cartList = cartList = new ArrayList<BoardVO>();
 				
 		session.setAttribute("cartList", cartList);
-		RequestDispatcher rd = request.getRequestDispatcher("Cartlist.jsp");
-		rd.forward(request, response);
+//		RequestDispatcher rd = request.getRequestDispatcher("Cartlist.jsp");
+//		rd.forward(request, response);
 	}
 
 }

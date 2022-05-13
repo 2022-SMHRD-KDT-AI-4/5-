@@ -36,26 +36,17 @@
                 		<td id="content" rowspan="2"><img src="img/<%=bvo.getP_img()%>" alt="<%=bvo.getP_name() %>" width="450px" height="500px"></td>
            		 	</tr>
            		 	
-           		 	<tr weight="100%" height="500px">
+           		 	<tr height="100%">
                     	<td id="list" align="center" bgcolor="skyblue">
                     	<%
                     		List<BoardVO> ilist = dao.selectPartyItemList(bvo.getP_id());
                     		for(BoardVO ivo : ilist){ // 해당 파티에 아이템 항목들을 불러오는 for문
                     	%>
-                        	<li><%=ivo.getI_name()%></li>
+                        	<li align="left"><%=ivo.getI_name()%></li>
                         <%} // 두번째 for문 닫히는 지점%>	
                     	</td>    
             		</tr>
-            		
-            		<tr height="40px">
-                    	<td id="button1"align="center" bgcolor="pink">
-                        	<input type="reset" value="Reset"> 
-                    	</td>
-                    	
-                    	<td id="button2" align="center" bgcolor="pink">
-                        	<input type="submit" value="작성하기">
-                    	</td>       
-                	</tr>
+
 
 <%			
 		} //첫번째 for문 닫히는 지점
@@ -106,6 +97,6 @@
       </div>
       
     </form>
+
 </body>
-	
 </html>
