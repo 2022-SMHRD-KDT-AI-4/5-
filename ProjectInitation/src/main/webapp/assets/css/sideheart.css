@@ -1,0 +1,25 @@
+.button{
+    display: inline-block;
+    background-color: red;
+    position:relative;
+ }
+ .outer-div{
+     background-color: blue;
+     width: 280px;
+     height: 880px;
+     position:fixed;
+     right: 20px;
+     top: 20px;
+     z-index:1;
+     text-align: center; 
+ }
+ .inner-div{
+     background-color: blueviolet;
+     display: inline-block;
+     height: 720px;
+     position:relative;
+     overflow-y:auto;
+ }
+  .out{
+     background-color: aquamarine;
+ }

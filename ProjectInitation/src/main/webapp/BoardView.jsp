@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" type="text/css" href="assets/css/BoardView.css">
-
+    <link rel="stylesheet" type="text/css" href="assets/css/sideheart.css">
 </head>
 <body>
 <%
@@ -61,19 +61,28 @@
     </table>
     </thead>
 	</div>
+	
+	
 	    <!-- 찜목록 영역 -->
-    <div>		
+    <div class="outer-div">		
     <%List<BoardVO> cartList = (List<BoardVO>) session.getAttribute("cartList");%>
 		
-    	<h1>찜목록</h1>
-    	<a href ="Invitepage.jsp" >초대장 작성하기</a>
-		<a href='javascript:void(0);' onclick="cartclear();">찜목록 비우기</a>
-		<table border="0">
-		<tbody id="cart">	
-		</tbody>
+    	<h3>찜 목록</h3>
+    	<div class="inner-div">
+    	<table border="0">
+    	<tbody id="cart">
+    	</tbody>
 		</table>
+		</div>
+		<br><br>
+		<div class="button">
+		<input type="button" onclick="cartclear();" value="찜목록 비우기">
+        <input type="button" onclick = "location.href = 'Invitepage.jsp'" value="작성하기">
+		</div>
     </div>
     <!-- 찜목록 영역 끝 -->
+    
+    
     
     <!-- Scripts -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
