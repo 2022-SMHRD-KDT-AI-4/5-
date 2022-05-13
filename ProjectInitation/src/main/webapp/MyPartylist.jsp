@@ -3,46 +3,51 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/mypartylist.css">
+    <style type="text/css">
+        @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+        html,body{width: 100%;height: 100%}
+        body,p,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,table,th,td,form,fieldset,legend,
+        input,textarea,button,select{margin: 0;padding: 0}
+        body,input,textarea,select,button,table{font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;font-size: 12px;}
+        img,fieldset{border: 0;}
+        ul,ol{list-style: none;}
+        em,address{font-style: normal;}
+        a{text-decoration: none;}
+        a:hover,a:active,a:focus{text-decoration: underline;}
+    </style>
 </head>
-<body>
+<body id="mypartylist_info">
 <%
-List<InviteVO> mylist = (List<InviteVO>) session.getAttribute("mylist");
-	%>
-<div>
-		<h1>나의 파티목록</h1>
-		<table border = "1">
-		<%int i = 1;
-		for (InviteVO ivo : mylist){
-			if(i%3==1){
-				%>
-				<tr>
-				<%} %>
-				<td>
-				<table>
-			<tr>
-			<td>
-			<img src="img/<%=ivo.getP_img() %>" width="300px">
-			</tr>
-			</td>
-			<tr>
-			<td>
-			<a href="MyViewService?v_id=<%=ivo.getV_id()%>"><%=ivo.getV_name() %></a>
-			</td>
-			</tr>
-			</table>
-			</td>
-				<%if(i%3==0){%>
-				</tr>
-				<%}
-				i++;
-				%>
+	List<InviteVO> mylist = (List<InviteVO>) session.getAttribute("mylist");
+%>
+<div class="mypartylist_head">
+	<a href="Main.jsp"><img src="assets/images/logoda.png" alt=""></a>
+</div>
+
+<div class="wrap">
+	<h1>나의 Party 모아보기</h1>
+	<div class="fixed_img_col">
+		<ul>
+			<% for (InviteVO ivo : mylist){%>
+				<li>
+					<a href="MyViewService?v_id=<%=ivo.getV_id()%>">
+						<span class="thumb">
+							<img src="img/<%=ivo.getP_img() %>" alt="<%=ivo.getP_name() %>" width="500" height="500">
+	                        <em><%=ivo.getV_name() %></em>
+	                    </span>
+	                </a>
+				</li>
 			<%} %>
-		</table>
-		</div>
+		</ul>
+	</div>
+</div>
 
 </body>
 </html>

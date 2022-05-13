@@ -10,7 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" type="text/css" href="assets/css/detailpage.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/BoardP.css">
     <style type="text/css">
         @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
         html,body{width: 100%;height: 100%}
@@ -25,7 +25,10 @@
     </style>
 </head>
 
-<body>
+<body id="board">
+<div class="board_header">
+	<a href="Main.jsp"><img src="assets/images/logoda.png" alt=""></a>
+</div>
 	<%
 	List<BoardVO> list = (List<BoardVO>) request.getAttribute("plist");
 	BoardVO vo = (BoardVO) request.getAttribute("pvo");
@@ -35,17 +38,16 @@
         <div class="fixed_img_col">
             <ul>
             	<% for (BoardVO bvo : list) {%>
-                <li>
-                    <a href="ViewService?pt_id=<%=bvo.getPt_id()%>&num=<%=bvo.getNum()%>">
-                        <span class="thumb">
-                            <img src="img/<%=bvo.getP_img() %>" alt="<%=bvo.getP_name() %>" width="500" height="700">
-                            <em>클릭하여 자세히 보기</em>
-                        </span>
-                        <strong><%=vo.getPt_name() + bvo.getNum()%></strong>
-                    </a>
-                </li>
+                		<li>
+                    		<a href="ViewService?pt_id=<%=bvo.getPt_id()%>&num=<%=bvo.getNum()%>">
+                        		<span class="thumb">
+                            		<img src="img/<%=bvo.getP_img() %>" alt="<%=bvo.getP_name() %>" width="500" height="700">
+                            		<em style="font-size: 45px;">클릭하여 자세히 보기</em>
+                        		</span>
+                        		<strong><%=vo.getPt_name() + bvo.getNum()%></strong>
+                    		</a>
+                		</li>
                 <%} %>
-
             </ul>
         </div>
     </div>

@@ -1,3 +1,4 @@
+<%@page import="xe.smhrd.model.InviteVO"%>
 <%@page import="java.util.List"%>
 <%@page import="xe.smhrd.model.BoardVO"%>
 <%@page import="xe.smhrd.model.MemberVO"%>
@@ -30,7 +31,6 @@
 		</div>
 	<%} else {%>
 		<div class="icons">
-			<a class="mypage-icon" href="Mypage.jsp">mypage</a>
 			<a class="logout-icon" href="LogoutService">logout</a>
 		</div>
 	<%}%>
@@ -47,16 +47,16 @@
 	<ul class="menu">
 		<li><a>invitation</a>
 			<ul class="sub-menu">
-				<li><a href="Invitepage.jsp"> write </a></li>
-				<br>
+				<!-- <li><a href="BoardMain.jsp"> write </a></li>
+				<br> -->
 				<li><a href="MylistService"> list </a></li>
 			</ul>
 		</li>
 
 		<li><a>information</a>
 			<ul class="sub-menu">
-				<li><a href="">introduce</a></li>
-				<br>
+				<!-- <li><a href="">introduce</a></li>
+				<br> -->
 				<li><a href="">how to use</a></li>
 			</ul>
 		</li>

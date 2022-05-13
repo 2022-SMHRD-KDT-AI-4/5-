@@ -15,28 +15,48 @@ import xe.smhrd.model.BoardDAO;
 import xe.smhrd.model.BoardVO;
 import xe.smhrd.model.InviteDAO;
 import xe.smhrd.model.InviteVO;
+import xe.smhrd.model.MemberVO;
+
 @WebServlet("/MylistService")
 public class MylistService extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//		로그인 정보 불러오기 임시 세션
-		HttpSession session = request.getSession();
 		request.setCharacterEncoding("UTF-8");
-		String m_id = "test1";
-		InviteDAO dao = new InviteDAO();
-		List<InviteVO> list = dao.selectMylist(m_id);
-		System.out.println("------테스트1-------");
-		for(int i = 0; i < list.size(); i++) {
-			System.out.println(list.get(i));
+		
+//		로그인 정보 불러오기
+		HttpSession session = request.getSession();
+		
+//		아이디 가져오기
+		MemberVO vo = (MemberVO) session.getAttribute("vo");
+		String m_id;
+		if(vo==null) {
+			m_id = null;
+		}else {
+			m_id = vo.getM_id();
 		}
-		session.setAttribute("mylist", list);
+
+		InviteDAO dao = new InviteDAO();	
+		
+		if(m_id != null) {
+			List<InviteVO> list = dao.selectMylist(m_id);
+			System.out.println("------" + m_id + "의 작성 목록------");
+			for(int i = 0; i < list.size(); i++) {
+				System.out.println(list.get(i));
+			}
+			session.setAttribute("mylist", list);
 //		List<InviteVO> mylist = (List<InviteVO>) session.getAttribute("mylist");
 //		System.out.println("------테스트2-------");
 //		for(int i = 0; i < mylist.size(); i++) {
 //			System.out.println(mylist.get(i));
-//		}
-		RequestDispatcher rd = request.getRequestDispatcher("MyPartylist.jsp");
-		rd.forward(request, response);
+//		}	
+			RequestDispatcher rd = request.getRequestDispatcher("MyPartylist.jsp");
+			rd.forward(request, response);
+		}else {
+			System.out.println("Error");
+			RequestDispatcher rd = request.getRequestDispatcher("Main.jsp");
+			rd.forward(request, response);
+		}
+		
 	}
 
 }
