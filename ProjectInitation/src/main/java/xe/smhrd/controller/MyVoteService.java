@@ -24,8 +24,8 @@ public class MyVoteService extends HttpServlet {
 		InviteVO vo = dao.selectMyOne(v_id);
 		List<InviteVO> list = dao.selectMyItem(v_id);
 		
-		System.out.println("------테스트1-------");
-		System.out.println(vo);
+//		System.out.println("------테스트1-------");
+//		System.out.println(vo);
 //		for(int i = 0; i < list.size(); i++) {
 //			System.out.println(list.get(i));
 //		}

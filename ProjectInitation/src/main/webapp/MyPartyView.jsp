@@ -120,9 +120,12 @@
 	<div id="pop_win3" class="pop_wrap" style="display: none;">
 		<div class="pop_inner">
 			<p class="resultdsc">정상적으로 등록되었습니다</p>
+			<!-- 
 			<p class="dsc">초대장을 복사해주세요</p>
 			<input type="text"  id = "ShareUrl3"  style="width:400px"><br>
 			<button OnClick="javascript:CopyUrlToClipboard3()" class="btn_close">URL 복사</button>
+			 -->
+			<button class="btn_close">창닫기</button>
 		</div>
 	</div>
 	<!-- 팝업창 끝 -->  
@@ -137,18 +140,19 @@
 	var obShareUrl = document.getElementById("ShareUrl");	
 	var obShareUrl1 = document.getElementById("ShareUrl1");
 	var obShareUrl2 = document.getElementById("ShareUrl2");
-	var obShareUrl3 = document.getElementById("ShareUrl3");
+
 	
 	obShareUrl.value = window.document.location.host	//현재 주소 추출
 	// 최종목적지 설정
 	obShareUrl1.value = obShareUrl.value+"/ProjectInitation/MyVoteService?v_id=<%=myvo.getV_id()%>";
 	obShareUrl2.value = obShareUrl.value+"/ProjectInitation/MyResultService?v_id=<%=myvo.getV_id()%>";
-	obShareUrl3.value = obShareUrl2.value
+
 	
 	$('#ShareUrl').val(obShareUrl.value);
 	$('#ShareUrl1').val(obShareUrl1.value);
 	$('#ShareUrl2').val(obShareUrl2.value);
-	$('#ShareUrl3').val(obShareUrl3.value);
+	
+
 	
 	function CopyUrlToClipboard1(){	
 		obShareUrl1.select();  // 해당 값이 선택되도록 select() 합니다
@@ -162,13 +166,17 @@
 		obShareUrl2.blur();
 		alert("URL이 클립보드에 복사되었습니다"); 
 	}
-	function CopyUrlToClipboard3(){	
+/* 	
+ 	var obShareUrl3 = document.getElementById("ShareUrl3"); 
+ 	obShareUrl3.value = obShareUrl2.value 
+ 	$('#ShareUrl3').val(obShareUrl3.value); 
+ 	function CopyUrlToClipboard3(){	
 		obShareUrl3.select();
 		document.execCommand("copy");
 		obShareUrl3.blur();
 		alert("URL이 클립보드에 복사되었습니다"); 
-	}
-	
+	} 
+	 */
 	function chk_form() {
 		document.getElementById('frm').submit();
 	}
