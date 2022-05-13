@@ -63,18 +63,18 @@
 	</div>
 	
 	
-	    <!-- 찜목록 영역 -->
+	<!-- 찜목록 영역 -->
     <div class="outer-div">		
     <%List<BoardVO> cartList = (List<BoardVO>) session.getAttribute("cartList");%>
-		
-    	<h3>찜 목록</h3>
+		<div class="title">
+        <h3>찜 목록</h3>
+        </div>
     	<div class="inner-div">
     	<table border="0">
     	<tbody id="cart">
     	</tbody>
 		</table>
 		</div>
-		<br><br>
 		<div class="button">
 		<input type="button" onclick="cartclear();" value="찜목록 비우기">
         <input type="button" onclick = "location.href = 'Invitepage.jsp'" value="작성하기">

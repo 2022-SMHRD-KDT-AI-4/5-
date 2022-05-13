@@ -11,6 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" type="text/css" href="assets/css/BoardP.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/sideheart.css">
     <style type="text/css">
         @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
         html,body{width: 100%;height: 100%}
@@ -52,16 +53,22 @@
         </div>
     </div>
     
- 	    <!-- 찜목록 영역 -->
-    <div>		
-    <h1>찜목록</h1>
-    	<a href ="Invitepage.jsp" >초대장 작성하기</a>
-		<a href='javascript:void(0);' onclick="cartclear();">찜목록 비우기</a>
+<!-- 찜목록 영역 -->
+    <div class="outer-div">		
     <%List<BoardVO> cartList = (List<BoardVO>) session.getAttribute("cartList");%>
-		<table border="0">
-		<tbody id="cart">	
-		</tbody>
+		<div class="title">
+        <h3>찜 목록</h3>
+        </div>
+    	<div class="inner-div">
+    	<table border="0">
+    	<tbody id="cart">
+    	</tbody>
 		</table>
+		</div>
+		<div class="button">
+		<input type="button" onclick="cartclear();" value="찜목록 비우기">
+        <input type="button" onclick = "location.href = 'Invitepage.jsp'" value="작성하기">
+		</div>
     </div>
     <!-- 찜목록 영역 끝 -->
     

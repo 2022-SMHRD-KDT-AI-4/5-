@@ -1,25 +1,32 @@
-.button{
-    display: inline-block;
-    background-color: red;
-    position:relative;
+.outer-div{
+    background-color: blue;
+    width: 280px;
+    height: 94vh;
+    right:2vw;
+    top: 1vh;
+    text-align: center; 
+    vertical-align:middle;
+    position: fixed;
+}
+
+.title{
+    background-color: yellow;
+    display:table-cell;
+    height: 50px;
+    width: 280px;
+    vertical-align:middle;
  }
- .outer-div{
-     background-color: blue;
-     width: 280px;
-     height: 880px;
-     position:fixed;
-     right: 20px;
-     top: 20px;
-     z-index:1;
-     text-align: center; 
+
+.button{
+    display:table-cell;
+    background-color: red;
+    height: 50px;
+    width: 280px;
+    vertical-align:middle;
  }
  .inner-div{
      background-color: blueviolet;
-     display: inline-block;
-     height: 720px;
-     position:relative;
+     height:calc(100% - 100px );
+     width: 280px;
      overflow-y:auto;
- }
-  .out{
-     background-color: aquamarine;
  }
