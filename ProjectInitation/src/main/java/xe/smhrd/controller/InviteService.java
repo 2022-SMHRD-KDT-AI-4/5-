@@ -15,6 +15,7 @@ import javax.servlet.http.HttpSession;
 import xe.smhrd.model.BoardVO;
 import xe.smhrd.model.InviteDAO;
 import xe.smhrd.model.InviteVO;
+import xe.smhrd.model.MemberVO;
 
 @WebServlet("/InviteService")
 public class InviteService extends HttpServlet {
@@ -32,6 +33,7 @@ public class InviteService extends HttpServlet {
 			System.out.println("찜목록이 비었습니다");
 		} else {
 
+			MemberVO mvo = (MemberVO) session.getAttribute("vo");
 			String name = request.getParameter("name");
 			String date = request.getParameter("date");
 			String address = request.getParameter("address");
@@ -39,7 +41,7 @@ public class InviteService extends HttpServlet {
 			String p_id = request.getParameter("p_id");
 			InviteVO vo = new InviteVO();
 
-			vo.setM_id("test1");
+			vo.setM_id(mvo.getM_id());
 			vo.setV_name(name);
 			vo.setV_date(date);
 			vo.setV_adr(address);

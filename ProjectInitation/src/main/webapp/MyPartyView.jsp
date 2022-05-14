@@ -3,98 +3,77 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-
-<!-- 팝업기능에 필요한 최소한의 css -->
-
-<style type="text/css">
-.pop_wrap {
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	background: rgba(0, 0, 0, .5);
-	font-size: 0;
-	text-align: center;
-}
-
-.pop_wrap:after {
-	display: inline-block;
-	height: 100%;
-	vertical-align: middle;
-	content: '';
-}
-
-.pop_wrap .pop_inner {
-	display: inline-block;
-	padding: 20px 30px;
-	background: #fff;
-	width: 400px;
-	vertical-align: middle;
-	font-size: 15px;
-}
-</style>
- 
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>초대장 만들기</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/MypartyView.css">
+    <style type="text/css">
+        table, th, td{
+            border: 1px solid black;
+        }
+    </style>
 </head>
 <body>
 <%
 	InviteVO myvo = (InviteVO) session.getAttribute("myvo");
 	List<InviteVO> myitemlist = (List<InviteVO>) session.getAttribute("myitemlist");
-	%>
-<%-- 	<form action="MyResultService?v_id=<%=myvo.getV_id()%>" method="post"> --%>
+%>
 <form id="frm" action="MyCommitService?v_id=<%=myvo.getV_id()%>&action=commit" method="post">
-<div>
+<div class="wrap">
 	<h1><%=myvo.getV_name() %></h1><br>
 	<%=myvo.getV_cont() %><br><br>
-	<table border="1">
-	<tr>
-	<td>
-	대표이미지
-	</td>
-	<td>
-	사용될 아이템 목록
-	</td>
-	<td>
-	추천수
-	</td>
-	<td>
-	최종 선택
-	</td>
-	</tr>
-	<tr>
-	<td rowspan="<%=myitemlist.size()%>">
-	<img src="img/<%=myvo.getP_img() %>" style="max-width: 700px;">
-	</td>
-		<%for(InviteVO ivo : myitemlist){ %>
-		<td>
-			<li><%=ivo.getI_name() %></li>
-			</td><td>
-			<%=ivo.getSel_g() %>
-			</td><td>
-			<input type="checkbox" name="seli_id" value="<%=ivo.getI_id()%>">
-			</td><tr>
+	<table border-collapse:collapse; width="1200px">
+		<tr height="20px" id="head">
+            <th id="th1">대표이미지</th>
+            <th id="th2">사용할 아이템 목록</th>
+            <th id="th3">추천수</th>
+            <th id="th4">최종 선택</th>
+        </tr>
+ 
+		<tr align="center">
+			<!-- 대표 이미지 가져오기 -->
+			<td id="images" rowspan="<%=myitemlist.size() + 1%>">
+				<img src="img/<%=myvo.getP_img() %>" alt="<%=myvo.getP_name()%>" width="500" height="500">
+			</td>
+		</tr>
+			<!-- 반복문을 통해 전체 항목과 조회수, 체크박스 가져오기 -->
+			<%for(InviteVO ivo : myitemlist){ %>
+				<tr align="center">
+            		<td><%=ivo.getI_name() %></td>
+            		<td><%=ivo.getSel_g() %></td>
+            		<td id="choice" align="center">
+            			<input type="checkbox" name="seli_id" value="<%=ivo.getI_id()%>">
+            		</td>
+		        </tr>
 			<%	}%>
-	</td>
-	</tr>
-	</tr>
+		<!-- 			</tr>
+				</tr>
+		</tr> -->
+		    
+		<tr height="40px">
+        	<td id="date"align="center">
+                개최일자 :  <%=myvo.getV_date()%>
+            </td>
+            <td id="spot" align="center">
+                장소 : <%=myvo.getV_adr()%>
+            </td>
+
+            <td id="linklink" align="center">
+                <a href="#pop_win1" class="btn_open"><button>① 투표 보내기</button></a>
+            </td>
+            <td id="button" align="center">
+                <a href="#pop_win2" class="btn_open"><button>③ 초대장 보내기</button></a>
+                <a href="#" onclick="chk_form()" ><button>② 초대장 등록하기</button></a>
+
+            </td>
+        </tr>
 	</table>
-	
 </div>
 </form>
-개최일시 : <%=myvo.getV_date()%><br>
-개최지 : <%=myvo.getV_adr()%><br>
-<br>
-
-
-<!--   </form> -->
-
-<a href="#pop_win1" class="btn_open">파티에 사용할 아이템 추천 링크 띄우기</a><br>
-<a href="#pop_win2" class="btn_open">초대장 최종안 링크 보기</a><br>
-<a href="#" onclick="chk_form()" >초대장 최종안 제출하기</a><br>
+			
 <a href="#pop_win3" class="btn_open" style="display: none;" >팝업창 열기</a><br>
 
 <!-- 기본 url 따오는 창 (안보임) -->

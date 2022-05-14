@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <frameset cols="*,300px">
-	<frame src="ListService" name="Boardlist" scrolling="auto"
+	<frame src="ListService" naㅈme="Boardlist" scrolling="auto"
 	frameborder=0 noresize>
 	<frameset rows="*,40px">
 	<frame src="Cartlist.jsp" name="Cartlist" scrolling="auto"

@@ -78,10 +78,14 @@
               </tr>
               
               <tr bgcolor="gray" height="35px">
-              	<th colspan="2" align="center">기타 필요한 사항을 적어주세요▼</th>
+              	<th colspan="2" align="center">보내고 싶은 내용▼</th>
                 	<tr height="35px" bgcolor="whitesmoke">
                     	<td align="right" colspan="2" >
-                          <textarea name="content" cols="85" rows="28"></textarea>
+                          <textarea name="content" cols="85" rows="28">
+			   ★☆당신을 초대합니다☆★
+                        
+			▶▷적고 싶은 내용을 적으세요◁◀
+                          </textarea>
                         </td>
                     </tr>
              	       

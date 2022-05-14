@@ -1,0 +1,28 @@
+.wrap{
+    width: 100%;
+    margin-top: 50px;
+    margin-left: 50px;
+}
+table{
+    border-collapse: collapse;
+}
+#head{
+    background-color: #FFDAB9;
+}
+#th1,#th2,#th3,#th4{
+    
+    box-shadow: inset 0 0 8px #ff1493;
+
+}
+#content, #list, #recommend, #final{
+    border: 1px solid #ffebb5;
+    background-color: #ffebb5;
+    box-shadow: inset 0 0 8px #deb13a;
+    
+}
+#button, #date, #spot, #linklink{
+    box-shadow: inset 0 0 8px #BC8F8F;
+    
+    
+    
+}
