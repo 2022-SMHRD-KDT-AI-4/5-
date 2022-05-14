@@ -48,7 +48,9 @@
 	InviteVO myvo = (InviteVO) session.getAttribute("myvo");
 	List<InviteVO> myitemlist = (List<InviteVO>) session.getAttribute("myitemlist");
 %>
+<%-- 
 <form id="frm" action="MyCommitService?v_id=<%=myvo.getV_id()%>&action=commit" method="post">
+ --%>
 <div class="wrap">
 	<h1><%=myvo.getV_name() %></h1><br>
 	<%=myvo.getV_cont() %><br><br>
@@ -88,19 +90,18 @@
                 장소 : <%=myvo.getV_adr()%>
             </td>
 
-            <td id="linklink" align="center">
+            <td id="button" align="center" colspan="2">
                 <a href="#pop_win1" class="btn_open"><button>① 투표 보내기</button></a>
-            </td>
-            <td id="button" align="center">
                 <a href="#pop_win2" class="btn_open"><button>③ 초대장 보내기</button></a>
-                <a href="#" onclick="chk_form()" ><button>② 초대장 등록하기</button></a>
+                <a href="#" onclick="array_chk()" ><button>② 초대장 등록하기</button></a>
 
             </td>
         </tr>
 	</table>
 </div>
+<!-- 
 </form>
-			
+	 -->		
 <a href="#pop_win3" class="btn_open" style="display: none;" >팝업창 열기</a><br>
 
 <!-- 기본 url 따오는 창 (안보임) -->
@@ -183,20 +184,44 @@
 		alert("URL이 클립보드에 복사되었습니다"); 
 	} 
 	 */
+	
+	 function array_chk() {
+	        var checkboxValues = [];
+	        $("input[name='seli_id']:checked").each(function(i) {
+	            checkboxValues.push($(this).val());
+	        });
+	        var postData = { "v_id": <%=myvo.getV_id()%>, "seli_id": checkboxValues };
+	        
+	        $.ajax({
+	               url:'MyCommitService',
+	               type:'post',
+	               data:postData,
+	               traditional: true,
+	               success : function(res){
+		               console.log("통신성공(커밋)");
+		               popup();
+		            },
+		            error : function(res){ alert('error!'); }
+		         });
+		} 
+	 
+<%-- 	 
 	function chk_form() {
 		document.getElementById('frm').submit();
 	}
 	
 	var popup = new Boolean(false);
-	if(<%=session.getAttribute("popup")%>!=null){
-		popup = new Boolean(<%=session.getAttribute("popup")%>);
-	}
 
 	if(popup==Boolean(true)){
 		console.log("팝업확인")
 		document.querySelector("#pop_win3").style.display = 'block';
 		popup = new Boolean(false);
 		<%request.getSession().setAttribute("popup", false);%>
+	}
+	 --%>
+	function popup(){
+		console.log("팝업확인")
+		document.querySelector("#pop_win3").style.display = 'block';
 	}
 
  	// 팝업 열기
