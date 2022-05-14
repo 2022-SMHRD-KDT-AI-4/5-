@@ -40,7 +40,7 @@
             <ul>
             	<% for (BoardVO bvo : list) {%>
                 		<li>
-                    		<a href="ViewService?pt_id=<%=bvo.getPt_id()%>&num=<%=bvo.getNum()%>">
+                    		<a href="BoardView.jsp?pt_id=<%=bvo.getPt_id()%>&num=<%=bvo.getNum()%>">
                         		<span class="thumb">
                             		<img src="img/<%=bvo.getP_img() %>" alt="<%=bvo.getP_name() %>" width="500" height="700">
                             		<em style="font-size: 45px;">클릭하여 자세히 보기</em>

@@ -96,13 +96,13 @@ public class CartService extends HttpServlet {
 			
 		}
 		
-//		테스트용 콘솔
-		System.out.println("------테스트1-------");
-		for(int i = 0; i < cartList.size(); i++) {
-			System.out.println(cartList.get(i).getP_id() +
-					" "+cartList.get(i).getP_name()+
-					" "+cartList.get(i).getP_img());
-		}
+////		테스트용 콘솔
+//		System.out.println("------테스트1-------");
+//		for(int i = 0; i < cartList.size(); i++) {
+//			System.out.println(cartList.get(i).getP_id() +
+//					" "+cartList.get(i).getP_name()+
+//					" "+cartList.get(i).getP_img());
+//		}
 		
 		session.setAttribute("cartList", cartList);
 		
