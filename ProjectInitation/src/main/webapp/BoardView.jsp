@@ -200,21 +200,19 @@
  		console.log("보드 작성 시작");
  		$('#board').html('');
  		tr = `
- 			<tr bgcolor="pink" height="70px">
+ 			<thead id = "board">
+ 			<tr class="head">
  	           	<th id="th1">`+board.p_name+`</th>
  	           	<th id="th2">조회수 : `+board.p_view+`</th>
  	      	</tr>
- 	      	<tr align="center">
-            	<td id="content" rowspan="2">
-                	<img src="img/`+board.p_img+`" alt="`+board.p_name+`" width="700px" height="700px">
+ 	      	<tr height="700px"> 
+ 	      		<td id="content" >
+ 	      			<div class="img"><img class="cover" src="img/`+board.p_img+`" alt="`+board.p_name+`"/></div>
            		</td>
+       		<td id="list">
+    		</td>
        		</tr>
-       		<tr height="650px">
-            	<td id="list">
-            	</td>
-   			</tr>
    			<tr height="40px">
-            
    			<td id="button1"align="center">
             </td>
             <td id="button2" align="center">
