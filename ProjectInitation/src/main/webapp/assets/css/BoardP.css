@@ -52,7 +52,6 @@
 .fixed_img_col li a .thumb {
     position: relative;
     display: block;
-    background-color: #ccc;
     height: 700px;
     color: #666;
     text-align: center;
@@ -66,12 +65,13 @@
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, .5);
-/*     color: #eee; */
+	color: #eee;
     font-weight: normal;
     font-size: x-large;
     text-align: center;
     line-height: 650px;
 }
+
 .fixed_img_col li a:hover .thumb em{
     display: block;
 }
@@ -92,6 +92,20 @@
     color: #767676;
     font-size: .9em;
 }
+
+        
+.cover {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 16px;
+  }
+
+  div.img {
+    width: 500px;
+    height: 700px;
+    border-radius: 16px;
+  }
 
 
 

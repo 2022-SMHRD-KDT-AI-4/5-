@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" type="text/css" href="assets/css/BoardView.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/sideheart.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/sideheart.css?ver=1.2">
     <style type="text/css">
     .bg-contain {
     background-size: contain;
@@ -19,6 +19,8 @@
     width: 100%;
     height: 100%;
   }
+  
+  
     </style>
 </head>
 <body>
@@ -30,16 +32,16 @@
 	</div>
 	
 	<!-- 찜목록 영역 -->
-	<button class="cartopen" style="position: fixed; right:40px;top: 11px; display: block;">
-    <img src="img/bono.png"  onclick="cartopen()" width="42px" height="40px" alt="보노보노">
+	<button class="cartopen" style="position: fixed; right:22px;top: 11px; margin: 0; padding: 0; display: block;">
+    <img src="img/bono.png"  onclick="cartopen()" width="40px" height="40px" alt="보노보노">
     </button>
 	
     <div class="outer-div" style="display: none;">		
     <%List<BoardVO> cartList = (List<BoardVO>) session.getAttribute("cartList");%>
 		<div class="title">
         <h3>찜 목록</h3>
-        <button style="position: absolute; right:2px;top: 2px;">
-        <img src="img/bono.png"  onclick="cartclose()" width="42px" height="40px" alt="보노보노">
+        <button style="position: absolute; right:2px;top: 2px; margin: 0; padding: 0;  ">
+        <img src="img/bono.png"  onclick="cartclose()" width="40px" height="40px" alt="보노보노">
         </button>
         </div>
     	<div class="inner-div">

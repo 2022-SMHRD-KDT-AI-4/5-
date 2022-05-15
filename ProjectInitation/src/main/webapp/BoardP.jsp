@@ -10,7 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" type="text/css" href="assets/css/BoardP.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/BoardP.css?ver=1.5">
     <link rel="stylesheet" type="text/css" href="assets/css/sideheart.css">
     <style type="text/css">
         @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
@@ -22,21 +22,7 @@
         ul,ol{list-style: none;}
         em,address{font-style: normal;}
         a{text-decoration: none;}
-        a:hover,a:active,a:focus{text-decoration: underline;}
-        
-.cover {
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-    border-radius: 16px;
-  }
-
-  div.img {
-    width: 500px;
-    height: 700px;
-    border-radius: 16px;
-  }
-        
+        a:hover,a:active,a:focus{text-decoration: underline;}        
     </style>
 </head>
 
@@ -71,16 +57,16 @@
     </div>
     
 <!-- 찜목록 영역 -->
-<button class="cartopen" style="position: fixed; right:40px;top: 11px; display: block;">
-    <img src="img/bono.png"  onclick="cartopen()" width="42px" height="40px" alt="보노보노">
+<button class="cartopen" style="position: fixed; right:22px; top: 11px; margin: 0; padding: 0;  display: block;">
+    <img src="img/bono.png"  onclick="cartopen()" width="40px" height="40px" alt="보노보노">
     </button>
     
     <div class="outer-div" style="display: none;">			
     <%List<BoardVO> cartList = (List<BoardVO>) session.getAttribute("cartList");%>
 		<div class="title">
         <h3>찜 목록</h3>
-        <button style="position: absolute; right:2px;top: 2px;">
-        <img src="img/bono.png"  onclick="cartclose()" width="42px" height="40px" alt="보노보노">
+        <button style="position: absolute; right:2px;top: 2px; margin: 0; padding: 0; ">
+        <img src="img/bono.png"  onclick="cartclose()" width="40px" height="40px" alt="보노보노">
         </button>
         </div>
     	<div class="inner-div">
