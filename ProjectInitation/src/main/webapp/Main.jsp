@@ -71,19 +71,19 @@
 <!--메인 사진 클릭하는 부분-->
 	<div id="wrap">
 		<article>
-		<a href="ListService?pt_id=bridal"><img src="assets/images/mainbridal.png" alt="bridal"></a>
+		<a href="BoardP.jsp?pt_id=bridal"><img src="assets/images/mainbridal.png" alt="bridal"></a>
 		</article>
 		<article>
-		<a href="ListService?pt_id=birth"><img src="assets/images/mainbirth.png" alt="birth"></a>
+		<a href="BoardP.jsp?pt_id=birth"><img src="assets/images/mainbirth.png" alt="birth"></a>
 		</article>
 		<article>
-		<a href="ListService?pt_id=xmas"><img src="assets/images/mainxmas.png" alt="xmas"></a>
+		<a href="BoardP.jsp?pt_id=xmas"><img src="assets/images/mainxmas.png" alt="xmas"></a>
 		</article>
 		<article>
-		<a href="ListService?pt_id=halloween"><img src="assets/images/mainhallo.png" alt="halloween"></a>
+		<a href="BoardP.jsp?pt_id=halloween"><img src="assets/images/mainhallo.png" alt="halloween"></a>
 		</article>
 		<article>
-		<a href="ListService?pt_id=baby"><img src="assets/images/mainbaby.png" alt="baby"></a>
+		<a href="BoardP.jsp?pt_id=baby"><img src="assets/images/mainbaby.png" alt="baby"></a>
 		</article>
 		
 		<article>
@@ -107,6 +107,12 @@
 	</section>
 
 	<section class="visual"> </section>
+	
+	
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+
+</script>
 
 </body>
 

@@ -11,6 +11,15 @@
     <title>Document</title>
     <link rel="stylesheet" type="text/css" href="assets/css/BoardView.css">
     <link rel="stylesheet" type="text/css" href="assets/css/sideheart.css">
+    <style type="text/css">
+    .bg-contain {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    width: 100%;
+    height: 100%;
+  }
+    </style>
 </head>
 <body>
 	<div class="wrap">
@@ -21,10 +30,17 @@
 	</div>
 	
 	<!-- 찜목록 영역 -->
-    <div class="outer-div">		
+	<button class="cartopen" style="position: fixed; right:40px;top: 11px; display: block;">
+    <img src="img/bono.png"  onclick="cartopen()" width="42px" height="40px" alt="보노보노">
+    </button>
+	
+    <div class="outer-div" style="display: none;">		
     <%List<BoardVO> cartList = (List<BoardVO>) session.getAttribute("cartList");%>
 		<div class="title">
         <h3>찜 목록</h3>
+        <button style="position: absolute; right:2px;top: 2px;">
+        <img src="img/bono.png"  onclick="cartclose()" width="42px" height="40px" alt="보노보노">
+        </button>
         </div>
     	<div class="inner-div">
     	<table border="0">
@@ -163,7 +179,6 @@
 		function makecartlist(){	
 			console.log("카트 리스트 작성 시작");	
 			for (var i = 0; i < p_id.length; i++){
-	/* 			console.log("추가리스트 : "+p_id[i],p_name[i],p_img[i]); */
 				 tr = `
 	                <tr>
 					 	<td width="250px"><center>
@@ -207,7 +222,8 @@
  	      	</tr>
  	      	<tr height="700px"> 
  	      		<td id="content" >
- 	      			<div class="img"><img class="cover" src="img/`+board.p_img+`" alt="`+board.p_name+`"/></div>
+
+ 	      			<div class="bg-contain" style="background-image:url(/ProjectInitation/img/`+board.p_img+`);" alt="`+board.p_name+`"></div>
            		</td>
        		<td id="list">
     		</td>
@@ -245,7 +261,18 @@
  			$('#list').append(tr);
  		}
  	}
-	
+ 	
+ 	
+ 	function cartopen(){
+ 		console.log("카트 열림")
+		document.querySelector(".outer-div").style.display = 'block';
+ 		document.querySelector(".cartopen").style.display = 'none';
+ 	}
+ 	function cartclose(){
+ 		console.log("카트 닫힘")
+		document.querySelector(".outer-div").style.display = 'none';
+ 		document.querySelector(".cartopen").style.display = 'block';
+ 	}
 	
 	
 	function getParameterByName(name) {
@@ -253,7 +280,7 @@
 	    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
 	        result = regex.exec(location.search);
 	    return result === null ? "" : decodeURIComponent(result[1].replace(/\+/g, " "));
-	}
+	}	
 </script>
 </body>
 </html>

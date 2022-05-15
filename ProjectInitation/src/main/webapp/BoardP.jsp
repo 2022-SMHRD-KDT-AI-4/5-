@@ -23,6 +23,20 @@
         em,address{font-style: normal;}
         a{text-decoration: none;}
         a:hover,a:active,a:focus{text-decoration: underline;}
+        
+.cover {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 16px;
+  }
+
+  div.img {
+    width: 500px;
+    height: 700px;
+    border-radius: 16px;
+  }
+        
     </style>
 </head>
 
@@ -30,15 +44,18 @@
 <div class="board_header">
 	<a href="Main.jsp"><img src="assets/images/logoda.png" alt=""></a>
 </div>
+<%-- 
 	<%
 	List<BoardVO> list = (List<BoardVO>) request.getAttribute("plist");
 	BoardVO vo = (BoardVO) request.getAttribute("pvo");
 	%>
+	 --%>
     <div class="wrap">
-        <h1><%=vo.getPt_name() %> 한 눈에 보기</h1>
+        <h1 id="headname"></h1>
         <div class="fixed_img_col">
-            <ul>
-            	<% for (BoardVO bvo : list) {%>
+            <ul id="listset">
+            <!-- 반복생성구문 -->
+            	<%-- <% for (BoardVO bvo : list) {%>
                 		<li>
                     		<a href="BoardView.jsp?pt_id=<%=bvo.getPt_id()%>&num=<%=bvo.getNum()%>">
                         		<span class="thumb">
@@ -48,16 +65,23 @@
                         		<strong><%=vo.getPt_name() + bvo.getNum()%></strong>
                     		</a>
                 		</li>
-                <%} %>
+                <%} %> --%>
             </ul>
         </div>
     </div>
     
 <!-- 찜목록 영역 -->
-    <div class="outer-div">		
+<button class="cartopen" style="position: fixed; right:40px;top: 11px; display: block;">
+    <img src="img/bono.png"  onclick="cartopen()" width="42px" height="40px" alt="보노보노">
+    </button>
+    
+    <div class="outer-div" style="display: none;">			
     <%List<BoardVO> cartList = (List<BoardVO>) session.getAttribute("cartList");%>
 		<div class="title">
         <h3>찜 목록</h3>
+        <button style="position: absolute; right:2px;top: 2px;">
+        <img src="img/bono.png"  onclick="cartclose()" width="42px" height="40px" alt="보노보노">
+        </button>
         </div>
     	<div class="inner-div">
     	<table border="0">
@@ -75,6 +99,8 @@
     <!-- Scripts -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript">
+	let pv_pt_id = getParameterByName("pt_id");
+
 	let p_id = [];
 	let p_name = [];
 	let p_img = [];
@@ -84,13 +110,68 @@
 		p_name.push('<%=cvo.getP_name()%>');
 		p_img.push('<%=cvo.getP_img()%>');
 		<% } }%>
-	console.log(p_id,p_name,p_img);
+		
+		
 	$(document).ready(function() {
 		console.log("시작");
+		boardload(pv_pt_id);
 		makecartlist(); 
 	})
 	
 	
+	/* 리스트 생성 구문 */
+	
+	function boardload(pv_pt_id, pv_num){
+		$.ajax({
+			url : 'ListService',
+			type : 'post',
+			dataType : "json",
+			data : {
+				"pt_id" : pv_pt_id,
+			},
+			 success : function(board){
+	               console.log("통신성공(보드호출)");
+ 	               makeheadname(board);
+	               makeboard(board);
+	               console.log(board[0].pt_name);
+	            },
+	            error : function(){ alert('error!'); }
+	         });
+	}
+	
+	function makeheadname(board){
+ 		console.log("헤드 작성 시작");
+ 		$('#headname').html('');
+ 		h1 = board[0].pt_name+` 한 눈에 보기`;
+ 		$('#headname').append(h1);
+ 	}
+	
+	
+	function makeboard(board){
+ 		console.log("보드 작성 시작");
+ 		$('#listset').html('');
+ 		for(let i = 1; i<board.length; i++){
+ 		tr = `
+  			<li>
+    		<a href="BoardView.jsp?pt_id=`+board[i].pt_id+`&num=`+board[i].num+`">
+        		<span class="thumb">
+            		<div class="img"><img class="cover" src="img/`+board[i].p_img+`" alt="`+board[i].p_name+`"/></div>
+            		<em style="font-size: 45px;">클릭하여 자세히 보기</em>
+        		</span>
+        		<strong>`+board[i].p_name+`</strong>
+    		</a>
+		</li> 
+			`;
+ 		$('#listset').append(tr);
+ 		}
+ 	}
+	
+	/* 리스트 생성 세트 끝 */
+	
+	
+	
+	
+	/* 카트 생성 구문 */
 
 	function cartclear(){
 		$.ajax({
@@ -141,6 +222,32 @@
 			 $('#cart').append(tr);
 		}
 	}
+	
+	/* 카트 생성 세트 끝 */
+	
+	
+	
+ 	function cartopen(){
+ 		console.log("카트 열림")
+		document.querySelector(".outer-div").style.display = 'block';
+ 		document.querySelector(".cartopen").style.display = 'none';
+ 	}
+ 	function cartclose(){
+ 		console.log("카트 닫힘")
+		document.querySelector(".outer-div").style.display = 'none';
+ 		document.querySelector(".cartopen").style.display = 'block';
+ 	}
+	
+	
+	/* 파라미터 수집 함수 */
+	
+	function getParameterByName(name) {
+	    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+	    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+	        result = regex.exec(location.search);
+	    return result === null ? "" : decodeURIComponent(result[1].replace(/\+/g, " "));
+	}
+	
 	</script>
 </body>
 </html>
