@@ -1,16 +1,121 @@
 @import url(//fonts.googleapis.com/earlyaccess/nanumpenscript.css);
-.nanumpenscript * {
-  font-family: 'Nanum Pen Script', cursive; }
+
+@font-face {
+    font-family: 'NanumBarunpen';
+    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumBarunpen.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+#my-info {
+    background-color: #fff5bf;
+}
+
+div.my-page {
+    width: 1280px;
+    margin: 30px auto;
+    padding: 30px 0;
+    text-align: center;
+}
+
+.wrap {
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 60px;
+    font-family: 'NanumBarunpen';
+}
+
+.wrap h1 {
+    padding: 20px 30px 15px;
+    margin-left: 30px;
+    margin-right: 30px;
+    font-family: 'NanumBarunpen';
+    font-size: 33px;
+}
+
+.fixed_img_col li {
+    float: left;
+    width: 500px;
+    height: 500px;
+    padding: 70px 60px;
+    margin-bottom: 10px;
+
+}
+
+.fixed_img_col li a {
+    display: block;
+
+}
+
+.fixed_img_col li a .thumb {
+    position: relative;
+    display: block;
+    background-color: #ccc;
+    height: 500px;
+    color: #666;
+    text-align: center;
+    line-height: 400px;
+}
+
+.fixed_img_col li a .thumb em {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .5);
+    color: #eee;
+    font-weight: normal;
+    font-size: x-large;
+    text-align: center;
+    line-height: 470px;
+}
+
+.fixed_img_col li a:hover .thumb em {
+    display: block;
+}
+
+.fixed_img_col li a strong {
+    display: block;
+    padding: 8px 0 4px;
+    color: #333;
+    font-weight: bold;
+    text-align: center;
+    font-size: xx-large;
+    line-height: 1.9;
+}
+
+.fixed_img_col li a:hover {
+    text-decoration: none;
+}
+
+.fixed_img_col li p {
+
+    color: #767676;
+    font-size: .9em;
+}
+
+.top {
+	appearance: auto;
+	
+	background: none;
+	border: 0;
+	
+    cursor: pointer;
+    position: fixed;
+    right: 3%;
+    bottom: 6%;
+    display: none;
+    z-index: 3;
+}
+/* @import url(//fonts.googleapis.com/earlyaccess/nanumpenscript.css);
 
 @font-face {
   font-family: 'NanumBarunpen';
   src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumBarunpen.woff") format("woff");
   font-weight: normal;
   font-style: normal; }
-
-.nanumpenscript * {
-  font-family: 'Nanum Pen Script', cursive; 
-}
 
 
 #mypartylist_info {
@@ -91,4 +196,4 @@
     
     color: #767676;
     font-size: .9em;
-}
+} */

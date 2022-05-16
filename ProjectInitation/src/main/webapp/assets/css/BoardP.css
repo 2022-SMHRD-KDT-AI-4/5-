@@ -1,16 +1,10 @@
 @import url(//fonts.googleapis.com/earlyaccess/nanumpenscript.css);
-.nanumpenscript * {
-  font-family: 'Nanum Pen Script', cursive; }
 
 @font-face {
   font-family: 'NanumBarunpen';
   src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumBarunpen.woff") format("woff");
   font-weight: normal;
   font-style: normal; }
-
-.nanumpenscript * {
-  font-family: 'Nanum Pen Script', cursive; 
-}
 
 #board {
     background-color: #fff5bf;
@@ -91,6 +85,20 @@
     
     color: #767676;
     font-size: .9em;
+}
+
+.top {
+	appearance: auto;
+	
+	background: none;
+	border: 0;
+	
+    cursor: pointer;
+    position: fixed;
+    left: 3%;
+    bottom: 6%;
+    display: none;
+    z-index: 3;
 }
 
 

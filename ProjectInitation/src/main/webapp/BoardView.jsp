@@ -8,40 +8,65 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Come On Yo</title>
     <link rel="stylesheet" type="text/css" href="assets/css/BoardView.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/sideheart.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/sideheart.css?ver=1.2">
+    <style type="text/css">
+    .bg-contain {
+	    background-size: contain;
+	    background-repeat: no-repeat;
+	    background-position: 50% 50%;
+	    width: 100%;
+	    height: 100%;
+  	}
+  
+  	#td1,
+    #td2 {
+        text-align: center;
+    }
+  
+    </style>
 </head>
-<body>
+<body id="heart-info">
 	<div class="wrap">
-    <table border-collapse:collapse; width="1200px">
-	<thead id = "board">
-	</thead>
-    </table>
+    	<table border-collapse:collapse; width="1200px">
+			<thead id = "board">
+			</thead>
+    	</table>
 	</div>
 	
+	
 	<!-- 찜목록 영역 -->
-    <div class="outer-div">		
-    <%List<BoardVO> cartList = (List<BoardVO>) session.getAttribute("cartList");%>
+	<button class="cartopen" style="position: fixed; right:22px;top: 11px; margin: 0; padding: 0; display: block;">
+    	<img src="img/bono.png"  onclick="cartopen()" width="40px" height="40px" alt="보노보노">
+    </button>
+	
+    <div class="outer-div" style="display: none;">		
+    <%
+    	List<BoardVO> cartList = (List<BoardVO>) session.getAttribute("cartList");
+    %>
 		<div class="title">
-        <h3>찜 목록</h3>
+        	<h3>찜 목록</h3>
+        	<button style="position: absolute; right:2px;top: 2px; margin: 0; padding: 0;  ">
+        		<img src="img/bono.png"  onclick="cartclose()" width="40px" height="40px" alt="보노보노">
+        	</button>
         </div>
+        
     	<div class="inner-div">
-    	<table border="0">
-    	<tbody id="cart">
-    	</tbody>
-		</table>
+    		<table border="0">
+    			<tbody id="cart">
+    		</tbody>
+			</table>
 		</div>
+		
 		<div class="button">
-		<input type="button" onclick="cartclear();" value="찜목록 비우기">
-        <input type="button" onclick = "location.href = 'Invitepage.jsp'" value="작성하기">
+			<input type="button" onclick="cartclear();" value="찜목록 비우기">
+        	<input type="button" onclick = "location.href = 'Invitepage.jsp'" value="작성하기">
 		</div>
     </div>
     <!-- 찜목록 영역 끝 -->
 		
-	
-    
-    
+
 <!-- Scripts -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript">
@@ -163,7 +188,6 @@
 		function makecartlist(){	
 			console.log("카트 리스트 작성 시작");	
 			for (var i = 0; i < p_id.length; i++){
-	/* 			console.log("추가리스트 : "+p_id[i],p_name[i],p_img[i]); */
 				 tr = `
 	                <tr>
 					 	<td width="250px"><center>
@@ -198,7 +222,7 @@
  	
  	function makeboard(board){
  		console.log("보드 작성 시작");
- 		$('#board').html('');
+ 		$('#board').html(''); 
  		tr = `
  			<thead id = "board">
  			<tr class="head">
@@ -206,8 +230,9 @@
  	           	<th id="th2">조회수 : `+board.p_view+`</th>
  	      	</tr>
  	      	<tr height="700px"> 
- 	      		<td id="content" >
- 	      			<div class="img"><img class="cover" src="img/`+board.p_img+`" alt="`+board.p_name+`"/></div>
+ 	      		<td id="content" >1
+
+ 	      			<div class="bg-contain" style="background-image:url(/ProjectInitation/img/`+board.p_img+`);" alt="`+board.p_name+`"></div>
            		</td>
        		<td id="list">
     		</td>
@@ -245,7 +270,18 @@
  			$('#list').append(tr);
  		}
  	}
-	
+ 	
+ 	
+ 	function cartopen(){
+ 		console.log("카트 열림")
+		document.querySelector(".outer-div").style.display = 'block';
+ 		document.querySelector(".cartopen").style.display = 'none';
+ 	}
+ 	function cartclose(){
+ 		console.log("카트 닫힘")
+		document.querySelector(".outer-div").style.display = 'none';
+ 		document.querySelector(".cartopen").style.display = 'block';
+ 	}
 	
 	
 	function getParameterByName(name) {
@@ -253,7 +289,7 @@
 	    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
 	        result = regex.exec(location.search);
 	    return result === null ? "" : decodeURIComponent(result[1].replace(/\+/g, " "));
-	}
+	}	
 </script>
 </body>
 </html>

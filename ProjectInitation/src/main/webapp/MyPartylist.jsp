@@ -1,15 +1,15 @@
 <%@page import="xe.smhrd.model.InviteVO"%>
 <%@page import="java.util.List"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Come On Yo</title>
     <link rel="stylesheet" type="text/css" href="assets/css/mypartylist.css">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/css/images/icon.png">
     <style type="text/css">
         @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
         html,body{width: 100%;height: 100%}
@@ -22,13 +22,15 @@
         a{text-decoration: none;}
         a:hover,a:active,a:focus{text-decoration: underline;}
     </style>
+    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+	<script src="assets/base.js"></script>
 </head>
-<body id="mypartylist_info">
+<body id="my-info">
 <%
 	List<InviteVO> mylist = (List<InviteVO>) session.getAttribute("mylist");
 %>
-<div class="mypartylist_head">
-	<a href="Main.jsp"><img src="assets/images/logoda.png" alt=""></a>
+<div class="my-page">
+    <a href="Main.jsp"><img src="assets/images/logoda.png" alt=""></a>
 </div>
 
 <div class="wrap">
@@ -48,6 +50,10 @@
 		</ul>
 	</div>
 </div>
+
+<button class="top">
+	<img src="assets/images/conged.png" alt="top button">
+</button>
 
 </body>
 </html>

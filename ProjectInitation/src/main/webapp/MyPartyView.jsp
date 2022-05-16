@@ -8,7 +8,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>초대장 만들기</title>
+    <title>Come On Yo</title>
     <link rel="stylesheet" type="text/css" href="assets/css/MypartyView.css">
     <style type="text/css">
         table, th, td{
@@ -43,65 +43,71 @@
 		}
     </style>
 </head>
-<body>
+<body id="de-info">
 <%
 	InviteVO myvo = (InviteVO) session.getAttribute("myvo");
 	List<InviteVO> myitemlist = (List<InviteVO>) session.getAttribute("myitemlist");
 %>
-<%-- 
-<form id="frm" action="MyCommitService?v_id=<%=myvo.getV_id()%>&action=commit" method="post">
- --%>
-<div class="wrap">
-	<h1><%=myvo.getV_name() %></h1><br>
-	<%=myvo.getV_cont() %><br><br>
-	<table border-collapse:collapse; width="1200px">
-		<tr height="20px" id="head">
-            <th id="th1">대표이미지</th>
-            <th id="th2">사용할 아이템 목록</th>
-            <th id="th3">추천수</th>
-            <th id="th4">최종 선택</th>
-        </tr>
- 
-		<tr align="center">
-			<!-- 대표 이미지 가져오기 -->
-			<td id="images" rowspan="<%=myitemlist.size() + 1%>">
-				<img src="img/<%=myvo.getP_img() %>" alt="<%=myvo.getP_name()%>" width="500" height="500">
-			</td>
-		</tr>
-			<!-- 반복문을 통해 전체 항목과 조회수, 체크박스 가져오기 -->
-			<%for(InviteVO ivo : myitemlist){ %>
-				<tr align="center">
-            		<td><%=ivo.getI_name() %></td>
-            		<td><%=ivo.getSel_g() %></td>
-            		<td id="choice" align="center">
-            			<input type="checkbox" name="seli_id" value="<%=ivo.getI_id()%>">
-            		</td>
-		        </tr>
-			<%	}%>
-		<!-- 			</tr>
-				</tr>
-		</tr> -->
-		    
-		<tr height="40px">
-        	<td id="date"align="center">
-                개최일자 :  <%=myvo.getV_date()%>
-            </td>
-            <td id="spot" align="center">
-                장소 : <%=myvo.getV_adr()%>
-            </td>
-
-            <td id="button" align="center" colspan="2">
-                <a href="#pop_win1" class="btn_open"><button>① 투표 보내기</button></a>
-                <a href="#pop_win2" class="btn_open"><button>③ 초대장 보내기</button></a>
-                <a href="#" onclick="array_chk()" ><button>② 초대장 등록하기</button></a>
-
-            </td>
-        </tr>
-	</table>
+<div class="de-page">
+	<a href="Main.jsp"><img src="assets/images/logoda.png" alt=""></a>
 </div>
-<!-- 
+
+<form id="frm" action="MyCommitService?v_id=<%=myvo.getV_id()%>&action=commit" method="post">
+<div class="wrap">
+	<h1>초대장 만들기</h1><br>
+	<h1><%=myvo.getV_name() %></h1><br>
+		<%=myvo.getV_cont() %><br><br>
+	<div id="col-de">
+		<ul id="de-ul">
+			<table border-collapse:collapse; width="1200px">
+				<tr height="20px" id="head">
+		            <th id="th1">대표이미지</th>
+		            <th id="th2">사용할 아이템 목록</th>
+		            <th id="th3">추천수</th>
+		            <th id="th4">최종 선택</th>
+		        </tr>
+		 
+				<tr align="center">
+					<!-- 대표 이미지 가져오기 -->
+					<td id="images" rowspan="<%=myitemlist.size() + 1%>">
+						<img src="img/<%=myvo.getP_img() %>" alt="<%=myvo.getP_name()%>" width="500" height="500">
+					</td>
+				</tr>
+					<!-- 반복문을 통해 전체 항목과 조회수, 체크박스 가져오기 -->
+					<%for(InviteVO ivo : myitemlist){ %>
+						<tr align="center">
+		            		<td><%=ivo.getI_name() %></td>
+		            		<td><%=ivo.getSel_g() %></td>
+		            		<td id="choice" align="center">
+		            			<input type="checkbox" name="seli_id" value="<%=ivo.getI_id()%>">
+		            		</td>
+				        </tr>
+					<%	}%>
+				<!-- 			</tr>
+						</tr>
+				</tr> -->
+				    
+				<tr height="40px">
+		        	<td id="date"align="center">
+		                개최일자 :  <%=myvo.getV_date()%>
+		            </td>
+		            <td id="spot" align="center">
+		                장소 : <%=myvo.getV_adr()%>
+		            </td>
+		
+		            <td id="button" align="center" colspan="2">
+		                <a href="#pop_win1" class="btn_open"><button>① 투표 보내기</button></a>
+		                <a href="#pop_win2" class="btn_open"><button>③ 초대장 보내기</button></a>
+		                <a href="#" onclick="array_chk()" ><button>② 초대장 등록하기</button></a>
+		
+		            </td>
+		        </tr>
+			</table>
+		</ul>
+	</div>
+</div>
 </form>
-	 -->		
+	
 <a href="#pop_win3" class="btn_open" style="display: none;" >팝업창 열기</a><br>
 
 <!-- 기본 url 따오는 창 (안보임) -->

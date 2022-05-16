@@ -1,4 +1,51 @@
-.wrap{
+@import url(//fonts.googleapis.com/earlyaccess/nanumpenscript.css);
+
+
+@font-face {
+    font-family: 'NanumBarunpen';
+    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumBarunpen.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+#heart-info {
+    background-color: #fff5bf;
+}
+
+div.heart-page {
+    width: 1280px;
+    margin: 30px auto;
+    padding: 30px 0;
+    text-align: center;
+}
+
+.wrap {
+
+    width: 100%;
+    margin-top: 50px;
+    margin-left: 50px;
+
+}
+
+table {
+    background-color: rgba(255, 250, 240, 0.7);
+    border: 3px solid #FFC99A;
+    font-size: 20px;
+    font-family: 'NanumBarunpen';
+}
+
+input {
+    font-family: 'NanumBarunpen';
+    background-color: #FFD8B6;
+    border: 1.5px solid #fff;
+    margin-left: 30px;
+    margin-left: 30px;
+}
+
+td#td1 {
+    font-size: 25px;
+}
+/* .wrap{
     margin-top: 50px;
     margin-left: 50px;
 }
@@ -52,3 +99,4 @@
     height: 700px;
     border-radius: 16px;
   }
+ */
