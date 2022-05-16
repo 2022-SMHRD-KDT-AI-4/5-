@@ -10,22 +10,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Come On Yo</title>
-    <link rel="stylesheet" type="text/css" href="assets/css/BoardView.css?ver=1.3">
-    <link rel="stylesheet" type="text/css" href="assets/css/sideheart.css?ver=1.2">
-    <style type="text/css">
-    .bg-contain {
-	    background-size: contain;
-	    background-repeat: no-repeat;
-	    background-position: 50% 50%;
-	    width: 100%;
-	    height: 100%;
-  	}
-  
-  	#td1, #td2 {
-        text-align: center;
-    }
-  
-    </style>
+    <link rel="stylesheet" type="text/css" href="assets/css/BoardView.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/sideheart.css">
 </head>
 <body id="heart-info">
 
@@ -236,7 +222,6 @@
  	      	</tr>
  	      	<tr height="700px"> 
  	      		<td id="content" >
-
  	      			<div class="bg-contain" style="background-image:url(/ProjectInitation/img/`+board.p_img+`);" alt="`+board.p_name+`"></div>
            		</td>
        		<td id="list">

@@ -10,6 +10,8 @@
     <title>Come On Yo</title>
     <link rel="stylesheet" type="text/css" href="assets/css/use.css">
     <link rel="shortcut icon" type="image/x-icon" href="assets/images/icon.png" />
+    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+	<script src="assets/base.js"></script>
 
 </head>
 <body id="use-info">
