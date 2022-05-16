@@ -48,7 +48,7 @@
 		
 			<ul class="menu">
 				<li>
-					<a href="MylistService">My List</a>
+					<a href="MyPartylist.jsp">My List</a>
 				</li>
 
 				<li>
@@ -57,7 +57,6 @@
 		</nav>
 
 <%
-	List<BoardVO> list = (List<BoardVO>) request.getAttribute("list");
 	BoardVO vo = (BoardVO) request.getAttribute("vo");
 %>
 <!--메인 사진 클릭하는 부분-->

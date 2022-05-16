@@ -25,11 +25,11 @@ h1 {
   padding: 10px 50px 30px;
 }
 
-th, li, td, input {
+th, li, td, input, button {
   font-family: 'NanumBarunpen';
 }
 
-input {
+input, button {
   margin-right: 20px;
 }
 

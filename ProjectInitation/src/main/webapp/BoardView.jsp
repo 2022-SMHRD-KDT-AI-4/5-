@@ -1,3 +1,4 @@
+<%@page import="xe.smhrd.model.MemberVO"%>
 <%@page import="java.util.List"%>
 <%@page import="xe.smhrd.model.BoardVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -27,6 +28,7 @@
     </style>
 </head>
 <body id="heart-info">
+<%MemberVO vo = (MemberVO) session.getAttribute("vo");%>
 	<div class="wrap">
     	<table border-collapse:collapse; width="1200px">
 			<thead id = "board">
@@ -60,7 +62,7 @@
 		
 		<div class="button">
 			<input type="button" onclick="cartclear();" value="찜목록 비우기">
-        	<input type="button" onclick = "location.href = 'Invitepage.jsp'" value="작성하기">
+        	<input type="button" id="toInvite" onclick = "location.href = 'Invitepage.jsp'" value="작성하기">
 		</div>
     </div>
     <!-- 찜목록 영역 끝 -->
@@ -280,6 +282,13 @@
  		console.log("카트 닫힘")
 		document.querySelector(".outer-div").style.display = 'none';
  		document.querySelector(".cartopen").style.display = 'block';
+ 	}
+ 	
+ 	
+	if(<%=session.getAttribute("vo")==null%>){
+ 		$('#toInvite').attr("disabled", true);
+ 	}else{
+ 		$('#toInvite').attr("disabled", false);
  	}
 	
 	

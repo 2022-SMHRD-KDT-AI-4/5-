@@ -10,36 +10,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Come On Yo</title>
     <link rel="stylesheet" type="text/css" href="assets/css/MypartyView.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/popup.css">
     <style type="text/css">
         table, th, td{
             border: 1px solid black;
-        }
-        
-        .pop_wrap {
-			position: fixed;
-			top: 0;
-			left: 0;
-			right: 0;
-			bottom: 0;
-			background: rgba(0, 0, 0, .5);
-			font-size: 0;
-			text-align: center;
-		}
-
-		.pop_wrap:after {
-			display: inline-block;
-			height: 100%;
-			vertical-align: middle;
-			content: '';
-		}
-
-		.pop_wrap .pop_inner {
-			display: inline-block;
-			padding: 20px 30px;
-			background: #fff;
-			width: 400px;
-			vertical-align: middle;
-			font-size: 15px;
+        }font-size: 15px;
 		}
     </style>
 </head>

@@ -72,7 +72,7 @@ public class InviteService extends HttpServlet {
 			} else {
 				System.out.println("추가실패");
 			}
-			RequestDispatcher rd = request.getRequestDispatcher("MylistService");
+			RequestDispatcher rd = request.getRequestDispatcher("MyPartylist.jsp");
 	        rd.forward(request, response);
 		}
 	}

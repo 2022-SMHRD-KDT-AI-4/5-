@@ -10,37 +10,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Come On Yo</title>
     <link rel="stylesheet" type="text/css" href="assets/css/MypartyView.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/popup.css">
     <style type="text/css">
         table, th, td{
             border: 1px solid black;
         }
-        
-        .pop_wrap {
-			position: fixed;
-			top: 0;
-			left: 0;
-			right: 0;
-			bottom: 0;
-			background: rgba(0, 0, 0, .5);
-			font-size: 0;
-			text-align: center;
-		}
-
-		.pop_wrap:after {
-			display: inline-block;
-			height: 100%;
-			vertical-align: middle;
-			content: '';
-		}
-
-		.pop_wrap .pop_inner {
-			display: inline-block;
-			padding: 20px 30px;
-			background: #fff;
-			width: 400px;
-			vertical-align: middle;
-			font-size: 15px;
-		}
     </style>
 </head>
 <body id="de-info">
@@ -131,11 +105,6 @@
 	<div id="pop_win3" class="pop_wrap" style="display: none;">
 		<div class="pop_inner">
 			<p class="resultdsc">정상적으로 등록되었습니다</p>
-			<!-- 
-			<p class="dsc">초대장을 복사해주세요</p>
-			<input type="text"  id = "ShareUrl3"  style="width:400px"><br>
-			<button OnClick="javascript:CopyUrlToClipboard3()" class="btn_close">URL 복사</button>
-			 -->
 			<button class="btn_close">창닫기</button>
 		</div>
 	</div>
@@ -209,20 +178,7 @@
 		         });
 		} 
 	 
-<%-- 	 
-	function chk_form() {
-		document.getElementById('frm').submit();
-	}
-	
-	var popup = new Boolean(false);
 
-	if(popup==Boolean(true)){
-		console.log("팝업확인")
-		document.querySelector("#pop_win3").style.display = 'block';
-		popup = new Boolean(false);
-		<%request.getSession().setAttribute("popup", false);%>
-	}
-	 --%>
 	function popup(){
 		console.log("팝업확인")
 		document.querySelector("#pop_win3").style.display = 'block';

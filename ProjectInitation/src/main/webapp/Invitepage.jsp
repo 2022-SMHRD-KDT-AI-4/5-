@@ -8,7 +8,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="assets/css/invitepage.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/invitepage.css?ver=1.1">
+    <link rel="stylesheet" type="text/css" href="assets/css/popup.css">
     <link rel="shortcut icon" type="image/x-icon" href="assets/images/icon.png" />
     <title>Come On Yo</title>
     <style>
@@ -44,7 +45,7 @@
     <a href="Main.jsp"><img src="assets/images/logoda.png" alt=""></a>
 </div>
 
-<form action="InviteService" method="post">
+<form name="form" action="InviteService" method="post">
     <h1>초대장 작성하기</h1>
 <%
 	List<BoardVO> cartList = (List<BoardVO>) session.getAttribute("cartList");
@@ -60,7 +61,7 @@
 					 <tr height="50px" width="50px">
                         <th id="th1"><%=bvo.getP_name() %></th>
                         <th>대표이미지 설정
-                            <input type="checkbox" name="p_id" value="<%=bvo.getP_id()%>">
+                            <input type="radio" name="p_id" value="<%=bvo.getP_id()%>">
                         </th>
                     </tr>
                     
@@ -96,17 +97,17 @@
           <table width="600px" height="600px">             
               <tr height="35px" bgcolor="whitesmoke">
                   <td align="right">파티이름 : </td>
-                  <td><input type="text" name="name"></td>
+                  <td><input id="name" type="text" name="name"></td>
               </tr>
   
               <tr height="35px" bgcolor="whitesmoke">
                   <td align="right">파티일자 : </td>
-                  <td><input type="date" name="date"></td>
+                  <td><input id="date" type="date" name="date"></td>
               </tr>
   
               <tr height="35px" bgcolor="whitesmoke">
                   <td align="right">장소 : </td>
-                  <td><input type="text" name="address"></td>
+                  <td><input id="addr" type="text" name="address"></td>
                  
               </tr>
               
@@ -114,24 +115,73 @@
               	<th colspan="2" align="center">보내고 싶은 내용▼</th>
               <tr height="35px" bgcolor="whitesmoke">
                 <td align="right" colspan="2" >
-              		<textarea name="content" cols="85" rows="28">
+              		<textarea id="content" name="content" cols="85" rows="28">
 			   	★☆당신을 초대합니다☆★
                         
 			▶▷적고 싶은 내용을 적으세요◁◀
                     </textarea>
                 </td>
               </tr>
+              
              	       
               <tr height="35px" bgcolor="whitesmoke">
               	<td colspan="2" align="center">
-                	<input type="submit" value="작성하기" style="background-color: #FFC99A; border: #FFC99A;">
+              		<button type="button" onclick="presubmit();" style="background-color: #FFC99A; border: #FFC99A;">작성하기</button>
                     <input type="reset" value="초기화" style="background-color: #FFC99A; border: #FFC99A;">
                 </td>
               </tr>
           </table>
     </div>
- 
-</form>
+ </form>
+
+<a href="#pop_win" class="btn_open" style="display: none;" >팝업창 열기</a><br>
+<div id="pop_win" class="pop_wrap" style="display: none;">
+		<div class="pop_inner">
+			<p class="dsc">누락된 항목이 있는지 확인해주세요</p>
+			<button class="btn_close">확인</button>
+		</div>
+	</div>
+
+<!-- Scripts -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+function presubmit(){
+var radio = $('input:radio[name="p_id"]').is(":checked");
+var name = isNull($('input[name="name"]').val());
+var date = isNull($('input[name="date"]').val());
+var address = isNull($('input[name="address"]').val());
+console.log(radio, name, date, address);
+if(radio & name & date & address){
+	console.log("동작확인");
+	$('form[name="form"]').submit();
+}else{
+	console.log("작동봉쇄")
+	popup();
+	}	
+}
+
+
+var target = document.querySelectorAll('.btn_open');
+var btnPopClose = document.querySelectorAll('.pop_wrap .btn_close');
+var targetID;
+
+function popup(){
+	console.log("팝업확인")
+	document.querySelector("#pop_win").style.display = 'block';
+}
+
+//팝업 닫기
+for (var j = 0; j < target.length; j++) {
+	btnPopClose[j].addEventListener('click', function() {
+		this.parentNode.parentNode.style.display = 'none';
+	});
+}
+
+function isNull(obj) {
+	return (typeof obj != "undefined" && obj != null && obj != "") ? true : false;
+}
+
+</script>
 
 </body>
 </html>

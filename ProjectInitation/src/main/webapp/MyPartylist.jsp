@@ -26,9 +26,6 @@
 	<script src="assets/base.js"></script>
 </head>
 <body id="my-info">
-<%
-	List<InviteVO> mylist = (List<InviteVO>) session.getAttribute("mylist");
-%>
 <div class="my-page">
     <a href="Main.jsp"><img src="assets/images/logoda.png" alt=""></a>
 </div>
@@ -36,8 +33,8 @@
 <div class="wrap">
 	<h1>나의 Party 모아보기</h1>
 	<div class="fixed_img_col">
-		<ul>
-			<% for (InviteVO ivo : mylist){%>
+		<ul id="mylist">
+			<%-- <% for (InviteVO ivo : mylist){%>
 				<li>
 					<a href="MyViewService?v_id=<%=ivo.getV_id()%>">
 						<span class="thumb">
@@ -46,7 +43,7 @@
 	                    </span>
 	                </a>
 				</li>
-			<%} %>
+			<%} %> --%>
 		</ul>
 	</div>
 </div>
@@ -54,6 +51,51 @@
 <button class="top">
 	<img src="assets/images/conged.png" alt="top button">
 </button>
+
+ <!-- Scripts -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+
+$(document).ready(function() {
+	console.log("시작");
+	listload();
+})
+
+function listload(){
+		$.ajax({
+			url : 'MylistService',
+			type : 'post',
+			dataType : "json",
+			 success : function(board){
+	               console.log("통신성공(리스트호출)");
+	               makelist(board);
+	            },
+	            error : function(){ alert('로그인후 접근하세요!'); }
+	         });
+	}
+	
+function makelist(board){
+	console.log("리스트 작성 시작");
+	$('#mylist').html('');
+	for(let i = 0; i < board.length; i++){
+		li = `
+			<li>
+			<a href="MyViewService?v_id=`+board[i].v_id+`">
+				<span class="thumb">
+					<img src="img/`+board[i].p_img+`" alt="`+board[i].p_name+`" width="500" height="500">
+                    <em>`+board[i].v_name+`</em>
+                </span>
+            </a>
+		</li>
+		`;
+		$('#mylist').append(li);
+	}
+}
+
+
+
+</script>
+
 
 </body>
 </html>

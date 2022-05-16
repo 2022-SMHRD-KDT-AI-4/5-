@@ -1,6 +1,7 @@
 package xe.smhrd.controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -10,6 +11,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
+import com.google.gson.Gson;
 
 import xe.smhrd.model.BoardDAO;
 import xe.smhrd.model.BoardVO;
@@ -39,22 +42,24 @@ public class MylistService extends HttpServlet {
 		
 		if(m_id != null) {
 			List<InviteVO> list = dao.selectMylist(m_id);
-			System.out.println("------" + m_id + "의 작성 목록------");
-			for(int i = 0; i < list.size(); i++) {
-				System.out.println(list.get(i));
-			}
-			session.setAttribute("mylist", list);
-//		List<InviteVO> mylist = (List<InviteVO>) session.getAttribute("mylist");
-//		System.out.println("------테스트2-------");
-//		for(int i = 0; i < mylist.size(); i++) {
-//			System.out.println(mylist.get(i));
-//		}	
-			RequestDispatcher rd = request.getRequestDispatcher("MyPartylist.jsp");
-			rd.forward(request, response);
+//			System.out.println("------" + m_id + "의 작성 목록------");
+//			for(int i = 0; i < list.size(); i++) {
+//				System.out.println(list.get(i));
+//			}
+//			session.setAttribute("mylist", list);
+//			RequestDispatcher rd = request.getRequestDispatcher("MyPartylist.jsp");
+//			rd.forward(request, response);
+			
+			Gson gson = new Gson();
+			String json = gson.toJson(list);
+			response.setContentType("text/html; charset=utf-8");
+			PrintWriter out = response.getWriter();
+			out.print(json);
+			
 		}else {
-			System.out.println("Error");
-			RequestDispatcher rd = request.getRequestDispatcher("Main.jsp");
-			rd.forward(request, response);
+			System.out.println("로그인되지 않았음");
+//			RequestDispatcher rd = request.getRequestDispatcher("Main.jsp");
+//			rd.forward(request, response);
 		}
 		
 	}

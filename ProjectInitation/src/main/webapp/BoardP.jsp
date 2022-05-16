@@ -1,3 +1,4 @@
+<%@page import="xe.smhrd.model.MemberVO"%>
 <%@page import="xe.smhrd.model.BoardVO"%>
 <%@page import="java.util.List"%>
 <%@page import="xe.smhrd.model.BoardDAO"%>
@@ -29,31 +30,17 @@
 </head>
 
 <body id="board">
+<%MemberVO vo = (MemberVO) session.getAttribute("vo");%>
 <div class="board_header">
 	<a href="Main.jsp"><img src="assets/images/logoda.png" alt=""></a>
 </div>
-<%-- 
-	<%
-	List<BoardVO> list = (List<BoardVO>) request.getAttribute("plist");
-	BoardVO vo = (BoardVO) request.getAttribute("pvo");
-	%>
-	 --%>
+
+	
+	
     <div class="wrap">
         <h1 id="headname"></h1>
         <div class="fixed_img_col">
             <ul id="listset">
-            <!-- 반복생성구문 -->
-            	<%-- <% for (BoardVO bvo : list) {%>
-                		<li>
-                    		<a href="BoardView.jsp?pt_id=<%=bvo.getPt_id()%>&num=<%=bvo.getNum()%>">
-                        		<span class="thumb">
-                            		<img src="img/<%=bvo.getP_img() %>" alt="<%=bvo.getP_name() %>" width="500" height="700">
-                            		<em style="font-size: 45px;">클릭하여 자세히 보기</em>
-                        		</span>
-                        		<strong><%=vo.getPt_name() + bvo.getNum()%></strong>
-                    		</a>
-                		</li>
-                <%} %> --%>
             </ul>
         </div>
     </div>
@@ -79,7 +66,7 @@
 		</div>
 		<div class="button">
 		<input type="button" onclick="cartclear();" value="찜목록 비우기">
-        <input type="button" onclick = "location.href = 'Invitepage.jsp'" value="작성하기">
+        <input type="button" id="toInvite" onclick = "location.href = 'Invitepage.jsp'" value="작성하기">
 		</div>
     </div>
     <!-- 찜목록 영역 끝 -->
@@ -217,7 +204,7 @@
 	
 	/* 카트 생성 세트 끝 */
 	
-	
+	/* 카트 열기 닫기 세트 */
 	
  	function cartopen(){
  		console.log("카트 열림")
@@ -229,6 +216,16 @@
 		document.querySelector(".outer-div").style.display = 'none';
  		document.querySelector(".cartopen").style.display = 'block';
  	}
+ 	
+ 	/* 카트 열기 닫기 세트 끝 */
+ 	
+	if(<%=session.getAttribute("vo")==null%>){
+ 		$('#toInvite').attr("disabled", true);
+ 	}else{
+ 		$('#toInvite').attr("disabled", false);
+ 	}
+ 	
+ 	
 	
 	
 	/* 파라미터 수집 함수 */
