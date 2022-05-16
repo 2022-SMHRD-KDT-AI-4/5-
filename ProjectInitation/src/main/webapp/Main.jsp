@@ -14,7 +14,7 @@
 	<title>Happy</title>
 	<link rel="stylesheet" type="text/css" href="assets/css/main.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/main_m.css" media="only screen and (max-width:910px)">
-	<link rel="shortcut icon" type="image/x-icon" href="images/icon.png" />
+	<link rel="shortcut icon" type="image/x-icon" href="assets/images/icon.png" />
 	<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
 	<script src="assets/base.js"></script>
 </head>
@@ -63,19 +63,19 @@
 <!--메인 사진 클릭하는 부분-->
 		<div id="wrap">
 			<article>
-			<a href="ListService?pt_id=bridal"><img src="assets/images/mainbridal.png" alt="bridal"></a>
+			<a href="BoardP.jsp?pt_id=bridal"><img src="assets/images/mainbridal.png" alt="bridal"></a>
 			</article>
 			<article>
-			<a href="ListService?pt_id=birth"><img src="assets/images/mainbirth.png" alt="birth"></a>
+			<a href="BoardP.jsp?pt_id=birth"><img src="assets/images/mainbirth.png" alt="birth"></a>
 			</article>
 			<article>
-			<a href="ListService?pt_id=xmas"><img src="assets/images/mainxmas.png" alt="xmas"></a>
+			<a href="BoardP.jsp?pt_id=xmas"><img src="assets/images/mainxmas.png" alt="xmas"></a>
 			</article>
 			<article>
-			<a href="ListService?pt_id=halloween"><img src="assets/images/mainhallo.png" alt="halloween"></a>
+			<a href="BoardP.jsp?pt_id=halloween"><img src="assets/images/mainhallo.png" alt="halloween"></a>
 			</article>
 			<article>
-			<a href="ListService?pt_id=baby"><img src="assets/images/mainbaby.png" alt="baby"></a>
+			<a href="BoardP.jsp?pt_id=baby"><img src="assets/images/mainbaby.png" alt="baby"></a>
 			</article>
 			
 			<article>

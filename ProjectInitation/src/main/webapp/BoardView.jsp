@@ -9,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Come On Yo</title>
-    <link rel="stylesheet" type="text/css" href="assets/css/BoardView.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/BoardView.css?ver=1.3">
     <link rel="stylesheet" type="text/css" href="assets/css/sideheart.css?ver=1.2">
     <style type="text/css">
     .bg-contain {
@@ -20,8 +20,7 @@
 	    height: 100%;
   	}
   
-  	#td1,
-    #td2 {
+  	#td1, #td2 {
         text-align: center;
     }
   
@@ -230,7 +229,7 @@
  	           	<th id="th2">조회수 : `+board.p_view+`</th>
  	      	</tr>
  	      	<tr height="700px"> 
- 	      		<td id="content" >1
+ 	      		<td id="content" >
 
  	      			<div class="bg-contain" style="background-image:url(/ProjectInitation/img/`+board.p_img+`);" alt="`+board.p_name+`"></div>
            		</td>
@@ -289,7 +288,7 @@
 	    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
 	        result = regex.exec(location.search);
 	    return result === null ? "" : decodeURIComponent(result[1].replace(/\+/g, " "));
-	}	
+	}
 </script>
 </body>
 </html>

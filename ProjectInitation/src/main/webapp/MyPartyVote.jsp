@@ -53,7 +53,6 @@
 	<a href="Main.jsp"><img src="assets/images/logoda.png" alt=""></a>
 </div>
 
-<form action="VoteService?v_id=<%=myvo.getV_id()%>" method="post">
 <div class="wrap">
 	<h1>투표하기</h1>
 	<h1><%=myvo.getV_name() %></h1><br>
@@ -88,16 +87,16 @@
 	                	장소 : <%=myvo.getV_adr()%>
 	            	</td>
 	           		 <td id="button" align="center">
-	           		 	<a href="#pop_win" class="btn_open" onClick="array_chk()"><button>투표하기</button></a>
-	           		 	<!-- <button OnClick="array_chk()">투표하기</button> -->
+	           		 	<!-- <a href="#pop_win" class="btn_open" onClick="array_chk()"><button>투표하기</button></a> -->
+	           		 	<button onClick="array_chk()">투표하기</button>
+	           		 	
 	           		 </td>
 				</tr>
 			</table>
 		</ul>
 	</div>
-</form>
 
-<!-- <a href="#pop_win" class="btn_open" style="display: none;" >팝업창 열기</a><br> -->
+<a href="#pop_win" class="btn_open" style="display: none;" >팝업창 열기</a><br>
 
 
 <!-- 팝업창 -->

@@ -54,7 +54,6 @@
 	<a href="Main.jsp"><img src="assets/images/logoda.png" alt=""></a>
 </div>
 
-<form action="MyResultService?v_id=<%=myvo.getV_id()%>" method="post">
 <div class="wrap">
 	<h1>초대장 결과</h1><br>
 	<h1><%=myvo.getV_name() %></h1><br>
@@ -92,6 +91,5 @@
 			</table>
 		</ul>
 	</div>
-</form>
 </body>
 </html>

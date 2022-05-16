@@ -1,6 +1,8 @@
 package xe.smhrd.controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -10,6 +12,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
 
 import xe.smhrd.model.BoardDAO;
 import xe.smhrd.model.BoardVO;
@@ -26,13 +31,12 @@ public class ListService extends HttpServlet {
 		BoardDAO dao = new BoardDAO();
 		RequestDispatcher rd;
 		
-		/*
-		 * // 세션 가져오기 HttpSession session = request.getSession(); MemberVO mvo =
-		 * (MemberVO) session.getAttribute("vo");
-		 */
+
+		
+		List<BoardVO> list = new ArrayList<BoardVO>();
 
 		if (pt_id == null) {
-			List<BoardVO> list = dao.selectPTList();
+			list = dao.selectPTList();
 			for(int i = 0; i<list.size(); i++) {
 				String p_img =  dao.selectPimgOne(list.get(i).getPt_id()).getP_img();
 				list.get(i).setP_img(p_img);
@@ -40,19 +44,26 @@ public class ListService extends HttpServlet {
 			request.setAttribute("list", list);
 		
 //			System.out.println("리스트 사이즈 : "+list.size());
-			rd = request.getRequestDispatcher("BoardPT.jsp");
+//			rd = request.getRequestDispatcher("BoardPT.jsp");
 			
 		}
 
 		else {
-			List<BoardVO> list = dao.selectPList(pt_id);
+			list = dao.selectPList(pt_id);
 			BoardVO vo = dao.selectPTone(pt_id);
-			request.setAttribute("pvo", vo);
-			request.setAttribute("plist", list);
-			rd = request.getRequestDispatcher("BoardP.jsp");
+//			request.setAttribute("pvo", vo);
+//			request.setAttribute("plist", list);			
+			list.add(0, vo);
+//			rd = request.getRequestDispatcher("BoardP.jsp");
 		}
-		rd.forward(request, response);
-		
+//		rd.forward(request, response);
+
+//		System.out.println(list.get(0));
+		Gson gson = new Gson();
+		String json = gson.toJson(list);
+		response.setContentType("text/html; charset=utf-8");
+		PrintWriter out = response.getWriter();
+		out.print(json);
 
 	}
 }

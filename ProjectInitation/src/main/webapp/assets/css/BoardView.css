@@ -42,33 +42,10 @@ input {
     margin-left: 30px;
 }
 
-td#td1 {
+td #td1 {
     font-size: 25px;
 }
-/* .wrap{
-    margin-top: 50px;
-    margin-left: 50px;
-}
-#th1,#th2{
-    border-radius: 16px;
-    box-shadow: inset 0 0 8px #ff1493;
 
-}
-#content, #list{
-    border: 1px solid #ffebb5;
-    background-color: #ffebb5;
-    box-shadow: inset 0 0 8px #deb13a;
-    border-radius: 16px;
-}
-#button1 , #button2{
-    box-shadow: inset 0 0 8px #BC8F8F;
-    border-radius: 16px;    
-}
-
-.main{
-    border-collapse:collapse;
-    border-radius: 16px;
-}
 
 #content{
     width: 900px;
@@ -83,12 +60,17 @@ td#td1 {
 
 .head{
     height: 60px;
-    background-color: pink;
-    border-radius: 16px;
 }
 
 .cover {
     object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 16px;
+  }
+  
+.contain {
+    object-fit: contain;
     width: 100%;
     height: 100%;
     border-radius: 16px;
@@ -99,4 +81,19 @@ td#td1 {
     height: 700px;
     border-radius: 16px;
   }
- */
+  
+.bg-contain {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    width: 100%;
+    height: 100%;
+  }
+  
+.bg-contain {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    width: 100%;
+    height: 100%;
+  }

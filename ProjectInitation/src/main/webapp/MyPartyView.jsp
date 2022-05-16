@@ -52,7 +52,6 @@
 	<a href="Main.jsp"><img src="assets/images/logoda.png" alt=""></a>
 </div>
 
-<form id="frm" action="MyCommitService?v_id=<%=myvo.getV_id()%>&action=commit" method="post">
 <div class="wrap">
 	<h1>초대장 만들기</h1><br>
 	<h1><%=myvo.getV_name() %></h1><br>
@@ -106,7 +105,6 @@
 		</ul>
 	</div>
 </div>
-</form>
 	
 <a href="#pop_win3" class="btn_open" style="display: none;" >팝업창 열기</a><br>
 

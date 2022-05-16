@@ -62,8 +62,8 @@ public class ViewService extends HttpServlet {
 		out.print(json);
 		
 		
-        RequestDispatcher rd = request.getRequestDispatcher("BoardView.jsp");
-        rd.forward(request, response);
+//        RequestDispatcher rd = request.getRequestDispatcher("BoardView.jsp");
+//        rd.forward(request, response);
 		
 		
 		
