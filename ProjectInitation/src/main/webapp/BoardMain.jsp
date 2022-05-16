@@ -4,10 +4,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Come On Yo</title>
 </head>
 <frameset cols="*,300px">
-	<frame src="ListService" naㅈme="Boardlist" scrolling="auto"
+	<frame src="ListService" name="Boardlist" scrolling="auto"
 	frameborder=0 noresize>
 	<frameset rows="*,40px">
 	<frame src="Cartlist.jsp" name="Cartlist" scrolling="auto"
