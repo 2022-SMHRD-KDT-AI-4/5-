@@ -104,10 +104,8 @@
             <br>
             <br>
             <div class="button">
-
-                <input type="button" id="" value="메인으로">
-                <input type="button" id="" value="초대장 작성하기">
-
+                <input type="button" id="" value="메인으로" onclick="location.href='Main.jsp'">
+                <input type="button" id="" value="초대장 작성하기" onclick="location.href='Invitepage.jsp'">
             </div>
         </div>
 </body>

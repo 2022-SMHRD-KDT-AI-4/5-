@@ -27,6 +27,11 @@
     </style>
 </head>
 <body id="heart-info">
+
+	<div class="board_header">
+		<a href="Main.jsp"><img src="assets/images/logoda.png" alt=""></a>
+	</div>
+
 	<div class="wrap">
     	<table border-collapse:collapse; width="1200px">
 			<thead id = "board">

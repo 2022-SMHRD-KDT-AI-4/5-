@@ -12,6 +12,7 @@
     <title>Come On Yo</title>
     <link rel="stylesheet" type="text/css" href="assets/css/BoardP.css?ver=1.1">
     <link rel="stylesheet" type="text/css" href="assets/css/sideheart.css">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/icon.png" />
     <style type="text/css">
         @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
         html,body{width: 100%;height: 100%}
