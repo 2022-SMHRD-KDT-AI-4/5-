@@ -31,7 +31,7 @@
 <div class="wrap">
 	<h1>초대장 결과</h1><br>
 	<h1><%=myvo.getV_name() %></h1><br>
-	<%=myvo.getV_cont() %><br><br>
+	<h5><%=myvo.getV_cont() %></h5><br>
 	<div id="col-de">
 		<ul id="de-ul">
 			<table border-collapse:collapse; width="1200px">

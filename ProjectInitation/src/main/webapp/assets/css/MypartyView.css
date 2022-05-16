@@ -21,29 +21,41 @@ div.de-page {
 
 .wrap {
   width: 100%;
-  margin-top: 50px;
-  margin-left: 50px;
   font-family: 'NanumBarunpen';
 }
 
-.wrap h1 {
-  padding: 0px 45px 20px;
-  font-family: 'NanumBarunpen';
-  font-size: 33px;
-}
+	.wrap > h1{
+	  	padding: 0px 45px 20px;
+	  	font-family: 'NanumBarunpen';
+	  	font-size: 33px;
+	  	display:flex;
+	  	flex-direction:column;
+	  	align-items:center;
+	}
+
+	.wrap > h5{
+		font-family: 'NanumBarunpen';
+	  	display:flex;
+	  	flex-direction:column;
+	  	align-items:center;
+	} 
 
 #col-de {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 table {
   border-collapse: collapse;
   width: 1000px;
+  box-shadow: 0 0 20px 0 rgb(0 0 0 / 20%), 0 5px 5px 0 rgb(0 0 0 / 24%);
 }
 
-ul {
+/* ul {
 	list-style: none;
-}
+} */
 
 th, tr, td {
   background-color: rgba(255, 250, 240, 0.7);
@@ -54,38 +66,47 @@ th, tr, td {
   text-align: center;
 }
 
-input {
+/* input {
   font-family: 'NanumBarunpen';
   background-color: #FFD8B6;
   border: 1.5px solid #fff;
-}
-
-
-/* .wrap{
-    width: 100%;
-    margin-top: 50px;
-    margin-left: 50px;
-}
-table{
-    border-collapse: collapse;
-}
-#head{
-    background-color: #FFDAB9;
-}
-#th1,#th2,#th3,#th4{
-    
-    box-shadow: inset 0 0 8px #ff1493;
-
-}
-#content, #list, #recommend, #final{
-    border: 1px so	lid #ffebb5;
-    background-color: #ffebb5;
-    box-shadow: inset 0 0 8px #deb13a;
-    
-}
-#button, #date, #spot, #linklink{
-    box-shadow: inset 0 0 8px #BC8F8F;
-    
-    
-    
 } */
+
+#btn_vote, #btn_enroll, #btn_send {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  border: 0;
+  background-color: #FFDDBF;
+  color: #fff;
+  width: 100%;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+#myparty_btn_vote{
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #FFDDBF;
+  width: 60%;
+  border: 0;
+  padding: 10px;
+  color: #fff;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+  margin: 10px 10px 10px;
+}
+
+input:hover, input :active, input:focus {
+  background: #FFB472;
+}
+
+#head{
+	font-size: 28px;	
+}
+
+td {
+  font-size: 20px;
+}

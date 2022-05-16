@@ -31,7 +31,7 @@
 <div class="wrap">
 	<h1>투표하기</h1>
 	<h1><%=myvo.getV_name() %></h1><br>
-		<%=myvo.getV_cont() %><br><br>
+	<h5><%=myvo.getV_cont() %></h5><br><br>
 	<div id="col-de">
 		<ul id="de-ul">
 			<table border-collapse:collapse; width="1200px">
@@ -63,7 +63,7 @@
 	            	</td>
 	           		 <td id="button" align="center">
 	           		 	<!-- <a href="#pop_win" class="btn_open" onClick="array_chk()"><button>투표하기</button></a> -->
-	           		 	<button onClick="array_chk()">투표하기</button>
+	           		 	<button id="myparty_btn_vote" onClick="array_chk()">투표하기</button>
 	           		 	
 	           		 </td>
 				</tr>

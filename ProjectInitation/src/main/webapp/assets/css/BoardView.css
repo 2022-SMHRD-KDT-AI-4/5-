@@ -36,11 +36,11 @@ table {
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.20), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
 
-input {
+input{
     font-family: "Roboto", sans-serif;
     text-transform: uppercase;
     outline: 0;
-    background: #FFDDBF ;
+    background: #FFDDBF;
     width: 29%;
     border: 0;
     padding: 15px;
@@ -49,26 +49,58 @@ input {
     -webkit-transition: all 0.3 ease;
     transition: all 0.3 ease;
     cursor: pointer;
-    margin: 30px 30px 30px;
+    margin-left: 30px;
 }
+
 
 input:hover,input :active,input:focus {
     background: #FFB472;
   }
 
-#td1 {
-    font-size: 25px;
+td #td1 {
+    font-size: 27px;
+    font-weight: bold
 }
 
 #element {
     font-size: x-large;
 }
 
+#content{
+    width: 900px;
+    height: 700px;
+    table-layout: fixed;
+    border-radius: 16px;
+}
+
+.cover {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;	
+    border-radius: 16px;
+}
+
+/* #list{
+	width: 200px;
+} */
+
+/* .head{
+    height: 60px;
+} */
+
+.contain {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    border-radius: 16px;
+}
+  
 div.img {
     width: 900px;
     height: 700px;
 	border-radius: 16px;
 }
+
   
 .bg-contain {
     background-size: contain;
@@ -77,3 +109,23 @@ div.img {
     width: 100%;
     height: 100%;
   }
+  
+ div.icons a.login-icon, a.join-icon, a.logout-icon{
+  text-align: left;
+  margin-left: 30px;
+  margin-top: 30px;
+  padding: 15px;
+  font-family: 'NanumBarunpen';
+  font-size: 25px;
+}
+ 
+a {
+  text-decoration: none;
+  list-style: none;
+  color: #000; 
+}
+
+.cartopen, .cartclose{
+	background-color:transparent;
+	border: 0;
+}

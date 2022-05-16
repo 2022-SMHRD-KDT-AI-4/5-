@@ -13,40 +13,20 @@
     <link rel="shortcut icon" type="image/x-icon" href="assets/images/icon.png" />
     <title>Come On Yo</title>
     <style>
-        #wrap {
-            padding-left: 50px;
-        }
-        table {
-            border: 3.5px solid #FFC99A;
-            font-size: 20px;
-        }
-        #button1 {
-            height: 55px;
-        }
-        #button2 {
-            height: 55px;
-        }
         table, tr, td {
             padding: 0px;
             margin: 0px;
             background-color: rgba(255, 250, 240, 0.7);
         }
-        #wr-ta {
-            margin-right: 30px;
-        }
-        #null_list {
-            font-family: 'NanumBarunpen';
-            font-size: 100px;
-        }
     </style>
 </head>
 <body id="write-info">
-<div class="write-page">
+<div class="write-page" align="center">
     <a href="Main.jsp"><img src="assets/images/logoda.png" alt=""></a>
 </div>
 
 <form name="form" action="InviteService" method="post">
-    <h1>초대장 작성하기</h1>
+    <h1 align="center">초대장 작성하기</h1>
 <%
 	List<BoardVO> cartList = (List<BoardVO>) session.getAttribute("cartList");
 	BoardDAO dao = new BoardDAO();
@@ -56,7 +36,7 @@
 <%
 	}else{
 		for(BoardVO bvo : cartList){%>
-			<div id="wrap" style="float:left; width:auto;">
+			<div id="wrap" style="float:left; margin-left: 240px" width:auto;">
 				<table id="wr-ta" width="650px" height="600px">
 					 <tr height="50px" width="50px">
                         <th id="th1"><%=bvo.getP_name() %></th>
@@ -76,7 +56,7 @@
                     		List<BoardVO> ilist = dao.selectPartyItemList(bvo.getP_id());
                     		for(BoardVO ivo : ilist){ // 해당 파티에 아이템 항목들을 불러오는 for문
                     	%>
-                        	<li align="left"><%=ivo.getI_name()%></li>
+                        	<li align="left"><%=ivo.getI_name()%></li><br>
                         <%} // 두번째 for문 닫히는 지점%>	
                     	</td>    
             		</tr>

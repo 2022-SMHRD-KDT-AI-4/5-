@@ -14,14 +14,29 @@
     <link rel="stylesheet" type="text/css" href="assets/css/sideheart.css">
 </head>
 <body id="heart-info">
-
-	<div class="board_header">
+<%
+	MemberVO mvo = (MemberVO) session.getAttribute("vo");
+%>
+	<nav class="privacy">
+	<%if (mvo == null) {%>
+		<div class="icons">
+			<a class="login-icon" href="Login.jsp">login</a>
+			<a class="join-icon" href="Join.jsp">join</a>
+		</div>
+	<%} else {%>
+		<div class="icons">
+			<a class="logout-icon" href="LogoutService">logout</a>
+		</div>
+	<%}%>
+	</nav>
+	
+	<div class="board_header" align="center">
 		<a href="Main.jsp"><img src="assets/images/logoda.png" alt=""></a>
 	</div>
-
+	
 	<div class="wrap">
     	<table border-collapse:collapse; width="1200px">
-			<thead id = "board">
+			<thead id="board">
 			</thead>
     	</table>
 	</div>
@@ -29,15 +44,15 @@
 	
 <!-- 찜목록 영역 -->
 <button class="cartopen" style="position: fixed; right:22px; top: 11px; margin: 0; padding: 0;  display: block;">
-    <img src="img/bono.png"  onclick="cartopen()" width="40px" height="40px" alt="보노보노">
-    </button>
+    <img src="img/bono.png" onclick="cartopen()" width="40px" height="40px" alt="보노보노">
+</button>
     
     <div class="outer-div" style="margin-right: -40%;">			
     <%List<BoardVO> cartList = (List<BoardVO>) session.getAttribute("cartList");%>
 		<div class="title">
         <h3>찜 목록</h3>
         <button class="cartclose" style="position: absolute; right:2px;top: 2px; margin: 0; padding: 0; ">
-        <img src="img/bono.png"  onclick="cartclose()" width="40px" height="40px" alt="보노보노">
+        	<img src="img/bono.png"  onclick="cartclose()" width="40px" height="40px" alt="보노보노">
         </button>
         </div>
     	<div class="inner-div">
@@ -46,9 +61,9 @@
     	</tbody>
 		</table>
 		</div>
-		<div class="button">
-		<input type="button" onclick="cartclear();" value="찜목록 비우기">
-        <input type="button" id="toInvite" onclick = "location.href = 'Invitepage.jsp'" value="작성하기">
+		<div class="button" display="flex">
+			<input type="button" onclick="cartclear();" value="비우기">
+        	<input type="button" id="toInvite" onclick = "location.href = 'Invitepage.jsp'" value="작성하기">
 		</div>
     </div>
     <!-- 찜목록 영역 끝 -->
@@ -228,7 +243,7 @@
             </td>
             <td id="button2" align="center">
                 <input type="button" value="찜하기" onclick="cartsave();">
-                <input type="button" value="찜빼기" onclick="cartdelete();">
+                <input type="button" value="찜빼기 " onclick="cartdelete();">
             </td> 
       		</tr>
 			`;
@@ -251,7 +266,7 @@
  		console.log("아이템 리스트 작성 시작");
  		for(var i = 0; i < item.length; i++){
  			tr = `
- 				<li>`+item[i].i_name+`</li>
+ 				<li>`+item[i].i_name+`</li><br>
 			`;
  			$('#list').append(tr);
  		}

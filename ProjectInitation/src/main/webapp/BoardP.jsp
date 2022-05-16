@@ -66,8 +66,8 @@
 		</table>
 		</div>
 		<div class="button">
-		<input type="button" onclick="cartclear();" value="찜목록 비우기">
-        <input type="button" id="toInvite" onclick = "location.href = 'Invitepage.jsp'" value="작성하기">
+		<input id="btn_clear" type="button" onclick="cartclear();" value="비우기">
+        <input id="btn_write" type="button" id="toInvite" onclick = "location.href = 'Invitepage.jsp'" value="작성하기">
 		</div>
     </div>
     <!-- 찜목록 영역 끝 -->

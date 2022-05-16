@@ -114,8 +114,24 @@
     border-radius: 16px;
   }
 
+.cartopen, .cartclose{
+	background-color:transparent;
+	border: 0;
+}
 
-
-
-  
-  
+#btn_clear, #btn_write{
+	font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background: #FFDDBF;
+    width: 29%;
+    border: 0;
+    padding: 15px;
+    color: #fff;
+    font-size: 14px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+    margin-left: 10px;
+	
+}

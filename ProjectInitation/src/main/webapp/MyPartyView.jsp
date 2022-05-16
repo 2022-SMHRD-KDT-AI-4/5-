@@ -11,10 +11,8 @@
     <title>Come On Yo</title>
     <link rel="stylesheet" type="text/css" href="assets/css/MypartyView.css">
     <link rel="stylesheet" type="text/css" href="assets/css/popup.css">
-    <style type="text/css">
-        table, th, td{
-            border: 1px solid black;
-        }
+    <style>
+        #th1,#th2,#th3{height: 50px;}
     </style>
 </head>
 <body id="de-info">
@@ -29,11 +27,11 @@
 <div class="wrap">
 	<h1>초대장 만들기</h1><br>
 	<h1><%=myvo.getV_name() %></h1><br>
-		<%=myvo.getV_cont() %><br><br>
+	<h5><%=myvo.getV_cont() %></h5><br>
 	<div id="col-de">
 		<ul id="de-ul">
 			<table border-collapse:collapse; width="1200px">
-				<tr height="20px" id="head">
+				<tr id="head">
 		            <th id="th1">대표이미지</th>
 		            <th id="th2">사용할 아이템 목록</th>
 		            <th id="th3">추천수</th>
@@ -60,7 +58,7 @@
 						</tr>
 				</tr> -->
 				    
-				<tr height="40px">
+				<tr> <!-- height="40px" -->
 		        	<td id="date"align="center">
 		                개최일자 :  <%=myvo.getV_date()%>
 		            </td>
@@ -68,11 +66,10 @@
 		                장소 : <%=myvo.getV_adr()%>
 		            </td>
 		
-		            <td id="button" align="center" colspan="2">
-		                <a href="#pop_win1" class="btn_open"><button>① 투표 보내기</button></a>
-		                <a href="#pop_win2" class="btn_open"><button>③ 초대장 보내기</button></a>
-		                <a href="#" onclick="array_chk()" ><button>② 초대장 등록하기</button></a>
-		
+		            <td id="button" align="center" colspan="2" width="100px">
+		                <a href="#pop_win1" class="btn_open"><button id="btn_vote">① 투표 보내기</button></a>
+		                <a href="#" onclick="array_chk()" ><button id="btn_enroll">② 초대장 등록하기</button></a>
+		                <a href="#pop_win2" class="btn_open"><button id="btn_send">③ 초대장 보내기</button></a>		
 		            </td>
 		        </tr>
 			</table>
@@ -120,7 +117,6 @@
 	var obShareUrl = document.getElementById("ShareUrl");	
 	var obShareUrl1 = document.getElementById("ShareUrl1");
 	var obShareUrl2 = document.getElementById("ShareUrl2");
-
 	
 	obShareUrl.value = window.document.location.host	//현재 주소 추출
 	// 최종목적지 설정
@@ -198,7 +194,6 @@
 			this.parentNode.parentNode.style.display = 'none';
 		});
 	}
-	
 
   </script>
 
