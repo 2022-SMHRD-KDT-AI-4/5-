@@ -71,3 +71,17 @@ tr {
     font-size: 25px;
     margin-bottom: 20px;
 }
+
+.top {
+    appearance: auto;
+	
+	background: none;
+	border: 0;
+	
+    cursor: pointer;
+    position: fixed;
+    left: 3%;
+    bottom: 6%;
+    display: none;
+    z-index: 3;
+  }
