@@ -26,7 +26,7 @@
 .wrap h1{
     padding: 20px 0 15px;
     font-size : 33px;
-    border-bottom: 10px solid #aaa;
+    /* border-bottom: 10px solid #aaa; */
 }
 .fixed_img_col ul{
     /* border-bottom: 1px solid #aaa; */

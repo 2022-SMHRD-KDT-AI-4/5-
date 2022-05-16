@@ -144,10 +144,15 @@ article{
 }
 /* 윗 부분 #wrap ~ article 가령누나 추가 부분 */
   .top {
+    appearance: auto;
+	
+	background: none;
+	border: 0;
+	
     cursor: pointer;
     position: fixed;
-    right: 3%;
-    bottom: 6%; 
+    left: 3%;
+    bottom: 6%;
     display: none;
     z-index: 3;
   }

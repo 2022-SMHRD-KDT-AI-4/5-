@@ -25,7 +25,7 @@
 	List<InviteVO> myitemlist = (List<InviteVO>) session.getAttribute("myitemlist");
 %>
 <div class="de-page">
-	<a href="Main.jsp"><img src="assets/images/logoda.png" alt=""></a>
+	<img src="assets/images/logoda.png" alt="">
 </div>
 
 <div class="wrap">
