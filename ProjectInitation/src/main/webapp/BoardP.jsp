@@ -51,11 +51,11 @@
     <img src="img/bono.png"  onclick="cartopen()" width="40px" height="40px" alt="보노보노">
     </button>
     
-    <div class="outer-div" style="display: none;">			
+    <div class="outer-div" style="margin-right: -40%;">			
     <%List<BoardVO> cartList = (List<BoardVO>) session.getAttribute("cartList");%>
 		<div class="title">
         <h3>찜 목록</h3>
-        <button style="position: absolute; right:2px;top: 2px; margin: 0; padding: 0; ">
+        <button class="cartclose" style="position: absolute; right:2px;top: 2px; margin: 0; padding: 0; ">
         <img src="img/bono.png"  onclick="cartclose()" width="40px" height="40px" alt="보노보노">
         </button>
         </div>
@@ -71,10 +71,7 @@
 		</div>
     </div>
     <!-- 찜목록 영역 끝 -->
-    
-    <button class="top">
-		<img src="assets/images/conged.png" alt="top button">
-	</button>
+
     
     <!-- Scripts -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -206,17 +203,20 @@
 	/* 카트 생성 세트 끝 */
 	
 	/* 카트 열기 닫기 세트 */
-	
- 	function cartopen(){
- 		console.log("카트 열림")
-		document.querySelector(".outer-div").style.display = 'block';
- 		document.querySelector(".cartopen").style.display = 'none';
- 	}
- 	function cartclose(){
- 		console.log("카트 닫힘")
-		document.querySelector(".outer-div").style.display = 'none';
- 		document.querySelector(".cartopen").style.display = 'block';
- 	}
+ 	 
+  	$('.cartopen').click(function(){
+ 		$(this).fadeOut();
+ 		$('.outer-div').animate({
+ 			marginRight:0
+ 		},1000);
+ 	});
+ 	
+ 	$('.cartclose').click(function(){
+ 		$('.cartopen').fadeIn();
+ 		$('.outer-div').animate({
+ 			marginRight:'-40%'
+ 		},1000);
+ 	});
  	
  	/* 카트 열기 닫기 세트 끝 */
  	
@@ -225,7 +225,6 @@
  	}else{
  		$('#toInvite').attr("disabled", false);
  	}
- 	
  	
 	
 	
