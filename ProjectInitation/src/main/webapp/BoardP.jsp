@@ -11,8 +11,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Come On Yo</title>
-    <link rel="stylesheet" type="text/css" href="assets/css/BoardP.css?ver=1.1">
+    <link rel="stylesheet" type="text/css" href="assets/css/BoardP.css?ver=3">
     <link rel="stylesheet" type="text/css" href="assets/css/sideheart.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/input.css">
     <link rel="shortcut icon" type="image/x-icon" href="assets/images/icon.png" />
     <style type="text/css">
         @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
@@ -66,15 +67,15 @@
     
 <!-- 찜목록 영역 -->
 <button class="cartopen" style="position: fixed; right:22px; top: 11px; margin: 0; padding: 0;  display: block;">
-    <img src="img/bono.png"  onclick="cartopen()" width="40px" height="40px" alt="보노보노">
-    </button>
+    <img src="img/bono.png" width="40px" height="40px" alt="보노보노">
+</button>
     
     <div class="outer-div" style="margin-right: -40%;">			
     <%List<BoardVO> cartList = (List<BoardVO>) session.getAttribute("cartList");%>
 		<div class="title">
         <h3>찜 목록</h3>
         <button class="cartclose" style="position: absolute; right:2px;top: 2px; margin: 0; padding: 0; ">
-        <img src="img/bono.png"  onclick="cartclose()" width="40px" height="40px" alt="보노보노">
+        	<img src="img/bono.png"  width="40px" height="40px" alt="보노보노">
         </button>
         </div>
     	<div class="inner-div">

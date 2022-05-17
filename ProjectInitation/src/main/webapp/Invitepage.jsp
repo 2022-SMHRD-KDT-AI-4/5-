@@ -107,9 +107,8 @@
              	       
               <tr height="35px" bgcolor="whitesmoke">
               	<td colspan="2" align="center">
-              		<input type="submit" value="작성하기" onclick="presubmit();" style="background-color: #FFC99A; border: #FFC99A;">
-					<!-- <button type="button" onclick="presubmit();" style="background-color: #FFC99A; border: #FFC99A;">작성하기</button> -->
-                    <input type="reset" value="초기화" style="background-color: #FFC99A; border: #FFC99A;">
+              		<button class="input" type="button" onclick="presubmit();" >작성하기</button>
+                    <input class="input" type="reset" value="초기화" >
                 </td>
               </tr>
           </table>

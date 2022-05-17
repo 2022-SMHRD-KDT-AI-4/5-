@@ -53,9 +53,9 @@ table {
   box-shadow: 0 0 20px 0 rgb(0 0 0 / 20%), 0 5px 5px 0 rgb(0 0 0 / 24%);
 }
 
-/* ul {
+ul {
 	list-style: none;
-} */
+}
 
 th, tr, td {
   background-color: rgba(255, 250, 240, 0.7);
@@ -76,32 +76,44 @@ th, tr, td {
   font-family: "Roboto", sans-serif;
   outline: 0;
   border: 0;
-  background-color: #FFDDBF;
   color: #fff;
   width: 100%;
   font-size: 14px;
   cursor: pointer;
 }
 
-#myparty_btn_vote{
+#myparty_btn_vote {
   font-family: "Roboto", sans-serif;
-  text-transform: uppercase;
-  outline: 0;
-  background: #FFDDBF;
-  width: 60%;
-  border: 0;
-  padding: 10px;
-  color: #fff;
-  font-size: 14px;
-  -webkit-transition: all 0.3 ease;
-  transition: all 0.3 ease;
-  cursor: pointer;
-  margin: 10px 10px 10px;
+    text-transform: uppercase;
+    outline: 0;
+    background: #FFDDBF;
+    width: 29%;
+    border: 0;
+    padding: 10px;
+    color: #fff;
+    font-size: 14px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+    margin-left: 30px;
 }
 
-input:hover, input :active, input:focus {
-  background: #FFB472;
+.btn_close {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  border: 0;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
 }
+
+button{
+	background: #FFDDBF;
+}
+
+input:hover,input :active,input:focus, button:hover,button :active,button:focus {
+    background: #FFB472;
+  }
 
 #head{
 	font-size: 28px;	
