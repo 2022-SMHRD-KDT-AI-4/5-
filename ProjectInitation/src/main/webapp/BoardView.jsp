@@ -12,6 +12,7 @@
     <title>Come On Yo</title>
     <link rel="stylesheet" type="text/css" href="assets/css/BoardView.css">
     <link rel="stylesheet" type="text/css" href="assets/css/sideheart.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/input.css">
 </head>
 <body id="heart-info">
 <%
@@ -44,7 +45,7 @@
 	
 <!-- 찜목록 영역 -->
 <button class="cartopen" style="position: fixed; right:22px; top: 11px; margin: 0; padding: 0;  display: block;">
-    <img src="img/bono.png" onclick="cartopen()" width="40px" height="40px" alt="보노보노">
+    <img src="img/bono.png" width="40px" height="40px" alt="보노보노">
 </button>
     
     <div class="outer-div" style="margin-right: -40%;">			
@@ -52,7 +53,7 @@
 		<div class="title">
         <h3>찜 목록</h3>
         <button class="cartclose" style="position: absolute; right:2px;top: 2px; margin: 0; padding: 0; ">
-        	<img src="img/bono.png"  onclick="cartclose()" width="40px" height="40px" alt="보노보노">
+        	<img src="img/bono.png"  width="40px" height="40px" alt="보노보노">
         </button>
         </div>
     	<div class="inner-div">

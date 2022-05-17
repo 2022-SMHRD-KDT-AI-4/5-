@@ -7,8 +7,8 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="assets/css/invitepage.css?ver=1.1">
+    <meta name="viewport" content="width=device-width, initial-scale=3">
+    <link rel="stylesheet" type="text/css" href="assets/css/invitepage.css?ver=1">
     <link rel="stylesheet" type="text/css" href="assets/css/popup.css">
     <link rel="shortcut icon" type="image/x-icon" href="assets/images/icon.png" />
     <title>Come On Yo</title>
@@ -106,8 +106,8 @@
              	       
               <tr height="35px" bgcolor="whitesmoke">
               	<td colspan="2" align="center">
-              		<button type="button" onclick="presubmit();" style="background-color: #FFC99A; border: #FFC99A;">작성하기</button>
-                    <input type="reset" value="초기화" style="background-color: #FFC99A; border: #FFC99A;">
+              		<button class="input" type="button" onclick="presubmit();" >작성하기</button>
+                    <input class="input" type="reset" value="초기화" >
                 </td>
               </tr>
           </table>

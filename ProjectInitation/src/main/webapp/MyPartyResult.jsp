@@ -11,6 +11,7 @@
     <title>Come On Yo</title>
     <link rel="stylesheet" type="text/css" href="assets/css/MypartyView.css">
     <link rel="stylesheet" type="text/css" href="assets/css/popup.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/input.css">
     <link rel="shortcut icon" type="image/x-icon" href="assets/images/icon.png"/>
     <style type="text/css">
         table, tr, th, td{

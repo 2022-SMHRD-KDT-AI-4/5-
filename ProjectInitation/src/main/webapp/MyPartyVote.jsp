@@ -9,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Come On Yo</title>
-    <link rel="stylesheet" type="text/css" href="assets/css/MypartyView.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/MypartyView.css?ver=1">
     <link rel="stylesheet" type="text/css" href="assets/css/popup.css">
     <style type="text/css">
         table, th, td{
