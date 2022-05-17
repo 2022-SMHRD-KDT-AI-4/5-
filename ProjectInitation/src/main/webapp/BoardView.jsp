@@ -22,6 +22,8 @@
 		<div class="icons">
 			<a class="login-icon" href="Login.jsp">login</a>
 			<a class="join-icon" href="Join.jsp">join</a>
+<!-- 			<a class="login-icon" href="Login.jsp?uri=BoardView">login</a>
+			<a class="join-icon" href="Join.jsp">join</a> -->
 		</div>
 	<%} else {%>
 		<div class="icons">

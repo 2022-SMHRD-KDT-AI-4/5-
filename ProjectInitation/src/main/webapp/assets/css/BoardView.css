@@ -80,14 +80,6 @@ td #td1 {
     border-radius: 16px;
 }
 
-/* #list{
-	width: 200px;
-} */
-
-/* .head{
-    height: 60px;
-} */
-
 .contain {
     object-fit: contain;
     width: 100%;
@@ -110,7 +102,7 @@ div.img {
     height: 100%;
   }
   
- div.icons a.login-icon, a.join-icon, a.logout-icon{
+div.icons a.login-icon, a.join-icon, a.logout-icon{
   text-align: left;
   margin-left: 30px;
   margin-top: 30px;

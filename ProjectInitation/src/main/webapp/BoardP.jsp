@@ -31,6 +31,24 @@
 </head>
 
 <body id="board">
+<%
+	MemberVO mvo = (MemberVO) session.getAttribute("vo");
+%>
+	<nav class="privacy">
+	<%if (mvo == null) {%>
+		<div class="icons">
+			<!-- <a class="login-icon" href="Login.jsp">login</a>
+			<a class="join-icon" href="Join.jsp">join</a> -->
+	 		<a class="login-icon" href="javascript:login();">login</a>
+			<a class="join-icon" href="Join.jsp?uri=BoardP">join</a>
+		</div>
+	<%} else {%>
+		<div class="icons">
+			<a class="logout-icon" href="LogoutService">logout</a>
+		</div>
+	<%}%>
+	</nav>
+	
 <%MemberVO vo = (MemberVO) session.getAttribute("vo");%>
 <div class="board_header">
 	<a href="Main.jsp"><img src="assets/images/logoda.png" alt=""></a>
@@ -241,6 +259,12 @@
 	    return result === null ? "" : decodeURIComponent(result[1].replace(/\+/g, " "));
 	}
 	
+	/* 로그인 유지 */
+	function login(){
+		var URL = window.location.href;
+		URL = URL.replace("http://" + window.location.host + "/ProjectInitation/", "");
+		location.href = "Login.jsp?url=" + URL;
+	}
 	</script>
 </body>
 </html>

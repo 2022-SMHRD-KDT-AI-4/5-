@@ -11,6 +11,8 @@ import lombok.RequiredArgsConstructor;
 @NoArgsConstructor
 public class BoardVO {
 	private int num;
+	private String m_id;
+	private String m_pw;
 	private String i_id;
 	private String i_name;
 	private String i_cont;

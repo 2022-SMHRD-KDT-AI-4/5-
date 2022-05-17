@@ -147,4 +147,19 @@
     bottom: 6%;
     display: none;
     z-index: 3;
-  }
+}
+  
+   div.icons a.login-icon, a.join-icon, a.logout-icon{
+  text-align: left;
+  margin-left: 30px;
+  margin-top: 30px;
+  padding: 15px;
+  font-family: 'NanumBarunpen';
+  font-size: 25px;
+}
+ 
+a {
+  text-decoration: none;
+  list-style: none;
+  color: #000; 
+}

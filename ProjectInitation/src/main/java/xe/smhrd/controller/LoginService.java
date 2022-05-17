@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import xe.smhrd.model.BoardVO;
 import xe.smhrd.model.MemberDAO;
 import xe.smhrd.model.MemberVO;
 
@@ -16,17 +17,22 @@ public class LoginService extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		
+		
 //		인코딩
 		request.setCharacterEncoding("UTF-8");
 		
 //		파라미터 수집
 		String m_id = request.getParameter("m_id");
 		String m_pw = request.getParameter("m_pw");
+		String URL = request.getParameter("URL");
+		System.out.println(URL);
 		
 		MemberVO vo = new MemberVO(m_id, m_pw, null);
 
 		MemberDAO dao = new MemberDAO();
 		MemberVO mvo = dao.login(vo);
+		//BoardVO bvo = dao.login(vo);
 		
 		HttpSession session = request.getSession();
 		
@@ -35,12 +41,13 @@ public class LoginService extends HttpServlet {
 			System.out.println("로그인 실패");
 			session.setAttribute("errMsg", "로그인 정보가 올바르지 않습니다.");
 			response.sendRedirect("Login.jsp");
-		}else {
+		}else{
+			
 			System.out.println("로그인 성공");
 			
 			session.setAttribute("vo", mvo);
 			
-			response.sendRedirect("Main.jsp");
+			response.sendRedirect(URL);
 		}
 			
 		

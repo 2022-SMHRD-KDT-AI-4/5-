@@ -20,6 +20,9 @@
 		errMsg = " ";
 
 	session.invalidate();
+	
+	String path = request.getParameter("URL");
+	out.print(path);
 %>
     <div class="login-sys" >
         <a href="Main.jsp"><img src="assets/images/logoda.png" alt=""></a>
@@ -30,11 +33,11 @@
 
         <form class="login-form" action="LoginService" method="post">
         	<div id="errMsg" style="color: red"><%=errMsg%></div>
-            <input type="text" name="m_id" placeholder="id"/>
-            <input type="password" name="m_pw" placeholder="password"/>
-            <button type="submit" name="login" >login</button>
-            <button type="button" name="cancel" onclick="location.href='Main.jsp'">cancel</button>
-            <p class="message">Not registered? <a href="Join.jsp">Create an account</a></p>
+            	<input type="text" name="m_id" placeholder="id"/>
+            	<input type="password" name="m_pw" placeholder="password"/>
+            	<button type="submit" name="login" >login</button>
+            	<button type="button" name="cancel" onclick="location.href='Main.jsp'">cancel</button>
+            	<p class="message">Not registered? <a href="Join.jsp">Create an account</a></p>
         </form>
 
     </div>
