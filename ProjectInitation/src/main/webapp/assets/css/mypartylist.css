@@ -104,7 +104,7 @@ div.my-page {
 	
     cursor: pointer;
     position: fixed;
-    right: 3%;
+    left: 3%;
     bottom: 6%;
     display: none;
     z-index: 3;

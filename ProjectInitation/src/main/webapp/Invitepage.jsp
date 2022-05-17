@@ -36,7 +36,8 @@
 <%
 	}else{
 		for(BoardVO bvo : cartList){%>
-			<div id="wrap" style="float:left; margin-left: 240px" width:auto;">
+			<!-- <div id="wrap" style="float:left; margin-left: 240px" width:auto;"> -->
+			<div id="wrap" style="float:left; margin-left: 150px">
 				<table id="wr-ta" width="650px" height="600px">
 					 <tr height="50px" width="50px">
                         <th id="th1"><%=bvo.getP_name() %></th>
@@ -106,7 +107,8 @@
              	       
               <tr height="35px" bgcolor="whitesmoke">
               	<td colspan="2" align="center">
-              		<button type="button" onclick="presubmit();" style="background-color: #FFC99A; border: #FFC99A;">작성하기</button>
+              		<input type="submit" value="작성하기" onclick="presubmit();" style="background-color: #FFC99A; border: #FFC99A;">
+					<!-- <button type="button" onclick="presubmit();" style="background-color: #FFC99A; border: #FFC99A;">작성하기</button> -->
                     <input type="reset" value="초기화" style="background-color: #FFC99A; border: #FFC99A;">
                 </td>
               </tr>

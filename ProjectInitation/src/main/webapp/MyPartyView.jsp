@@ -40,7 +40,7 @@
 		 
 				<tr align="center">
 					<!-- 대표 이미지 가져오기 -->
-					<td id="images" rowspan="<%=myitemlist.size() + 1%>">
+					<td id="images" rowspan="<%=myitemlist.size() + 2%>">
 						<img src="img/<%=myvo.getP_img() %>" alt="<%=myvo.getP_name()%>" width="500" height="500">
 					</td>
 				</tr>

@@ -71,7 +71,11 @@
 		</div>
     </div>
     <!-- 찜목록 영역 끝 -->
-
+    
+    <!-- 위로 가기 버튼 -->
+	<button class="top">
+			<img src="assets/images/conged.png" alt="top button">
+	</button>
     
     <!-- Scripts -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

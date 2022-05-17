@@ -133,5 +133,18 @@
     transition: all 0.3 ease;
     cursor: pointer;
     margin-left: 10px;
-	
 }
+
+.top {
+    appearance: auto;
+	
+	background: none;
+	border: 0;
+	
+    cursor: pointer;
+    position: fixed;
+    left: 3%;
+    bottom: 6%;
+    display: none;
+    z-index: 3;
+  }
