@@ -18,11 +18,10 @@
 	String errMsg = (String) session.getAttribute("errMsg");
 	if (errMsg == null)
 		errMsg = " ";
-
 	session.invalidate();
 	
-	String path = request.getParameter("URL");
-	out.print(path);
+	String url = request.getParameter("url");
+	String num = request.getParameter("num");
 %>
     <div class="login-sys" >
         <a href="Main.jsp"><img src="assets/images/logoda.png" alt=""></a>
@@ -31,7 +30,8 @@
 <div class="login-page">
     <div class="form">
 
-        <form class="login-form" action="LoginService" method="post">
+        <form class="login-form" action="LoginService<%if(url!=null){%>?url=<%=url%><%if(num!=null){%>&num=<%=num%><%}%><%}%>" method="post">
+        
         	<div id="errMsg" style="color: red"><%=errMsg%></div>
             	<input type="text" name="m_id" placeholder="id"/>
             	<input type="password" name="m_pw" placeholder="password"/>

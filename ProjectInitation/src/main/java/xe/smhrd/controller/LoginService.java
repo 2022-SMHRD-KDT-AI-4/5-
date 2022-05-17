@@ -1,6 +1,8 @@
 package xe.smhrd.controller;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -25,8 +27,9 @@ public class LoginService extends HttpServlet {
 //		파라미터 수집
 		String m_id = request.getParameter("m_id");
 		String m_pw = request.getParameter("m_pw");
-		String URL = request.getParameter("URL");
-		System.out.println(URL);
+		String url = request.getParameter("url");
+		String num = request.getParameter("num");
+		System.out.println(url + num);
 		
 		MemberVO vo = new MemberVO(m_id, m_pw, null);
 
@@ -46,8 +49,14 @@ public class LoginService extends HttpServlet {
 			System.out.println("로그인 성공");
 			
 			session.setAttribute("vo", mvo);
+			if(url == null) {
+				RequestDispatcher rd = request.getRequestDispatcher("Main.jsp");
+				rd.forward(request, response);
+			}else {
+				RequestDispatcher rd = request.getRequestDispatcher(url);
+				rd.forward(request, response);
 			
-			response.sendRedirect(URL);
+			}
 		}
 			
 		

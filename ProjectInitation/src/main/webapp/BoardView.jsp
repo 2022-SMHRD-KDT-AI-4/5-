@@ -21,10 +21,8 @@
 	<nav class="privacy">
 	<%if (mvo == null) {%>
 		<div class="icons">
-			<a class="login-icon" href="Login.jsp">login</a>
+			<a class="login-icon" href="javascript:login();">login</a>
 			<a class="join-icon" href="Join.jsp">join</a>
-<!-- 			<a class="login-icon" href="Login.jsp?uri=BoardView">login</a>
-			<a class="join-icon" href="Join.jsp">join</a> -->
 		</div>
 	<%} else {%>
 		<div class="icons">
@@ -306,6 +304,13 @@
 	    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
 	        result = regex.exec(location.search);
 	    return result === null ? "" : decodeURIComponent(result[1].replace(/\+/g, " "));
+	}
+	
+	/* 로그인 유지 */
+	function login(){
+		var URL = window.location.href;
+		URL = URL.replace("http://" + window.location.host + "/ProjectInitation/", "");
+		location.href = "Login.jsp?url=" + URL;
 	}
 </script>
 </body>
