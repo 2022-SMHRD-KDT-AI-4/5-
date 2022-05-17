@@ -10,7 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Come On Yo</title>
-    <link rel="stylesheet" type="text/css" href="assets/css/BoardView.css?ver=3">
+    <link rel="stylesheet" type="text/css" href="assets/css/BoardView.css?ver=6">
     <link rel="stylesheet" type="text/css" href="assets/css/sideheart.css">
     <link rel="stylesheet" type="text/css" href="assets/css/input.css">
 </head>
@@ -43,29 +43,34 @@
 	</div>
 	
 	
+<%List<BoardVO> cartList = (List<BoardVO>) session.getAttribute("cartList");%>
 <!-- 찜목록 영역 -->
-<button class="cartopen" style="position: fixed; right:22px; top: 11px; margin: 0; padding: 0;  display: block;">
+<button class="cartopen" style="position: fixed; right:22px; top: 13px; margin: 0; padding: 0;  display: block;">
     <img src="img/bono.png" width="40px" height="40px" alt="보노보노">
 </button>
     
-    <div class="outer-div" style="margin-right: -40%;">			
-    <%List<BoardVO> cartList = (List<BoardVO>) session.getAttribute("cartList");%>
+    <div class="outer-div" style="margin-right: -40%;">	
 		<div class="title">
         <h3>찜 목록</h3>
-        <button class="cartclose" style="position: absolute; right:2px;top: 2px; margin: 0; padding: 0; ">
+        <button class="cartclose" style="position: absolute; right:2px;top: 4px; margin: 0; padding: 0; ">
         	<img src="img/bono.png"  width="40px" height="40px" alt="보노보노">
         </button>
         </div>
-    	<div class="inner-div">
-    	<table border="0">
-    	<tbody id="cart">
-    	</tbody>
-		</table>
-		</div>
-		<div class="button" display="flex">
-			<input type="button" onclick="cartclear();" value="비우기">
-        	<input type="button" id="toInvite" onclick = "location.href = 'Invitepage.jsp'" value="작성하기">
-		</div>
+		
+        
+        <div class="inner-div">
+            <table border="0">
+            <tbody id="cart">
+            </tbody>
+            </table>
+        </div>
+        <div class="button">
+            <div>
+                <input type="button" onclick="cartclear();" value="비우기">
+                <input type="button" id="toInvite" onclick = "location.href = 'Invitepage.jsp'" value="작성하기">
+            </div>
+            </div>
+            <div class="bg_img"></div>	
     </div>
     <!-- 찜목록 영역 끝 -->
 		
@@ -194,7 +199,7 @@
 				 tr = `
 	                <tr>
 					 	<td width="250px"><center>
-							<img src="img/`+p_img[i]+`" width="250px">
+							<img src="img/`+p_img[i]+`" width="274px">
 						</center></td>
 					</tr>
 					<tr>

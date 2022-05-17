@@ -65,29 +65,34 @@
         </div>
     </div>
     
+<%List<BoardVO> cartList = (List<BoardVO>) session.getAttribute("cartList");%>
 <!-- 찜목록 영역 -->
-<button class="cartopen" style="position: fixed; right:22px; top: 11px; margin: 0; padding: 0;  display: block;">
+<button class="cartopen" style="position: fixed; right:22px; top: 13px; margin: 0; padding: 0;  display: block;">
     <img src="img/bono.png" width="40px" height="40px" alt="보노보노">
 </button>
     
-    <div class="outer-div" style="margin-right: -40%;">			
-    <%List<BoardVO> cartList = (List<BoardVO>) session.getAttribute("cartList");%>
+    <div class="outer-div" style="margin-right: -40%;">	
 		<div class="title">
         <h3>찜 목록</h3>
-        <button class="cartclose" style="position: absolute; right:2px;top: 2px; margin: 0; padding: 0; ">
+        <button class="cartclose" style="position: absolute; right:2px;top: 4px; margin: 0; padding: 0; ">
         	<img src="img/bono.png"  width="40px" height="40px" alt="보노보노">
         </button>
         </div>
-    	<div class="inner-div">
-    	<table border="0">
-    	<tbody id="cart">
-    	</tbody>
-		</table>
-		</div>
-		<div class="button">
-		<input id="btn_clear" type="button" onclick="cartclear();" value="비우기">
-        <input id="btn_write" type="button" id="toInvite" onclick = "location.href = 'Invitepage.jsp'" value="작성하기">
-		</div>
+		
+        
+        <div class="inner-div">
+            <table border="0">
+            <tbody id="cart">
+            </tbody>
+            </table>
+        </div>
+        <div class="button">
+            <div>
+                <input type="button" onclick="cartclear();" value="비우기">
+                <input type="button" id="toInvite" onclick = "location.href = 'Invitepage.jsp'" value="작성하기">
+            </div>
+            </div>
+            <div class="bg_img"></div>	
     </div>
     <!-- 찜목록 영역 끝 -->
     
