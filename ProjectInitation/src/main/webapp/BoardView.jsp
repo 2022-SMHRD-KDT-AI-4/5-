@@ -10,7 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Come On Yo</title>
-    <link rel="stylesheet" type="text/css" href="assets/css/BoardView.css?ver=6">
+    <link rel="stylesheet" type="text/css" href="assets/css/BoardView.css?ver=10">
     <link rel="stylesheet" type="text/css" href="assets/css/sideheart.css">
     <link rel="stylesheet" type="text/css" href="assets/css/input.css">
 </head>
@@ -36,7 +36,7 @@
 	</div>
 	
 	<div class="wrap">
-    	<table border-collapse:collapse; width="1200px">
+    	<table class="mainboard" border-collapse:collapse; width="1200px">
 			<thead id="board">
 			</thead>
     	</table>
@@ -199,7 +199,7 @@
 				 tr = `
 	                <tr>
 					 	<td width="250px"><center>
-							<img src="img/`+p_img[i]+`" width="274px">
+							<img src="img/`+p_img[i]+`" width="250px">
 						</center></td>
 					</tr>
 					<tr>

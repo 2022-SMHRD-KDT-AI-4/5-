@@ -95,6 +95,13 @@
      z-index:1;
  }
  
- .inner-div::-webkit-scrollbar{
+.inner-div::-webkit-scrollbar{
    display: none;
+}
+#cart>tr>td{
+   width: 280px;
+   text-align: center;
+}
+.inner-div>table {
+   background-color: none;
 }

@@ -28,8 +28,7 @@ div.heart-page {
     align-items: center;
 }
 
-
-table {
+.mainboard {
     background-color: rgba(255, 250, 240, 0.7);
     font-size: 20px;
     font-family: 'NanumBarunpen';
