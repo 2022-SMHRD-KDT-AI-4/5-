@@ -36,7 +36,7 @@ table {
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.20), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
 
-td #td1 {
+#th1 {
     font-size: 27px;
     font-weight: bold
 }
@@ -107,4 +107,8 @@ a {
 .cartopen, .cartclose{
 	background-color:transparent;
 	border: 0;
+}
+
+.head{
+	height:70px;
 }

@@ -10,7 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Come On Yo</title>
-    <link rel="stylesheet" type="text/css" href="assets/css/BoardView.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/BoardView.css?ver=3">
     <link rel="stylesheet" type="text/css" href="assets/css/sideheart.css">
     <link rel="stylesheet" type="text/css" href="assets/css/input.css">
 </head>
@@ -227,7 +227,6 @@
  		console.log("보드 작성 시작");
  		$('#board').html(''); 
  		tr = `
- 			<thead id = "board">
  			<tr class="head">
  	           	<th id="th1">`+board.p_name+`</th>
  	           	<th id="th2">조회수 : `+board.p_view+`</th>
@@ -243,8 +242,8 @@
    			<td id="button1"align="center">
             </td>
             <td id="button2" align="center">
-                <input type="button" value="찜하기" onclick="cartsave();">
-                <input type="button" value="찜빼기 " onclick="cartdelete();">
+                <input type="button" class="intable" value="찜하기" onclick="cartsave();">
+                <input type="button" class="intable" value="찜빼기 " onclick="cartdelete();">
             </td> 
       		</tr>
 			`;

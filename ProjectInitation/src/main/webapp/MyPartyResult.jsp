@@ -48,7 +48,7 @@
 			
 					<td align="center" width="200px" height="300px">
 						<%for(InviteVO ivo : myitemlist){ %>
-							<li>
+							<li style="list-style: none;">
 								<%=ivo.getI_name() %>
 							</li><br>
 						<%} %>

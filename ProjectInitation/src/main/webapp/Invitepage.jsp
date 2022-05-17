@@ -7,8 +7,8 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=3">
-    <link rel="stylesheet" type="text/css" href="assets/css/invitepage.css?ver=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="assets/css/invitepage.css?ver=1.1">
     <link rel="stylesheet" type="text/css" href="assets/css/popup.css">
     <link rel="shortcut icon" type="image/x-icon" href="assets/images/icon.png" />
     <title>Come On Yo</title>
@@ -36,7 +36,8 @@
 <%
 	}else{
 		for(BoardVO bvo : cartList){%>
-			<div id="wrap" style="float:left; margin-left: 240px" width:auto;">
+			<!-- <div id="wrap" style="float:left; margin-left: 240px" width:auto;"> -->
+			<div id="wrap" style="float:left; margin-left: 150px">
 				<table id="wr-ta" width="650px" height="600px">
 					 <tr height="50px" width="50px">
                         <th id="th1"><%=bvo.getP_name() %></th>

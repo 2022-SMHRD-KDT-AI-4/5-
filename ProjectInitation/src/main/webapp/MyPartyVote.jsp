@@ -45,9 +45,9 @@
 						<img src="img/<%=myvo.getP_img() %>" width="100%" height="100%">
 					</td>
 					
-					<td>
+					<td align="center">
 						<%for(InviteVO ivo : myitemlist){ %>
-							<li>
+							<li style="list-style: none;">
 								<%=ivo.getI_name() %>
 								<input type="checkbox" name="seli_id" value="<%=ivo.getI_id()%>">
 							</li><br>
@@ -63,7 +63,7 @@
 	            	</td>
 	           		 <td id="button" align="center">
 	           		 	<!-- <a href="#pop_win" class="btn_open" onClick="array_chk()"><button>투표하기</button></a> -->
-	           		 	<button id="myparty_btn_vote" onClick="array_chk()">투표하기</button>
+	           		 	<button id="myparty_btn_vote" onClick="array_chk()">선택하기</button>
 	           		 	
 	           		 </td>
 				</tr>
@@ -77,7 +77,7 @@
 <!-- 팝업창 -->
 	<div id="pop_win" class="pop_wrap" style="display: none;">
 		<div class="pop_inner">
-			<p class="dsc">투표가 완료되었습니다</p>
+			<p class="dsc">선택이 완료되었습니다</p>
 			<button class="btn_close">닫기</button>
 		</div>
 	</div>
