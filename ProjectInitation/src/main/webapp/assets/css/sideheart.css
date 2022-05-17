@@ -94,3 +94,7 @@
      overflow-x:hidden;
      z-index:1;
  }
+ 
+ .inner-div::-webkit-scrollbar{
+   display: none;
+}
