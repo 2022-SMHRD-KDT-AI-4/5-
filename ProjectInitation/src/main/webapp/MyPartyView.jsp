@@ -131,9 +131,9 @@
 
 	
 	function CopyUrlToClipboard1(){	
-		obShareUrl1.select();  // 해당 값이 선택되도록 select() 합니다
-		document.execCommand("copy"); // 클립보드에 복사합니다.
-		obShareUrl1.blur(); // 선택된 것을 다시 선택안된것으로 바꿈니다.
+		obShareUrl1.select();
+		document.execCommand("copy");
+		obShareUrl1.blur();
 		alert("URL이 클립보드에 복사되었습니다"); 
 	}
 	function CopyUrlToClipboard2(){	
@@ -142,17 +142,6 @@
 		obShareUrl2.blur();
 		alert("URL이 클립보드에 복사되었습니다"); 
 	}
-/* 	
- 	var obShareUrl3 = document.getElementById("ShareUrl3"); 
- 	obShareUrl3.value = obShareUrl2.value 
- 	$('#ShareUrl3').val(obShareUrl3.value); 
- 	function CopyUrlToClipboard3(){	
-		obShareUrl3.select();
-		document.execCommand("copy");
-		obShareUrl3.blur();
-		alert("URL이 클립보드에 복사되었습니다"); 
-	} 
-	 */
 	
 	 function array_chk() {
 	        var checkboxValues = [];

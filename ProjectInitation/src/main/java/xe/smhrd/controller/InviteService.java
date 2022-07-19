@@ -26,11 +26,11 @@ public class InviteService extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		HttpSession session = request.getSession();
 
-//		Ä«Æ®¸ñ·Ï ¼ÒÈ¯
+//		ì¹´íŠ¸ëª©ë¡ ì†Œí™˜
 		List<BoardVO> cartList = (List<BoardVO>)session.getAttribute("cartList");
 		if (cartList == null) {
 //			cartList = new ArrayList<String>();
-			System.out.println("Âò¸ñ·ÏÀÌ ºñ¾ú½À´Ï´Ù");
+			System.out.println("ì°œëª©ë¡ì´ ë¹„ì—ˆìŠµë‹ˆë‹¤");
 		} else {
 
 			MemberVO mvo = (MemberVO) session.getAttribute("vo");
@@ -51,26 +51,26 @@ public class InviteService extends HttpServlet {
 
 			InviteDAO dao = new InviteDAO();
 			int lastnum = dao.selectLast();
-			System.out.println("¸¶Áö¸·¹øÈ£ : " + lastnum);
+			System.out.println("ë§ˆì§€ë§‰ë²ˆí˜¸ : " + lastnum);
 			int cnt = dao.write(vo);
 			vo.setV_id(lastnum);
 			if (cnt > 0) {
-				System.out.println("ÃÊ´ëÀå ¹øÈ£ " + lastnum + "¹ø Ãß°¡ ¼º°ø");
+				System.out.println("ì´ˆëŒ€ì¥ ë²ˆí˜¸ " + lastnum + "ë²ˆ ì¶”ê°€ ì„±ê³µ");
 				for (int i = 0; i < cartList.size(); i++) {
 					vo.setP_id(cartList.get(i).getP_id());
 					cnt = 0;
 					cnt = dao.addinvsel(vo);
 					if (cnt > 0) {
-						System.out.println("ÆÄÆ¼Ãß°¡ : " + cartList.get(i).getP_id());
+						System.out.println("íŒŒí‹°ì¶”ê°€ : " + cartList.get(i).getP_id());
 					}
 				}
 				cnt = 0;
 				cnt = dao.addinvselitm(lastnum);
 				if (cnt > 0) {
-					System.out.println("¾ÆÀÌÅÛ Ãß°¡ : " + cnt + '¿­');
+					System.out.println("ì•„ì´í…œ ì¶”ê°€ : " + cnt + 'ì—´');
 				}
 			} else {
-				System.out.println("Ãß°¡½ÇÆĞ");
+				System.out.println("ì¶”ê°€ì‹¤íŒ¨");
 			}
 			RequestDispatcher rd = request.getRequestDispatcher("MyPartylist.jsp");
 	        rd.forward(request, response);
